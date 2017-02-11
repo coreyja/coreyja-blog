@@ -1,85 +1,3 @@
-#header {
-  width: 100%;
-
-  .wrap {
-    margin: 30px auto;
-
-    height: 60px;
-  }
-
-  h1#title {
-    font-size: 60px;
-
-    display: inline-block;
-
-    margin: 0;
-    margin-right: 15px;
-  }
-
-  h2#tag-line{
-    display: inline-block;
-
-    font-family: Times;
-    font-style: italic;
-    font-weight: normal;
-    font-size: 20px;
-
-    margin: 0;
-  }
-
-  a, a:hover {
-    text-decoration: none;
-
-    color: inherit;
-  }
-
-  h3#about-link {
-    text-transform: uppercase;
-    font-weight: normal;
-    font-size: 30px;
-
-    margin: 0;
-
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    cursor: pointer;
-  }
-
-  .right {
-    position: relative;
-    overflow: hidden;
-
-    height: 100%;
-    width: 200px;
-  }
-
-}
-
-.colors-bar {
-  width: 100%;
-  height: 5px;
-
-  overflow: hidden;
-
-  span {
-    height: 100%;
-    width: 20%; //Since there are 5 this work perfectly
-
-    float: left;
-    margin: 0;
-    padding: 0;
-
-    &.purple { background: purple; }
-    &.red { background: red; }
-    &.blue { background: blue; }
-    &.green { background: green; }
-    &.orange { background: orange; }
-
-  }
-}
-
 .Header {
   &-titleContainer {
     height: 80px;
@@ -91,7 +9,6 @@
     font-size: 60px;
     color: #9a9a9a;
     margin-right: 15px;
-    font-family: "Alternate Gothic";
 
     &--lightGray {
       color: #bcbcbc;
@@ -99,8 +16,9 @@
   }
 
   &-subTitle {
+    @include body-font;
     display: inline-block;
-    font-family: Times;
+
     font-style: italic;
     font-weight: normal;
     font-size: 20px;
