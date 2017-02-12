@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # If you do not have OpenSSL installed, change
 # the following line to use 'http://'
 source 'https://rubygems.org'
@@ -9,12 +10,14 @@ gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw]
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
 # Middleman Gems
-gem "middleman", "~> 4.1"
-gem "middleman-blog"
+gem 'middleman', '~> 4.1'
 gem 'middleman-autoprefixer'
+gem 'middleman-blog'
 gem 'nokogiri'
 
 gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 
 # For feed.xml.builder
-gem "builder", "~> 3.0"
+gem 'builder', '~> 3.0'
+
+gem 'rubocop'

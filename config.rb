@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -34,10 +35,10 @@ activate :blog do |blog|
   # blog.year_link = "{year}.html"
   # blog.month_link = "{year}/{month}.html"
   # blog.day_link = "{year}/{month}/{day}.html"
-  blog.default_extension = ".md"
+  blog.default_extension = '.md'
 
-  blog.tag_template = "tag.html"
-  blog.calendar_template = "calendar.html"
+  blog.tag_template = 'tag.html'
+  blog.calendar_template = 'calendar.html'
 
   # Enable pagination
   # blog.paginate = true
@@ -45,7 +46,7 @@ activate :blog do |blog|
   # blog.page_link = "page/{num}"
 end
 
-page "/feed.xml", layout: false
+page '/feed.xml', layout: false
 # Reload the browser automatically whenever files change
 # configure :development do
 #   activate :livereload
