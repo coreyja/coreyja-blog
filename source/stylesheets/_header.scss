@@ -4,14 +4,10 @@
 
     text-align: center;
 
-
-    @media (min-width: 600px) {
-      & {
-        text-align: left;
-      }
+    @include bigger-than-300 {
       padding: 30px 50px;
+      text-align: left;
     }
-
   }
 
   &-title {
@@ -24,11 +20,9 @@
       color: $light-gray;
     }
 
-    @media (min-width: 600px) {
-      & {
-        display: inline-block;
-        margin-right: 15px;
-      }
+    @include bigger-than-300 {
+      display: inline-block;
+      margin-right: 15px;
     }
   }
 
@@ -38,15 +32,11 @@
     font-weight: normal;
     font-size: 20px;
     margin: 10px 0;
-
-
     color: $light-gray;
 
-    @media (min-width: 600px) {
-      & {
-        display: inline-block;
-        margin: 0;
-      }
+    @include bigger-than-300 {
+      display: inline-block;
+      margin: 0;
     }
   }
 
