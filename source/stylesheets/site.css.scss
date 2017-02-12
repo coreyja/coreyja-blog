@@ -6,6 +6,8 @@
 
 //Components
 @import 'components/header';
+@import 'components/blog_layout';
+@import 'components/blog_post';
 
 
 body {
@@ -24,8 +26,4 @@ a, a:visited {
   &:hover {
     color: darken($dark-gray, 10%);
   }
-}
-
-#main {
-  @include outside-padding;
 }

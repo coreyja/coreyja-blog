@@ -1,0 +1,9 @@
+<% wrap_layout :layout do %>
+    <div class="BlogLayout">
+      <section class="BlogLayout--mainContent">
+        <%= yield %>
+      </section>
+
+      <%= partial 'blog/other_articles_aside' %>
+    </div>
+<% end %>
