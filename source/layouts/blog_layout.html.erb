@@ -4,6 +4,6 @@
         <%= yield %>
       </section>
 
-      <%= partial 'blog/other_articles_aside' %>
+      <%= partial 'blog/other_articles_aside', locals: { aside_class: 'BlogLayout--aside' } %>
     </div>
 <% end %>

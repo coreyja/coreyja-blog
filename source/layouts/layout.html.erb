@@ -12,15 +12,13 @@
   <%= javascript_include_tag :all %>
 </head>
 <body>
+  <div class="Layout">
+    <%= partial 'shared/header', locals: { header_class: 'Layout--header' } %>
 
-<%= partial 'shared/header' %>
-
-<div id="main" role="main">
-  <%= yield %>
-</div>
-
+    <div id="main" role="main" class="Layout--content">
+      <%= yield %>
+    </div>
+  </div>
 </body>
-<footer>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Oswald:500,600,700" rel="stylesheet">
-</footer>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Oswald:500,600,700" rel="stylesheet">
 </html>
