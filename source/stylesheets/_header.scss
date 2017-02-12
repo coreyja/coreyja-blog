@@ -1,27 +1,53 @@
 .Header {
   &-titleContainer {
-    height: 80px;
-    text-align: left;
+    padding: 30px 10px;
+
+    text-align: center;
+
+
+    @media (min-width: 600px) {
+      & {
+        text-align: left;
+      }
+      padding: 30px 50px;
+    }
+
   }
 
   &-title {
-    display: inline-block;
-    font-size: 60px;
-    color: #9a9a9a;
-    margin-right: 15px;
+    font-size: 50px;
+    color: $dark-gray;
+    text-transform: uppercase;
+    margin: 0;
 
     &--lightGray {
-      color: #bcbcbc;
+      color: $light-gray;
+    }
+
+    @media (min-width: 600px) {
+      & {
+        display: inline-block;
+        margin-right: 15px;
+      }
     }
   }
 
   &-subTitle {
     @include body-font;
-    display: inline-block;
-
     font-style: italic;
     font-weight: normal;
     font-size: 20px;
+    margin: 10px 0;
+
+
+    color: $light-gray;
+
+    @media (min-width: 600px) {
+      & {
+        display: inline-block;
+        margin: 0;
+      }
+    }
   }
 
   &-coloredBars {
@@ -33,10 +59,10 @@
   &-coloredBar {
     flex: 1 0 auto;
 
-    &--purple { background: purple; }
-    &--red { background: red; }
-    &--blue { background: blue; }
-    &--green { background: green; }
-    &--orange { background: orange; }
+    &--purple { background: $purple; }
+    &--red { background: $red; }
+    &--blue { background: $blue; }
+    &--green { background: $green; }
+    &--orange { background: $orange; }
   }
 }
