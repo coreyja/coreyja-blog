@@ -1,11 +1,11 @@
 .Header {
   &-titleContainer {
-    padding: 30px 10px;
-
+    @include content;
+    padding-top: 30px;
+    padding-bottom: 30px;
     text-align: center;
 
     @include bigger-than-600 {
-      padding: 30px 50px;
       text-align: left;
     }
   }

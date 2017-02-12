@@ -22,3 +22,8 @@ a, a:visited {
   }
 }
 
+// Meh
+.content {
+  @include content;
+
+}
