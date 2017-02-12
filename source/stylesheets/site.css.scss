@@ -1,7 +1,11 @@
 @charset "utf-8";
+// Imports
 @import 'normalize';
-@import 'import';
-@import 'header';
+@import 'mixins';
+@import 'colors';
+
+//Components
+@import 'components/header';
 
 
 body {
