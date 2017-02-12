@@ -26,8 +26,6 @@ a, a:visited {
   }
 }
 
-// Meh
-.content {
-  @include content;
-
+#main {
+  @include outside-padding;
 }
