@@ -4,7 +4,7 @@
 
     text-align: center;
 
-    @include bigger-than-300 {
+    @include bigger-than-600 {
       padding: 30px 50px;
       text-align: left;
     }
@@ -20,7 +20,7 @@
       color: $light-gray;
     }
 
-    @include bigger-than-300 {
+    @include bigger-than-600 {
       display: inline-block;
       margin-right: 15px;
     }
@@ -34,7 +34,7 @@
     margin: 10px 0;
     color: $light-gray;
 
-    @include bigger-than-300 {
+    @include bigger-than-600 {
       display: inline-block;
       margin: 0;
     }

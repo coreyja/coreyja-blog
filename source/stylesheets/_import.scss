@@ -6,8 +6,8 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', sans-serif;
 }
 
-@mixin bigger-than-300 {
-  @media (min-width: 300px) {
+@mixin bigger-than-600 {
+  @media (min-width: 600px) {
     @content;
   }
 }
