@@ -1,0 +1,36 @@
+.PostTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid currentColor;
+
+  &-title, &-date, &-author {
+    flex: 0 0 auto;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &-date, &-author {
+    color: $dark-gray;
+  }
+
+  &-title {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight:normal;
+    margin-right: 20px;
+  }
+
+  &-date {
+
+  }
+
+  &-author {
+    flex-grow: 1;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+}

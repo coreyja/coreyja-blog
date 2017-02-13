@@ -9,6 +9,7 @@
 @import 'components/header';
 @import 'components/blog_layout';
 @import 'components/blog_post';
+@import 'components/post_title';
 
 html {
   height: 100%;
@@ -25,11 +26,8 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   @include title-font;
-  margin: 0;
-}
-
-p {
-  margin: 0;
+  //margin: 0;
+  line-height: 1em;
 }
 
 a, a:visited {

@@ -1,3 +1,34 @@
 .BlogPost {
+  display: flex;
+  flex-direction: column;
+  min-height:100%;
 
+  &-titleContainer {
+    flex: 0 0 auto;
+  }
+
+  &-post {
+    flex: 1 1 auto;
+    color: $dark-gray;
+  }
+
+  &-tags {
+    border-top: 2px solid currentColor;
+    padding: 5px 0;
+  }
+
+  &-tag {
+    &:not(:first-child)::before {
+      content: ' / '
+    }
+
+    text-decoration: none;
+    color: $dark-gray;
+  }
+
+  &--purple { color: $purple; }
+  &--red { color: $red; }
+  &--blue { color: $blue; }
+  &--green { color: $green; }
+  &--orange { color: $orange; }
 }
