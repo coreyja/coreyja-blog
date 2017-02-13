@@ -13,29 +13,34 @@
           <%= yield %>
         </section>
 
-        <aside class="BlogLayout-aside">
-          <h2>Recent Articles</h2>
-          <ol>
+        <aside class="BlogLayout-aside BlogSidebar">
+          <h2 class="BlogSidebar-title">Recent Articles</h2>
+          <ul class="BlogSidebar-list">
             <% blog.articles[0...10].each do |article| %>
-                <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+                <li class="BlogSidebar-listItem">
+                  <%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span>
+                </li>
             <% end %>
-          </ol>
+          </ul>
 
-          <h2>Tags</h2>
-          <ol>
+          <h2 class="BlogSidebar-title">Tags</h2>
+          <ul class="BlogSidebar-list">
             <% blog.tags.each do |tag, articles| %>
-                <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
+                <li class="BlogSidebar-listItem">
+                  <%= link_to tag, tag_path(tag) %>
+                </li>
             <% end %>
-          </ol>
+          </ul>
 
-          <h2>By Year</h2>
-          <ol>
+          <h2 class="BlogSidebar-title">By Year</h2>
+          <ul class="BlogSidebar-list">
             <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
-                <li><%= link_to "#{year} (#{articles.size})", blog_year_path(year) %></li>
+                <li class="BlogSidebar-listItem">
+                  <%= link_to year, blog_year_path(year) %>
+                </li>
             <% end %>
-          </ol>
+          </ul>
         </aside>
-
       </div>
     </div>
 <% end %>

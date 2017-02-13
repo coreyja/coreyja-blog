@@ -7,9 +7,10 @@
 //Components
 @import 'components/layout';
 @import 'components/header';
-@import 'components/blog_layout';
-@import 'components/blog_post';
-@import 'components/post_title';
+@import 'components/blog/blog_layout';
+@import 'components/blog/blog_post';
+@import 'components/blog/post_title';
+@import 'components/blog/blog_sidebar';
 
 html {
   height: 100%;
@@ -26,7 +27,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   @include title-font;
-  //margin: 0;
   line-height: 1em;
 }
 

@@ -1,0 +1,19 @@
+.BlogSidebar {
+  &-title {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 22px;
+    padding: 5px 0;
+
+    border-bottom: 1px solid $light-gray;
+  }
+
+  &-list {
+    padding-left: 20px;
+    list-style: none;
+  }
+
+  &-listItem {
+    margin: 5px 0;
+  }
+}
