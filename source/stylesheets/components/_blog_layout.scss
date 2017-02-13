@@ -1,14 +1,54 @@
 .BlogLayout {
+  @include outside-padding;
+
   background-color: $background-gray;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
+  padding-bottom: 20px;
 
-  &--mainContent {
+  &-container {
+    display: flex;
+    flex-direction: row;
     flex: 1 0 auto;
   }
 
-  &--aside {
+  &-mainContent {
+    flex: 1 1 auto;
+    margin-right: 50px;
+    background: $white;
+    padding: 20px;
+  }
+
+  &-aside, &-header {
     flex: 0 0 auto;
+  }
+
+  &-header {
+    background: $white;
+    margin: 20px 0;
+    padding: 10px 20px;
+
+    &-title, &-subTitle {
+      display: inline-block;
+      font-weight: normal;
+    }
+
+    &-title {
+      font-size: 55px;
+      text-transform: uppercase;
+      margin-right: 30px;
+
+    }
+
+    &-subTitle {
+      @include body-font;
+      font-size: 20px;
+    }
+  }
+
+  &-aside {
+    padding: 20px;
+    background-color: $white;
   }
 }
