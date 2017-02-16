@@ -9,3 +9,23 @@ color:  blue
 ---
 
 This is an example article. You probably want to delete it and write your own articles!
+
+~~~ruby
+def foo
+  bar
+end
+
+def foo
+  bar
+end
+
+def foo
+  bar
+end
+
+def foo
+  bar
+end
+~~~
+
+Some more copy goes here

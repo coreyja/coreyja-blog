@@ -13,9 +13,10 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'middleman', '~> 4.1'
 gem 'middleman-autoprefixer'
 gem 'middleman-blog'
+gem 'middleman-syntax'
 gem 'nokogiri'
 
-gem 'redcarpet', '~> 3.3', '>= 3.3.3'
+gem 'kramdown'
 
 # For feed.xml.builder
 gem 'builder', '~> 3.0'
