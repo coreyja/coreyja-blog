@@ -37,3 +37,7 @@ a, a:visited {
     color: darken($dark-gray, 10%);
   }
 }
+
+.highlight {
+  border: 10px solid $light-gray;
+}
