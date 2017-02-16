@@ -5,24 +5,23 @@ class CoreyjaTheme < Rouge::CSSTheme
   name 'coreyja'
 
   palette black: '#000000'
-  palette bright_green: '#a6e22e'
-  palette bright_pink: '#f92672'
-  palette carmine: '#960050'
+  palette bright_green: '#99cc00'
+  palette bright_pink: '#ff5374'
+  palette carmine: '#96376a'
   palette dark: '#49483e'
   palette dark_grey: '#888888'
-  palette dark_red: '#aa0000'
+  palette dark_red: '#942828'
   palette dimgrey: '#75715e'
   palette dimgreen: '#324932'
-  palette dimred: '#493131'
+  palette dimred: '#401010'
   palette emperor: '#555555'
   palette grey: '#999999'
   palette light_grey: '#aaaaaa'
-  palette light_violet: '#ae81ff'
-  palette soft_cyan: '#66d9ef'
+  palette light_violet: '#aa66cc'
+  palette soft_cyan: '#33b5e5'
   palette soft_yellow: '#e6db74'
   palette very_dark: '#1e0010'
-  palette whitish: '#f8f8f2'
-  palette orange: '#f6aa11'
+  palette orange: '#ffbb33'
   palette white: '#ffffff'
 
   style Comment,
@@ -44,12 +43,12 @@ class CoreyjaTheme < Rouge::CSSTheme
   style Keyword,
         Keyword::Constant,
         Keyword::Declaration,
-        Keyword::Pseudo,
-        Keyword::Reserved,
         Keyword::Type, fg: :soft_cyan, bold: true
+  style Keyword::Reserved,
+        Keyword::Pseudo, fg: :bright_pink, bold: true
   style Keyword::Namespace,
         Operator::Word,
-        Operator, fg: :bright_pink, bold: true
+        Operator, fg: :orange, bold: true
   style Literal::Number::Float,
         Literal::Number::Hex,
         Literal::Number::Integer::Long,
@@ -67,13 +66,13 @@ class CoreyjaTheme < Rouge::CSSTheme
         Literal::String::Regex,
         Literal::String::Single,
         Literal::String::Symbol,
-        Literal::String, fg: :soft_yellow
+        Literal::String, fg: :orange
   style Name::Attribute, fg: :bright_green
   style Name::Class,
         Name::Decorator,
         Name::Exception,
         Name::Function, fg: :bright_green, bold: true
-  style Name::Constant, fg: :soft_cyan
+  style Name::Constant, fg: :bright_pink
   style Name::Builtin::Pseudo,
         Name::Builtin,
         Name::Entity,
@@ -82,8 +81,8 @@ class CoreyjaTheme < Rouge::CSSTheme
         Name::Variable::Global,
         Name::Variable::Instance,
         Name::Variable,
-        Text::Whitespace, fg: :whitish
-  style Name::Label,                      fg: :whitish, bold: true
+        Text::Whitespace, fg: :grey
+  style Name::Label,                      fg: :grey, bold: true
   style Name::Tag,                        fg: :bright_pink
-  style Text,                             fg: :whitish, bg: :dark
+  style Text,                             fg: :grey, bg: :white
 end
