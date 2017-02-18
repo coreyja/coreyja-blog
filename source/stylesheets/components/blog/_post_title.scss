@@ -1,11 +1,15 @@
 .PostTitle {
   @include accent-color-modifier;
-  align-items: flex-end;
+  align-items: flex-start;
   border-bottom: 2px solid currentColor;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: 20px;
-  padding: 10px 0;
+
+  @media (min-width: 600px) {
+    align-items: flex-end;
+    flex-direction: row;
+  }
 
   &-title,
   &-date,
@@ -13,6 +17,7 @@
     flex: 0 0 auto;
     margin-bottom: 0;
     margin-top: 0;
+    padding: 10px 0;
   }
 
   &-date,
@@ -32,7 +37,7 @@
 
   &-date {
     flex-grow: 1;
-    margin-right: 50px;
+    margin-right: 20px;
     text-align: right;
   }
 
