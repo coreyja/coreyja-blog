@@ -1,12 +1,12 @@
 ---
-title:  Example Article
-slug: extra
+title:  Example Article2
+slug: example-2
 author: Corey Alexander
-date:   2012-01-01
+date:   2012-01-02
 tags:
     - example
     - test
-color:  blue
+color:  purple
 ---
 
 Some copy here Lorem ipsum the sum is golden brown and the sky is full of candy.

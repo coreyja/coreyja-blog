@@ -30,11 +30,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1em;
 }
 
-a, a:visited {
-  color: $dark-gray;
+a {
+  color: darken($dark-gray, 10%);
 
-  &:hover {
-    color: darken($dark-gray, 10%);
+  &:hover, &:active {
+    text-decoration: underline;
   }
 }
 

@@ -17,20 +17,29 @@
   }
 
   &-title {
+    @include title-font;
     text-transform: uppercase;
     font-size: 30px;
     font-weight:normal;
     margin-right: 20px;
+    text-decoration: none;
+    color: inherit;
   }
 
   &-date {
-
+    flex-grow: 1;
+    text-align: right;
+    margin-right: 50px;
   }
 
   &-author {
-    flex-grow: 1;
-    text-align: right;
     text-transform: uppercase;
     font-size: 20px;
   }
+
+  &--purple { color: $purple; }
+  &--red { color: $red; }
+  &--blue { color: $blue; }
+  &--green { color: $green; }
+  &--orange { color: $orange; }
 }

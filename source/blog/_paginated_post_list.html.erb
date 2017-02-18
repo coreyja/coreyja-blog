@@ -7,10 +7,15 @@
 <% end %>
 
 <% page_articles.each_with_index do |article, i| %>
-    <h2><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h2>
-    <!-- use article.summary(250) if you have Nokogiri available to show just
-         the first 250 characters -->
-    <%= article.summary(250) %>
+    <section class="BlogPost-title PostTitle <%= "#{"PostTitle--#{article.data.color}"  if article.data.color }" %>">
+      <%= link_to article.data.title, article, class: 'PostTitle-title' %>
+      <h4 class="PostTitle-date">
+        <%= article.data.date.strftime('%-m.%-d.%y') %>
+      </h4>
+      <h4 class="PostTitle-author">
+        <%= article.data.author %>
+      </h4>
+    </section>
 <% end %>
 
 <% if paginate %>
