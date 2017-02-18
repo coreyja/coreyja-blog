@@ -1,7 +1,11 @@
 .PostCards {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
   &-card {
     @include accent-color-modifier;
@@ -11,10 +15,12 @@
     margin: 10px 5px;
     padding-bottom: 30px;
     padding-top: 30px;
-    width: calc(50% - 20px);
-
     text-align: center;
-  }
+
+    @media (min-width: 600px) {
+      width: calc(50% - 20px);
+    }
+    }
 
   &-title {
     @include title-font;
