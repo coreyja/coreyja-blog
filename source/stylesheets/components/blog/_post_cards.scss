@@ -12,15 +12,20 @@
     background-color: currentColor;
     box-sizing: border-box;
     flex: 0 0 auto;
-    margin: 10px 5px;
+    margin: 10px;
     padding-bottom: 30px;
     padding-top: 30px;
     text-align: center;
 
     @media (min-width: 600px) {
-      width: calc(50% - 20px);
+      width: calc((100% / 2) - 20px);
     }
+
+    @media (min-width: 1200px) {
+      margin: 20px;
+      width: calc((100% / 3) - 40px);
     }
+  }
 
   &-title {
     @include title-font;
