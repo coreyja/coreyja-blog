@@ -23,6 +23,7 @@
     flex: 1 1 auto;
     padding: 20px;
     margin-bottom: 50px;
+    min-width: 0;
 
     @media (min-width: 900px) {
       margin-right: 50px;
