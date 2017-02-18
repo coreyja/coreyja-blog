@@ -132,6 +132,7 @@ DEPENDENCIES
   middleman-autoprefixer
   middleman-blog
   middleman-syntax
+  rake
   rubocop
   scss_lint
   tzinfo-data
