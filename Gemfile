@@ -14,7 +14,6 @@ gem 'middleman', '~> 4.1'
 gem 'middleman-autoprefixer'
 gem 'middleman-blog'
 gem 'middleman-syntax'
-gem 'nokogiri'
 
 gem 'kramdown'
 

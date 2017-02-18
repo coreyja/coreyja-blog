@@ -6,17 +6,22 @@
     <% end %>
 <% end %>
 
-<% page_articles.each_with_index do |article, i| %>
-    <section class="BlogPost-title PostTitle <%= "#{"PostTitle--#{article.data.color}"  if article.data.color }" %>">
-      <%= link_to article.data.title, article, class: 'PostTitle-title' %>
-      <h4 class="PostTitle-date">
-        <%= article.data.date.strftime('%-m.%-d.%y') %>
-      </h4>
-      <h4 class="PostTitle-author">
-        <%= article.data.author %>
-      </h4>
-    </section>
-<% end %>
+<div class="PostCards">
+  <% page_articles.each_with_index do |article, i| %>
+      <section class="PostCards-card <%= "#{"PostCards-card--#{article.data.color}"  if article.data.color }" %>">
+        <%= link_to article.data.title, article, class: 'PostCards-title' %>
+        <div class="PostCards-date">
+          <%= article.data.date.strftime('%-m.%-d.%y') %>
+        </div>
+        <div class="PostCards-tags">
+          <% article.tags.each do |tag, articles| %>
+            <%= link_to tag, tag_path(tag), class: 'PostCards-tag' %>
+          <% end %>
+        </div>
+        <%= link_to 'More >', article, class: 'PostCards-more' %>
+      </section>
+  <% end %>
+</div>
 
 <% if paginate %>
     <% if next_page %>

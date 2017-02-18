@@ -1,12 +1,13 @@
 ---
-title:  Example Article2
-slug: example-2
+title:  Example Article3
+slug: example-3
 author: Corey Alexander
-date:   2012-01-02
+date:   2012-01-03
 tags:
     - example
-    - test
-color:  purple
+    - other
+    - thingys
+color:  orange
 ---
 
 jkldjfsdlkfjsdf

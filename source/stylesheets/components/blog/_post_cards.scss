@@ -1,0 +1,54 @@
+.PostCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &-card {
+    @include accent-color-modifier;
+    background-color: currentColor;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    margin: 10px 5px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    width: calc(50% - 20px);
+
+    text-align: center;
+  }
+
+  &-title {
+    @include title-font;
+    color: gray('white');
+    display: inline-block;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+
+  &-date {
+    color: gray('white');
+    margin-bottom: 10px;
+  }
+
+  &-tags {
+    margin-bottom: 15px;
+  }
+
+  &-tag {
+    color: gray('white');
+    font-style: italic;
+    text-decoration: none;
+
+    &:not(:last-child)::after {
+      content: ',';
+    }
+  }
+
+  &-more {
+    @include title-font;
+    color: gray('white');
+    display: inline-block;
+    font-size: 20px;
+    text-decoration: none;
+  }
+}

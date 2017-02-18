@@ -11,8 +11,6 @@ color:  blue
 
 Some copy here Lorem ipsum the sum is golden brown and the sky is full of candy.
 
-SPLIT_SUMMARY_BEFORE_THIS
-
 ~~~ruby
 require "active_support/core_ext/hash/keys"
 
