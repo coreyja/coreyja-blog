@@ -21,7 +21,7 @@ body {
 
 body {
   @include body-font;
-  color: $dark-gray;
+  color: gray('dark');
   font-size: 1em;
 }
 
@@ -31,9 +31,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: darken($dark-gray, 10%);
+  color: darken(gray('dark'), 10%);
 }
 
 .highlight {
-  border: 10px solid $light-gray;
+  border: 10px solid gray('light');
 }

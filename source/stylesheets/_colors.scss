@@ -1,10 +1,37 @@
-$red:               #ff4444;
-$green:             #99cc00;
-$blue:              #33b5e5;
-$purple:            #aa66cc;
-$orange:            #ffbb33;
+$accent-colors: (
+  'red': #ff4444,
+  'green': #99cc00,
+  'blue': #33b5e5,
+  'purple': #aa66cc,
+  'orange': #ffbb33,
+);
+@function accent-color($key) {
+  @if map-has-key($accent-colors, $key) {
+    @return map-get($accent-colors, $key);
+  }
 
-$white:             #ffffff;
-$background-gray:   #dadada;
-$light-gray:        #bcbcbc;
-$dark-gray:         #9a9a9a;
+  @error "Unknown key `#{$key}` in $accent-colors.";
+  @return null;
+}
+@mixin accent-color-modifier($property: 'color') {
+  @each $key, $color in $accent-colors {
+    &--#{$key} {
+      #{$property}: $color;
+    }
+  }
+}
+
+$grays: (
+  'white': #ffffff,
+  'background': #dadada,
+  'light': #bcbcbc,
+  'dark': #9a9a9a,
+);
+@function gray($key) {
+  @if map-has-key($grays, $key) {
+    @return map-get($grays, $key);
+  }
+
+  @error "Unknown key `#{$key}` in $grays.";
+  @return null;
+}

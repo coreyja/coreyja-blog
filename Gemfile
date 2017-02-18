@@ -22,3 +22,5 @@ gem 'kramdown'
 gem 'builder', '~> 3.0'
 
 gem 'rubocop'
+
+gem 'scss_lint', require: false

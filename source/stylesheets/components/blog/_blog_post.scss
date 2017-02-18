@@ -1,4 +1,5 @@
 .BlogPost {
+  @include accent-color-modifier;
   display: flex;
   flex-direction: column;
   min-height:100%;
@@ -9,7 +10,7 @@
 
   &-post {
     flex: 1 1 auto;
-    color: $dark-gray;
+    color: gray('dark');
   }
 
   &-tags {
@@ -23,12 +24,6 @@
     }
 
     text-decoration: none;
-    color: $dark-gray;
+    color: gray('dark');
   }
-
-  &--purple { color: $purple; }
-  &--red { color: $red; }
-  &--blue { color: $blue; }
-  &--green { color: $green; }
-  &--orange { color: $orange; }
 }

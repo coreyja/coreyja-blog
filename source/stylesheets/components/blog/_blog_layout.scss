@@ -1,7 +1,7 @@
 .BlogLayout {
   @include outside-padding;
 
-  background-color: $background-gray;
+  background-color: gray('background');
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -18,7 +18,7 @@
   &-mainContent {
     flex: 1 1 auto;
     margin-right: 50px;
-    background: $white;
+    background: gray('white');
     padding: 20px;
   }
 
@@ -27,7 +27,7 @@
   }
 
   &-header {
-    background: $white;
+    background: gray('white');
     margin: 20px 0;
     padding: 10px 20px;
 
@@ -53,6 +53,6 @@
 
   &-aside {
     padding: 20px;
-    background-color: $white;
+    background-color: gray('white');
   }
 }

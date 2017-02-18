@@ -4,7 +4,7 @@
     padding-top: 30px;
     padding-bottom: 30px;
     text-align: center;
-    background-color: $white;
+    background-color: gray('white');
 
     @include bigger-than-600 {
       text-align: left;
@@ -14,13 +14,13 @@
   &-title {
     @include title-font;
     font-size: 50px;
-    color: $dark-gray;
+    color: gray('dark');
     text-transform: uppercase;
     margin: 0;
     text-decoration: none;
 
     &--lightGray {
-      color: $light-gray;
+      color: gray('light');
     }
 
     @include bigger-than-600 {
@@ -35,7 +35,7 @@
     font-weight: normal;
     font-size: 20px;
     margin: 10px 0;
-    color: $light-gray;
+    color: gray('light');
 
     @include bigger-than-600 {
       display: inline-block;
@@ -50,12 +50,8 @@
   }
 
   &-coloredBar {
+    @include accent-color-modifier;
     flex: 1 0 auto;
-
-    &--purple { background: $purple; }
-    &--red { background: $red; }
-    &--blue { background: $blue; }
-    &--green { background: $green; }
-    &--orange { background: $orange; }
+    background: currentColor;
   }
 }
