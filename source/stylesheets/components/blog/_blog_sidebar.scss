@@ -1,20 +1,19 @@
 .BlogSidebar {
   &-title {
-    text-transform: uppercase;
-    font-weight: normal;
-    font-size: 22px;
-    padding: 5px 0;
-
     border-bottom: 1px solid gray('light');
+    font-size: 22px;
+    font-weight: normal;
+    padding: 5px 0;
+    text-transform: uppercase;
   }
 
   &-list {
-    padding-left: 20px;
     list-style: none;
+    padding-left: 20px;
   }
 
   &-listItem {
-    margin: 5px 0;
     font-style: italic;
+    margin: 5px 0;
   }
 }

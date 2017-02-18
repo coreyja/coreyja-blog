@@ -1,5 +1,7 @@
 scss_files: 'source/stylesheets/**/*.scss'
+exclude: 'source/stylesheets/_normalize.scss'
 linters:
-  Indentation:
-    severity: error
-    width: 2
+  HexLength:
+    style: long
+  SelectorFormat:
+    enabled: false

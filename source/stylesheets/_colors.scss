@@ -5,6 +5,7 @@ $accent-colors: (
   'purple': #aa66cc,
   'orange': #ffbb33,
 );
+
 @function accent-color($key) {
   @if map-has-key($accent-colors, $key) {
     @return map-get($accent-colors, $key);
@@ -13,6 +14,7 @@ $accent-colors: (
   @error "Unknown key `#{$key}` in $accent-colors.";
   @return null;
 }
+
 @mixin accent-color-modifier($property: 'color') {
   @each $key, $color in $accent-colors {
     &--#{$key} {
@@ -27,6 +29,7 @@ $grays: (
   'light': #bcbcbc,
   'dark': #9a9a9a,
 );
+
 @function gray($key) {
   @if map-has-key($grays, $key) {
     @return map-get($grays, $key);

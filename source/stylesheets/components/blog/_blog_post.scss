@@ -2,15 +2,15 @@
   @include accent-color-modifier;
   display: flex;
   flex-direction: column;
-  min-height:100%;
+  min-height: 100%;
 
   &-titleContainer {
     flex: 0 0 auto;
   }
 
   &-post {
-    flex: 1 1 auto;
     color: gray('dark');
+    flex: 1 1 auto;
   }
 
   &-tags {
@@ -19,11 +19,11 @@
   }
 
   &-tag {
-    &:not(:first-child)::before {
-      content: ' / '
-    }
-
-    text-decoration: none;
     color: gray('dark');
+    text-decoration: none;
+
+    &:not(:first-child)::before {
+      content: ' / ';
+    }
   }
 }

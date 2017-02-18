@@ -1,10 +1,10 @@
 .Header {
   &-titleContainer {
     @include outside-padding;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
     background-color: gray('white');
+    padding-bottom: 30px;
+    padding-top: 30px;
+    text-align: center;
 
     @include bigger-than-600 {
       text-align: left;
@@ -13,29 +13,29 @@
 
   &-title {
     @include title-font;
-    font-size: 50px;
     color: gray('dark');
-    text-transform: uppercase;
+    font-size: 50px;
     margin: 0;
     text-decoration: none;
-
-    &--lightGray {
-      color: gray('light');
-    }
+    text-transform: uppercase;
 
     @include bigger-than-600 {
       display: inline-block;
       margin-right: 15px;
     }
+
+    &--lightGray {
+      color: gray('light');
+    }
   }
 
   &-subTitle {
     @include body-font;
+    color: gray('light');
+    font-size: 20px;
     font-style: italic;
     font-weight: normal;
-    font-size: 20px;
     margin: 10px 0;
-    color: gray('light');
 
     @include bigger-than-600 {
       display: inline-block;
@@ -44,14 +44,13 @@
   }
 
   &-coloredBars {
-    height: 5px;
-
     display: flex;
+    height: 5px;
   }
 
   &-coloredBar {
     @include accent-color-modifier;
-    flex: 1 0 auto;
     background: currentColor;
+    flex: 1 0 auto;
   }
 }

@@ -1,40 +1,43 @@
 .PostTitle {
   @include accent-color-modifier;
+  align-items: flex-end;
+  border-bottom: 2px solid currentColor;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  padding: 10px 0;
   margin-bottom: 20px;
-  border-bottom: 2px solid currentColor;
+  padding: 10px 0;
 
-  &-title, &-date, &-author {
+  &-title,
+  &-date,
+  &-author {
     flex: 0 0 auto;
-    margin-top: 0;
     margin-bottom: 0;
+    margin-top: 0;
   }
 
-  &-date, &-author {
+  &-date,
+  &-author {
     color: gray('dark');
   }
 
   &-title {
     @include title-font;
-    text-transform: uppercase;
+    color: inherit;
     font-size: 30px;
-    font-weight:normal;
+    font-weight: normal;
     margin-right: 20px;
     text-decoration: none;
-    color: inherit;
+    text-transform: uppercase;
   }
 
   &-date {
     flex-grow: 1;
-    text-align: right;
     margin-right: 50px;
+    text-align: right;
   }
 
   &-author {
-    text-transform: uppercase;
     font-size: 20px;
+    text-transform: uppercase;
   }
 }
