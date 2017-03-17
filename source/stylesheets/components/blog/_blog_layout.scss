@@ -24,10 +24,14 @@
     margin-bottom: 50px;
     min-width: 0;
     padding: 20px;
+    border: 5px solid accent-color('butter');
+    order: 1;
 
     @media (min-width: 900px) {
       margin-bottom: 0;
-      margin-right: 50px;
+      margin-left: 50px;
+
+      order: 2;
     }
   }
 
@@ -63,5 +67,10 @@
   &-aside {
     background-color: gray('white');
     padding: 20px;
+    order: 2;
+
+    @media (min-width: 900px) {
+      order: 1;
+    }
   }
 }
