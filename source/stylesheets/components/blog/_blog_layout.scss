@@ -3,6 +3,7 @@
   background-color: gray('background');
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   min-height: 100%;
   padding-bottom: 20px;
 
