@@ -19,10 +19,9 @@ namespace :post do
     file_contents = <<~MARKDOWN
       ---
       title:  #{args[:title]}
-      author: Corey Alexander
+      author: Brandi Sanders
       date:   #{Time.now.strftime('%F')}
       tags: tag
-      color: red
       ---
 
       Some copy here Lorem ipsum the sum is golden brown and the sky is full of candy.

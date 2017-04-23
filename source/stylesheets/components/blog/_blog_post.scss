@@ -11,6 +11,10 @@
   &-post {
     color: gray('dark');
     flex: 1 1 auto;
+
+    img {
+      max-width: 100%;
+    }
   }
 
   &-tags {

@@ -29,7 +29,7 @@
 
   &-title {
     @include title-font;
-    color: gray('dark');
+    color: gray('white');
     display: inline-block;
     font-size: 20px;
     margin-bottom: 10px;
@@ -37,7 +37,7 @@
   }
 
   &-date {
-    color: gray('dark');
+    color: gray('white');
     margin-bottom: 10px;
   }
 
@@ -46,7 +46,7 @@
   }
 
   &-tag {
-    color: gray('dark');
+    color: gray('white');
     font-style: italic;
     text-decoration: none;
 
@@ -57,7 +57,7 @@
 
   &-more {
     @include title-font;
-    color: gray('dark');
+    color: gray('white');
     display: inline-block;
     font-size: 20px;
     text-decoration: none;
