@@ -62,7 +62,10 @@ configure :build do
 
   # Minify Javascript on build
   activate :minify_javascript
+  activate :gzip
 end
+
+activate :asset_hash
 
 activate :autoprefixer do |config|
   config.browsers = ['last 3 versions']
