@@ -64,6 +64,8 @@ configure :build do
   activate :minify_javascript
 end
 
+activate :asset_hash
+
 activate :autoprefixer do |config|
   config.browsers = ['last 3 versions']
 end
