@@ -1,5 +1,9 @@
 $accent-colors: (
-  'butter': #ffff99,
+  'red': #ff4444,
+  'green': #99cc00,
+  'blue': #33b5e5,
+  'purple': #aa66cc,
+  'orange': #ffbb33,
 );
 
 @function accent-color($key) {
