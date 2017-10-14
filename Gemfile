@@ -15,7 +15,11 @@ gem 'rake'
 gem 'middleman', '~> 4.1'
 gem 'middleman-autoprefixer'
 gem 'middleman-blog'
+gem 'middleman-cloudfront', git: 'git://github.com/andrusha/middleman-cloudfront.git'
+gem 'middleman-s3_sync'
 gem 'middleman-syntax'
+
+gem 'mime-types'
 
 gem 'kramdown'
 
