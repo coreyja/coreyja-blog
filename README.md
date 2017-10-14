@@ -1,5 +1,3 @@
-# Coreyja.com Blog
+# Glassbambi.com Blog
 
-Have an existing site that I am going to replace with this blog, with the same styles. Using the Middleman blog engine.
-
-The finished product will eventually be launched at [coreyja.com](http://coreyja.com)
+Setting up a blog based on the coreyja.com blog for Bambi

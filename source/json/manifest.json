@@ -1,0 +1,23 @@
+{
+  "short_name": "GlassBambi Blog",
+  "name": "GlassBambi Blog",
+  "background_color": "#ffff99",
+  "theme_color": "#ffff99",
+  "icons": [
+    {
+      "src": "/images/apple-touch-icon-76x76.png",
+      "sizes": "76x76",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/apple-touch-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/apple-touch-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+}
