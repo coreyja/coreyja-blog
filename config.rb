@@ -62,6 +62,29 @@ configure :build do
 
   # Minify Javascript on build
   activate :minify_javascript
+  activate :gzip
+end
+
+activate :s3_sync do |s3_sync|
+  s3_sync.region                     = 'us-east-1'     # The AWS region for your bucket.
+  s3_sync.delete                     = true
+  s3_sync.after_build                = false # We do not chain after the build step by default.
+  s3_sync.prefer_gzip                = true
+  s3_sync.path_style                 = true
+  s3_sync.reduced_redundancy_storage = false
+  s3_sync.acl                        = 'public-read'
+  s3_sync.encryption                 = false
+  s3_sync.prefix                     = ''
+  s3_sync.version_bucket             = false
+  s3_sync.index_document             = 'index.html'
+  s3_sync.error_document             = '404.html'
+end
+
+activate :cloudfront do |cf|
+  cf.access_key_id = ENV['AWS_ACCESS_KEY_ID']
+  cf.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+  cf.distribution_id = ENV['AWS_DISTRIBUTION_ID']
+  cf.filter = /\.html$/i
 end
 
 activate :asset_hash
