@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rouge'
 # Rouge theme for the Coreyja Site used for Syntax Highlighting
 class CoreyjaTheme < Rouge::CSSTheme
