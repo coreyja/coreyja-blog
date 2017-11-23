@@ -87,7 +87,10 @@ activate :cloudfront do |cf|
   cf.filter = /\.html$/i
 end
 
-activate :asset_hash
+app.config[:asset_extensions] += %w(.json)
+activate :asset_hash do |opts|
+  opts.sources += %w(.json)
+end
 
 activate :autoprefixer do |config|
   config.browsers = ['last 3 versions']
