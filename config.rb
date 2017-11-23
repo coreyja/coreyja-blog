@@ -1,4 +1,9 @@
 # frozen_string_literal: true
+
+## Set the Time Zone
+Time.zone = 'America/New_York'
+
+
 ###
 # Page options, layouts, aliases and proxies
 ###
