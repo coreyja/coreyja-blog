@@ -92,6 +92,7 @@ activate :cloudfront do |cf|
 end
 
 activate :asset_hash
+activate :directory_indexes
 
 activate :autoprefixer do |config|
   config.browsers = ['last 3 versions']
