@@ -1,4 +1,8 @@
 # frozen_string_literal: true
+
+## Set the Time Zone
+Time.zone = 'America/New_York'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -66,7 +70,7 @@ configure :build do
 end
 
 activate :s3_sync do |s3_sync|
-  s3_sync.region                     = 'us-east-1'     # The AWS region for your bucket.
+  s3_sync.region                     = 'us-east-1' # The AWS region for your bucket.
   s3_sync.delete                     = true
   s3_sync.after_build                = false # We do not chain after the build step by default.
   s3_sync.prefer_gzip                = true
@@ -87,6 +91,7 @@ activate :cloudfront do |cf|
   cf.filter = /\.html$/i
 end
 
+activate :directory_indexes
 app.config[:asset_extensions] += %w(.json)
 activate :asset_hash do |opts|
   opts.sources += %w(.json)
