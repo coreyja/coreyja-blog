@@ -8,7 +8,6 @@ tags:
     - tmux
     - vim
 color: orange
-published: false
 
 ---
 
