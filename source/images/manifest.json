@@ -1,5 +1,6 @@
 {
     "name": "Coreyja Blog",
+    "short_name": "Coreyja",
     "icons": [
         {
             "src": "/images/android-chrome-192x192.png",
