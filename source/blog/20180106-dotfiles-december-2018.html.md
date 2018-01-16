@@ -1,6 +1,7 @@
 ---
 
 title: Dotfiles - January 2018
+Author: Corey Alexander
 date: 2018-01-06
 tags:
     - dotfiles
