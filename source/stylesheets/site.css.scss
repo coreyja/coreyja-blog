@@ -38,11 +38,12 @@ a {
   color: darken(gray('dark'), 10%);
 }
 
-.highlight {
+.highlight > .highlight {
   border: 10px solid gray('light');
-  overflow: scroll;
+  max-height: 90vh;
+  overflow: auto;
 }
 
 img {
-    max-width: 100%
+  max-width: 100%
 }
