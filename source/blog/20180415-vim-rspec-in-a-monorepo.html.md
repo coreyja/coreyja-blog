@@ -12,7 +12,7 @@ tags:
 
 ## Monorepos
 
-At work we often use monorepos, where the root of the git repo contains subdirs where each one contains a different project. A single repo could contain multiple Ruby projects, or a single Ruby project and a docs repo for instance. When I work in these monorepos I typically prefer to open VIM at the root level of the git repo. This has the unfortunate side effect of making it hard to interact with with [vim-rspec](https://github.com/thoughtbot/vim-rspec)[^1] plugin. vim-rspec tries to run rspec from the git root which is outside of any of the projects, and as such fails.
+At work we often use monorepos, where the root of the git repo contains subdirs where each one contains a different project. A single repo could contain multiple Ruby projects, or a single Ruby project and a docs repo for instance. When I work in these monorepos I typically prefer to open VIM at the root level of the git repo. This has the unfortunate side effect of making it hard to interact with [vim-rspec](https://github.com/thoughtbot/vim-rspec)[^1] plugin. vim-rspec tries to run rspec from the git root which is outside of any of the projects, and as such fails.
 
 ## Investigating Plugin Configuration
 
@@ -33,7 +33,7 @@ After thinking about parsing the path after `vim-rspec` was done with it, also m
 
 One thing that most rspec spec files have in common, is that they are within a project that contain a `Gemfile`. All my monorepos will contain a Gemfile in the root on the project if it is a Ruby project that is using rspec, so this will work for my use-case and I imagine many others.
 
-Since we are operating outside the context of `vim-rspec` we are acting in the context of the current file in VIM. From the file we need to find the nearest `Gemfile` if one exists. Luckily the `findfile` function in VIM will do exactly what I want. From there it was simply a matter of cding to that directory before running `vim-rspec`, and the returning the the original directory. I decided to (probably overly 😉) deconstruct into a few functions that I added to my `.vimrc`.
+Since we are operating outside the context of `vim-rspec` we are acting in the context of the current file in VIM. From the file we need to find the nearest `Gemfile` if one exists. Luckily the `findfile` function in VIM will do exactly what I want. From there it was simply a matter of cding to that directory before running `vim-rspec`, and the returning the original directory. I decided to (probably overly 😉) deconstruct into a few functions that I added to my `.vimrc`.
 
 ## Solution
 
