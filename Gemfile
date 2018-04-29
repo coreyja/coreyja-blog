@@ -4,6 +4,8 @@
 # the following line to use 'http://'
 source 'https://rubygems.org'
 
+gem 'puma'
+
 # For faster file watcher updates on Windows:
 gem 'wdm', '~> 0.1.0', platforms: %i[mswin mingw]
 

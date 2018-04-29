@@ -139,6 +139,7 @@ GEM
       ast (~> 2.4.0)
     powerpack (0.1.1)
     public_suffix (3.0.2)
+    puma (3.10.0)
     rack (2.0.4)
     rainbow (3.0.0)
     rake (12.3.1)
@@ -185,6 +186,7 @@ DEPENDENCIES
   middleman-s3_sync
   middleman-syntax
   mime-types
+  puma
   rake
   rubocop
   scss_lint
