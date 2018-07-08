@@ -19,6 +19,7 @@
 
   &-title {
     @include title-font;
+    @include accent-color-modifier;
     color: gray('dark');
     font-size: 50px;
     margin: 0;
@@ -30,8 +31,9 @@
       margin-right: 15px;
     }
 
-    &--lightGray {
+    &--symbols {
       color: gray('light');
+      font-weight: 700;
     }
   }
 

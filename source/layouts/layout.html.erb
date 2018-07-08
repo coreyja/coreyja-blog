@@ -23,7 +23,7 @@
 </head>
 <body>
   <div class="Layout">
-    <%= partial 'shared/header', locals: { header_class: 'Layout--header' } %>
+    <%= partial 'shared/header', locals: { header_class: 'Layout--header', color: theme_color } %>
 
     <div id="main" role="main" class="Layout--content">
       <%= yield %>
