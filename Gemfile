@@ -20,6 +20,7 @@ gem 'middleman-autoprefixer'
 gem 'middleman-blog'
 gem 'middleman-cloudfront', git: 'git://github.com/andrusha/middleman-cloudfront.git'
 gem 'middleman-s3_sync'
+gem 'middleman-search_engine_sitemap'
 gem 'middleman-syntax'
 
 gem 'mime-types'

@@ -3,6 +3,9 @@
 ## Set the Time Zone
 Time.zone = 'America/New_York'
 
+## Set the URL
+set :url_root, 'https://coreyja.com'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -91,11 +94,13 @@ activate :cloudfront do |cf|
   cf.filter = /\.html$/i
 end
 
-app.config[:asset_extensions] += %w(.json)
+app.config[:asset_extensions] += %w[.json]
 activate :asset_hash do |opts|
-  opts.sources += %w(.json)
+  opts.sources += %w[.json]
 end
 
 activate :autoprefixer do |config|
   config.browsers = ['last 3 versions']
 end
+
+activate :search_engine_sitemap
