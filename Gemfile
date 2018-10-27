@@ -20,6 +20,7 @@ gem 'middleman-autoprefixer'
 gem 'middleman-blog'
 gem 'middleman-cloudfront', git: 'git://github.com/andrusha/middleman-cloudfront.git'
 gem 'middleman-s3_sync'
+gem 'middleman-search_engine_sitemap'
 gem 'middleman-syntax'
 
 gem 'mime-types'
@@ -29,6 +30,6 @@ gem 'kramdown'
 # For feed.xml.builder
 gem 'builder', '~> 3.0'
 
-gem 'rubocop'
+gem 'rubocop-coreyja', '0.2.0'
 
 gem 'scss_lint', require: false

@@ -53,13 +53,20 @@
 
   &-socialIcons {
     @include bigger-than-600 {
-        margin-left: auto;
+      margin-left: auto;
     }
   }
 
   &-socialIcon {
-      display: inline-block;
-      max-width: 32px;
+    display: inline-block;
+    height: 32px;
+    margin: 0 3px;
+    width: 32px;
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
   }
 
   &-coloredBars {
