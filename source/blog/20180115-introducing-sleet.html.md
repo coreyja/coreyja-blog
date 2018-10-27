@@ -1,7 +1,7 @@
 ---
 
 title: Introducing Sleet ☁️ ❄️
-Author: Corey Alexander
+author: Corey Alexander
 date: 2018-01-15
 tags:
   - gem

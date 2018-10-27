@@ -1,6 +1,7 @@
 ---
 
 title: vim-rspec in a Monorepo
+author: Corey Alexander
 date: 2018-04-15
 color: green
 tags:
