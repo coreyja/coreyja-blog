@@ -30,6 +30,6 @@ gem 'kramdown'
 # For feed.xml.builder
 gem 'builder', '~> 3.0'
 
-gem 'rubocop'
+gem 'rubocop-coreyja', '0.2.0'
 
 gem 'scss_lint', require: false
