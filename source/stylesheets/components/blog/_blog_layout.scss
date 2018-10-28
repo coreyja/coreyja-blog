@@ -24,7 +24,7 @@
     flex: 1 1 auto;
     margin-bottom: 50px;
     min-width: 0;
-    padding: 20px;
+    padding: 20px 50px;
 
     @media (min-width: 900px) {
       margin-bottom: 0;
@@ -63,7 +63,10 @@
 
   &-aside {
     background-color: gray('white');
-    max-width: 20%;
     padding: 20px;
+
+    @media (min-width: 900px) {
+      max-width: 20%;
+    }
   }
 }

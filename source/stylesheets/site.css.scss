@@ -38,7 +38,11 @@ a {
   color: darken(gray('dark'), 10%);
 }
 
-.highlight > .highlight {
+div.highlight {
+  margin: 0 -50px;
+}
+
+pre.highlight {
   border: 10px solid gray('light');
   max-height: 90vh;
   overflow: auto;
