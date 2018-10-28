@@ -15,5 +15,20 @@
   &-listItem {
     font-style: italic;
     margin: 5px 0;
+    display: inline;
+
+    &:not(:last-of-type)::after {
+      content: '\2022';
+      padding: 0 5px;
+    }
+
+    @media (min-width: 900px) {
+      display: block;
+
+      &:not(:last-of-type)::after {
+        content: '';
+        padding: 0;
+      }
+    }
   }
 }
