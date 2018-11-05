@@ -3,10 +3,12 @@
 @import 'normalize';
 @import 'mixins';
 @import 'colors';
+@import 'utils';
 
 //Components
 @import 'components/layout';
 @import 'components/header';
+@import 'components/resume';
 @import 'components/blog/blog_layout';
 @import 'components/blog/blog_post';
 @import 'components/blog/post_title';

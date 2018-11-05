@@ -1,0 +1,114 @@
+.Resume {
+  margin: auto;
+  padding: 0 20px;
+  max-width: 800px;
+
+  &-contactInfoSection {
+    display: grid;
+    grid-gap: 1px 1px;
+    grid-template-areas: 'email number address';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+  }
+
+  &-contactInfo {
+    text-align: center;
+
+    &--email {
+      grid-area: email;
+    }
+
+    &--number {
+      grid-area: number;
+    }
+
+    &--address {
+      grid-area: address;
+    }
+  }
+
+  @media print {
+    &-contactValue {
+      margin: 0;
+    }
+
+    color: #000000;
+  }
+}
+
+.WorkExperience {
+  display: grid;
+  grid-gap: 1px 1px;
+  grid-template-areas: 'title company time' 'description description description';
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  height: 100%;
+
+  margin-bottom: 1em;
+
+  &-title {
+    grid-area: title;
+
+  }
+
+  &-company {
+    grid-area: company;
+    text-align: center;
+  }
+
+  &-time {
+    grid-area: time;
+    text-align: right;
+  }
+
+  &-title,
+  &-company,
+  &-time {
+    margin: 0;
+  }
+
+  &-description {
+    grid-area: description;
+  }
+}
+
+.ResumeWrapper {
+  .Header-titleContainer {
+    align-items: center;
+    margin: auto;
+    max-width: 800px;
+  }
+
+  .Header-title {
+    text-transform: none;
+
+    @include bigger-than-600 {
+      margin-right: 40px;
+    }
+  }
+
+  @media print {
+    .Header-socialIcons {
+      display: none;
+    }
+
+    .Header-coloredBars {
+      -webkit-print-color-adjust: exact !important;
+    }
+
+    .Header-subTitle {
+      @include bigger-than-600 {
+        margin-left: auto;
+      }
+    }
+
+    .Header-title {
+      color: #000000;
+    }
+
+    .Header-titleContainer {
+      padding-bottom: 0;
+    }
+  }
+}

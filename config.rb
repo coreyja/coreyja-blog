@@ -19,6 +19,7 @@ page '/*.txt', layout: false
 
 # With alternative layout
 page 'error.html'
+page 'resume.html', layout: :base
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
@@ -53,7 +54,6 @@ activate :blog do |blog|
   # blog.page_link = "page/{num}"
 end
 
-page '/feed.xml', layout: false
 
 # Methods defined in the helpers block are available in templates
 # helpers do

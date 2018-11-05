@@ -1,0 +1,21 @@
+// scss-lint:disable ImportantRule
+.u-bodyFont {
+  @include body-font;
+}
+
+.u-titleFont {
+  @include title-font;
+}
+
+.u-uppercase {
+  text-transform: uppercase !important;
+}
+
+.u-textDecorationNone {
+  text-decoration: none !important;
+}
+
+.u-fontStyleNormal {
+  font-style: normal !important;
+}
+// scss-lint:enable ImportantRule

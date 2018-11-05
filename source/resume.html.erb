@@ -1,0 +1,122 @@
+<div class="ResumeWrapper Layout">
+  <header class="Header">
+    <div class="Header-titleContainer">
+      <span class="Header-title">
+        Corey Alexander
+      </span>
+      <h2 class="Header-subTitle">
+        <a href='/' class="u-titleFont u-uppercase u-textDecorationNone u-fontStyleNormal">
+          corey<span class="<%= "Header-title--#{theme_color}" %>">ja</span><span class="Header-title--symbols">.com</span>
+        </a>
+        <br />
+        complex to simple
+      </h2>
+      <div class="Header-socialIcons">
+        <% link_to 'https://www.github.com/coreyja', class: 'Header-socialIcon', target: '_blank', rel: 'noopener' do %>
+          <%= image_tag 'github-mark.png' %>
+        <% end %>
+        <% link_to 'https://dev.to/coreyja', class: 'Header-socialIcon', target: '_blank', rel: 'noopener' do %>
+          <%= image_tag 'https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg' %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="Header-coloredBars">
+      <div class="Header-coloredBar Header-coloredBar--red"></div>
+      <div class="Header-coloredBar Header-coloredBar--purple"></div>
+      <div class="Header-coloredBar Header-coloredBar--green"></div>
+      <div class="Header-coloredBar Header-coloredBar--orange"></div>
+      <div class="Header-coloredBar Header-coloredBar--blue"></div>
+    </div>
+  </header>
+
+  <div id="main" role="main" class="Layout--content">
+    <div class="Resume">
+      <div class="Resume-contactInfoSection">
+        <div class="Resume-contactInfo Resume-contactInfo--email">
+          <h2 class="Resume-contactTitle">Email</h2>
+          <p class="Resume-contactValue">coreyja@gmail.com</p>
+        </div>
+
+        <div class="Resume-contactInfo Resume-contactInfo--number">
+          <h2 class="Resume-contactTitle">Phone</h2>
+          <p class="Resume-contactValue">(347) 863-4518</p>
+        </div>
+
+        <div class="Resume-contactInfo Resume-contactInfo--address">
+          <h2 class="Resume-contactTitle">Address</h2>
+          <p class="Resume-contactValue">
+          211 W 146th St Apt 5E<br>
+          New York, NY 10039<br>
+          </p>
+        </div>
+      </div>
+
+      <div class="Resume-workExperienceSection">
+        <h1 class="Resume-sectionTitle">Work Experience</h1>
+
+        <div class="WorkExperience">
+          <h3 class="WorkExperience-title">Software Engineer</h3>
+          <h3 class="WorkExperience-company">Betterment</h3>
+          <h3 class="WorkExperience-time">June 2015 - Present</h3>
+
+          <p class="WorkExperience-description">
+          Currently working on the Retail team, which ships products on the user facing website. I do full stack work
+          ranging from working on rebuilding the frontend design to leading complex backend integrations with partners
+          via APIS. Experience working in a eventually-consistent enviroment where systems communicate with another through
+          a variety of APIs and syncing strategies.
+          </p>
+        </div>
+
+        <div class="WorkExperience">
+          <h3 class="WorkExperience-title">Consulting Intern</h3>
+          <h3 class="WorkExperience-company">West Monroe Partners</h3>
+          <h3 class="WorkExperience-time">Summer 2014</h3>
+
+          <p class="WorkExperience-description">
+          Personally rewrote the HTML/CSS templates for a client .NET application as well as created a mobile version of their site, with both iOS and Android native wrappers<br>
+          Debugged and added features to a client's legacy Visual Basic web application
+          </p>
+        </div>
+
+        <div class="WorkExperience">
+          <h3 class="WorkExperience-title">Freelance Web Developer</h3>
+          <h3 class="WorkExperience-company"> </h3>
+          <h3 class="WorkExperience-time">Aug 2010 - 2014</h3>
+
+          <p class="WorkExperience-description">
+          Worked as a developer on many different websites and webapps using a variety of tools<br>
+          For a more complete portfolio of projects visit coreyja.com<br>
+          </p>
+        </div>
+
+        <div class="WorkExperience">
+          <h3 class="WorkExperience-title">Junior Developer</h3>
+          <h3 class="WorkExperience-company">Giftovus</h3>
+          <h3 class="WorkExperience-time">Summer 2013</h3>
+
+          <p class="WorkExperience-description">
+          Worked as a web developer on the Giftovus team.<br>
+          Familiar with and coded for the both frontend and backend of the Giftovus web app: giftovus.com<br>
+          Wrote code that was shipped in the live app: Python with Django and Javascript<br>
+          Gained experience working in a startup environment<br>
+          </p>
+        </div>
+      </div>
+
+      <div id="Resume-educationSection" class="wrap">
+        <h1 class="Resume-sectionTitle">Education</h1>
+
+        <div class="WorkExperience">
+          <h3 class="WorkExperience-title">Rose-Hulman Institute of Technology</h3>
+          <h3 class="WorkExperience-company">CS/SE/MA</h3>
+          <h3 class="WorkExperience-time">Class of 2015</h3>
+
+          <p class="WorkExperience-description">
+          Graduated with a Bachelors of Science Triple Major in Computer Science, Software Engineering and Mathematics
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
