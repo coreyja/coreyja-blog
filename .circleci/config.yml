@@ -33,6 +33,9 @@ jobs:
             --format RuboCop::Formatter::JUnitFormatter \
             --out /tmp/test-results/rubocop.xml
 
+     - type: shell
+       command: bundle exec scss-lint
+
       # Save artifacts
       - type: store_test_results
         path: /tmp/test-results
