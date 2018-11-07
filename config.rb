@@ -54,7 +54,6 @@ activate :blog do |blog|
   # blog.page_link = "page/{num}"
 end
 
-
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper

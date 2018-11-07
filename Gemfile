@@ -31,5 +31,6 @@ gem 'kramdown'
 gem 'builder', '~> 3.0'
 
 gem 'rubocop-coreyja', '0.2.0'
+gem 'rubocop-junit-formatter', require: false
 
 gem 'scss_lint', require: false

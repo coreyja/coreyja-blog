@@ -5,9 +5,13 @@
         Corey Alexander
       </span>
       <h2 class="Header-subTitle">
-        <a href='/' class="u-titleFont u-uppercase u-textDecorationNone u-fontStyleNormal">
+        <a href='/' class="Header-coreyja-link">
           corey<span class="<%= "Header-title--#{theme_color}" %>">ja</span><span class="Header-title--symbols">.com</span>
         </a>
+        <br />
+        <% link_to 'https://www.github.com/coreyja', class: 'Header-github-link', target: '_blank', rel: 'noopener' do %>
+          github.com/coreyja
+        <% end %>
         <br />
         complex to simple
       </h2>
@@ -22,11 +26,11 @@
     </div>
 
     <div class="Header-coloredBars">
-      <div class="Header-coloredBar Header-coloredBar--red"></div>
-      <div class="Header-coloredBar Header-coloredBar--purple"></div>
-      <div class="Header-coloredBar Header-coloredBar--green"></div>
-      <div class="Header-coloredBar Header-coloredBar--orange"></div>
-      <div class="Header-coloredBar Header-coloredBar--blue"></div>
+      <div class="Header-coloredBar Header-coloredBar--red" data-color="red"></div>
+      <div class="Header-coloredBar Header-coloredBar--purple" data-color="purple"></div>
+      <div class="Header-coloredBar Header-coloredBar--green" data-color="green"></div>
+      <div class="Header-coloredBar Header-coloredBar--orange" data-color="orange"></div>
+      <div class="Header-coloredBar Header-coloredBar--blue" data-color="blue"></div>
     </div>
   </header>
 

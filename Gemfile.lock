@@ -162,6 +162,7 @@ GEM
     rubocop-coreyja (0.2.0)
       rubocop (= 0.58.2)
       rubocop-rspec (= 1.27.0)
+    rubocop-junit-formatter (0.1.4)
     rubocop-rspec (1.27.0)
       rubocop (>= 0.56.0)
     ruby-progressbar (1.9.0)
@@ -200,6 +201,7 @@ DEPENDENCIES
   puma
   rake
   rubocop-coreyja (= 0.2.0)
+  rubocop-junit-formatter
   scss_lint
   tzinfo-data
   wdm (~> 0.1.0)

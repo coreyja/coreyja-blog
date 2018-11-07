@@ -1,15 +1,18 @@
 .Resume {
   margin: auto;
-  padding: 0 20px;
   max-width: 800px;
+  padding: 0 20px;
 
   &-contactInfoSection {
     display: grid;
-    grid-gap: 1px 1px;
-    grid-template-areas: 'email number address';
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-gap: 1px;
+    grid-template-areas: 'email number' 'address address';
     height: 100%;
+
+    @include bigger-than-600 {
+      grid-template-areas: 'email number address';
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 
   &-contactInfo {
@@ -28,12 +31,18 @@
     }
   }
 
+  &-contactTitle {
+    @include smaller-than-600 {
+      margin: .5em 0;
+    }
+  }
+
   @media print {
+    color: $print-black;
+
     &-contactValue {
       margin: 0;
     }
-
-    color: #000000;
   }
 }
 
@@ -88,13 +97,25 @@
     }
   }
 
+  .Header-coreyja-link,
+  .Header-github-link {
+    @include title-font;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .Header-github-link {
+    font-size: .8em;
+  }
+
   @media print {
     .Header-socialIcons {
       display: none;
     }
 
     .Header-coloredBars {
-      -webkit-print-color-adjust: exact !important;
+      -webkit-print-color-adjust: exact !important; // scss-lint:disable ImportantRule
     }
 
     .Header-subTitle {
@@ -104,7 +125,7 @@
     }
 
     .Header-title {
-      color: #000000;
+      color: $print-black;
     }
 
     .Header-titleContainer {
