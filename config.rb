@@ -6,9 +6,6 @@ Time.zone = 'America/New_York'
 ## Set the URL
 set :url_root, 'https://coreyja.com'
 
-
-
-
 ###
 # Page options, layouts, aliases and proxies
 ###
