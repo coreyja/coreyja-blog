@@ -29,8 +29,8 @@ jobs:
       - type: shell
         command: |
           bundle exec rubocop \
-            --require rubocop/formatter/checkstyle_formatter
-            --format RuboCop::Formatter::CheckstyleFormatter
+            --require rubocop/formatter/checkstyle_formatter \
+            --format RuboCop::Formatter::CheckstyleFormatter \
             --out /tmp/test-results/rubocop.xml
 
       # Save artifacts
