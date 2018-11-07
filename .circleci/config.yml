@@ -11,7 +11,7 @@ jobs:
 
       # Restore bundle cache
       - type: cache-restore
-        key: coreyja-blog-v1-{{ checksum "Gemfile.lock" }}
+        key: coreyja-blog-v2-{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
       - run: bundle config --local path "vendor/bundle"
@@ -22,7 +22,7 @@ jobs:
 
       # Store bundle cache
       - type: cache-save
-        key: coreyja-blog-v1-{{ checksum "Gemfile.lock" }}
+        key: coreyja-blog-v2-{{ checksum "Gemfile.lock" }}
         paths:
           - vendor/bundle
 
