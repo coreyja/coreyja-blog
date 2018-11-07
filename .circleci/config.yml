@@ -45,6 +45,24 @@ jobs:
       - image: circleci/ruby:latest
     steps:
       - checkout
+
+      # Restore bundle cache
+      - type: cache-restore
+        key: coreyja-blog-v2-{{ checksum "Gemfile.lock" }}
+
+      # Bundle install dependencies
+      - run: bundle config --local path "vendor/bundle"
+      - run: |
+          bundle check ||
+            bundle install --frozen --jobs 5 --retry 5
+      - run: bundle clean
+
+      # Store bundle cache
+      - type: cache-save
+        key: coreyja-blog-v2-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
       - run:
           name: Deploy
           command: |
