@@ -46,9 +46,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Deploy with git push
+          name: Deploy
           command: |
-            ./script/deploy
+            ./script/deploy.sh
 
 workflows:
   version: 2
