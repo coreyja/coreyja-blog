@@ -5,11 +5,14 @@
 
   &-contactInfoSection {
     display: grid;
-    grid-gap: 1px 1px;
-    grid-template-areas: 'email number address';
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-gap: 1px;
+    grid-template-areas: 'email number' 'address address';
     height: 100%;
+
+    @include bigger-than-600 {
+      grid-template-areas: 'email number address';
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 
   &-contactInfo {
@@ -25,6 +28,12 @@
 
     &--address {
       grid-area: address;
+    }
+  }
+
+  &-contactTitle {
+    @include smaller-than-600 {
+      margin: 0.5em 0;
     }
   }
 
@@ -86,6 +95,18 @@
     @include bigger-than-600 {
       margin-right: 40px;
     }
+  }
+
+  .Header-coreyja-link,
+  .Header-github-link {
+    @include title-font;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-style: normal;
+  }
+
+  .Header-github-link {
+    font-size: 0.8em;
   }
 
   @media print {

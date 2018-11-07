@@ -5,9 +5,13 @@
         Corey Alexander
       </span>
       <h2 class="Header-subTitle">
-        <a href='/' class="u-titleFont u-uppercase u-textDecorationNone u-fontStyleNormal">
+        <a href='/' class="Header-coreyja-link">
           corey<span class="<%= "Header-title--#{theme_color}" %>">ja</span><span class="Header-title--symbols">.com</span>
         </a>
+        <br />
+        <% link_to 'https://www.github.com/coreyja', class: 'Header-github-link', target: '_blank', rel: 'noopener' do %>
+          github.com/coreyja
+        <% end %>
         <br />
         complex to simple
       </h2>
