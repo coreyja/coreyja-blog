@@ -41,6 +41,7 @@ jobs:
       - type: store_test_results
         path: /tmp/test-results
   deploy:
+    working_directory: ~/coreyja-blog
     docker:
       - image: circleci/ruby:latest-node
     steps:
