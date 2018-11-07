@@ -159,8 +159,6 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
-    rubocop-checkstyle_formatter (0.4.0)
-      rubocop (>= 0.35.1)
     rubocop-coreyja (0.2.0)
       rubocop (= 0.58.2)
       rubocop-rspec (= 1.27.0)
@@ -202,7 +200,6 @@ DEPENDENCIES
   mime-types
   puma
   rake
-  rubocop-checkstyle_formatter
   rubocop-coreyja (= 0.2.0)
   rubocop-junit-formatter
   scss_lint
