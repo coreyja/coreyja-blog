@@ -1,0 +1,56 @@
+version: 2
+jobs:
+  test:
+    working_directory: ~/package-tracker
+    docker:
+      - image: circleci/ruby:latest
+        environment:
+          RAILS_ENV: test
+    steps:
+      - checkout
+
+      # Restore bundle cache
+      - type: cache-restore
+        key: coreyja-blog-v1-{{ checksum "Gemfile.lock" }}
+
+      # Bundle install dependencies
+      - run: bundle config --local path "vendor/bundle"
+      - run: |
+          bundle check ||
+            bundle install --frozen --jobs 5 --retry 5
+      - run: bundle clean
+
+      # Store bundle cache
+      - type: cache-save
+        key: coreyja-blog-v1-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      - type: shell
+        command: bundle exec rake
+
+      # Save artifacts
+      - type: store_test_results
+        path: /tmp/test-results
+  deploy:
+    docker:
+      - image: circleci/ruby:latest
+    steps:
+      - checkout
+      - run:
+          name: Deploy with git push
+          command: |
+            ./script/deploy
+
+workflows:
+  version: 2
+  test-and-deploy:
+    jobs:
+      - test
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
+
