@@ -1,7 +1,7 @@
 version: 2
 jobs:
   test:
-    working_directory: ~/package-tracker
+    working_directory: ~/coreyja-blog
     docker:
       - image: circleci/ruby:latest
         environment:
@@ -33,8 +33,9 @@ jobs:
             --format RuboCop::Formatter::JUnitFormatter \
             --out /tmp/test-results/rubocop.xml
 
-     - type: shell
-       command: bundle exec scss-lint
+      - type: shell
+        command: |
+          bundle exec scss-lint
 
       # Save artifacts
       - type: store_test_results
