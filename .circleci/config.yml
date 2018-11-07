@@ -27,7 +27,11 @@ jobs:
           - vendor/bundle
 
       - type: shell
-        command: bundle exec rake
+        command: |
+					bundle exec rubocop \
+						--require rubocop/formatter/checkstyle_formatter
+						--format RuboCop::Formatter::CheckstyleFormatter
+						--out /tmp/test-results/rubocop.xml
 
       # Save artifacts
       - type: store_test_results
