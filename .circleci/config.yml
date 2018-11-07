@@ -42,7 +42,7 @@ jobs:
         path: /tmp/test-results
   deploy:
     docker:
-      - image: circleci/ruby:latest
+      - image: circleci/ruby:latest-node
     steps:
       - checkout
 
