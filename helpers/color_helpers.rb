@@ -20,4 +20,12 @@ module ColorHelpers
   def theme_color_hex
     color_hex theme_color
   end
+
+  def theme_color_map_json
+    COLORS.to_json
+  end
+
+  def theme_manifest_map_json
+    COLORS.keys.map { |color| [color, asset_path(:images, "manifest-#{color}.json")] }.to_h.to_json
+  end
 end
