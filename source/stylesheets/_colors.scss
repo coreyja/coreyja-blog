@@ -38,3 +38,5 @@ $grays: (
   @error "Unknown key `#{$key}` in $grays.";
   @return null;
 }
+
+$print-black: '#000000';

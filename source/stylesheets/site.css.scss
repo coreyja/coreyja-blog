@@ -40,6 +40,7 @@ a {
   color: darken(gray('dark'), 10%);
 }
 
+// scss-lint:disable QualifyingElement
 div.highlight {
   margin: 0 -50px;
 }
@@ -49,7 +50,8 @@ pre.highlight {
   max-height: 90vh;
   overflow: auto;
 }
+// scss-lint:enable QualifyingElement
 
 img {
-  max-width: 100%
+  max-width: 100%;
 }

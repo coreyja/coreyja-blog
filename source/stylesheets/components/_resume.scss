@@ -1,7 +1,7 @@
 .Resume {
   margin: auto;
-  padding: 0 20px;
   max-width: 800px;
+  padding: 0 20px;
 
   &-contactInfoSection {
     display: grid;
@@ -33,16 +33,16 @@
 
   &-contactTitle {
     @include smaller-than-600 {
-      margin: 0.5em 0;
+      margin: .5em 0;
     }
   }
 
   @media print {
+    color: $print-black;
+
     &-contactValue {
       margin: 0;
     }
-
-    color: #000000;
   }
 }
 
@@ -100,13 +100,13 @@
   .Header-coreyja-link,
   .Header-github-link {
     @include title-font;
-    text-transform: uppercase;
-    text-decoration: none;
     font-style: normal;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 
   .Header-github-link {
-    font-size: 0.8em;
+    font-size: .8em;
   }
 
   @media print {
@@ -115,7 +115,7 @@
     }
 
     .Header-coloredBars {
-      -webkit-print-color-adjust: exact !important;
+      -webkit-print-color-adjust: exact !important; // scss-lint:disable ImportantRule
     }
 
     .Header-subTitle {
@@ -125,7 +125,7 @@
     }
 
     .Header-title {
-      color: #000000;
+      color: $print-black;
     }
 
     .Header-titleContainer {

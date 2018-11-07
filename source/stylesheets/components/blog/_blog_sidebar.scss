@@ -13,9 +13,9 @@
   }
 
   &-listItem {
+    display: inline;
     font-style: italic;
     margin: 5px 0;
-    display: inline;
 
     &:not(:last-of-type)::after {
       content: '\2022';
