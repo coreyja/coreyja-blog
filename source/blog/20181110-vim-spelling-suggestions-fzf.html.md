@@ -13,13 +13,13 @@ color: orange
 
 ## TlDr
 
- Use fzf to show VIM Spelling Suggestions, and override the built in `z=` shortcut
+ Use fzf to show VIM spelling suggestions, and override the built in `z=` shortcut
 
 ~~~vimscript
 function! FzfSpellSink(word)
   exe 'normal! "_ciw'.a:word
 endfunction
-function! FzfSpell(...)
+function! FzfSpell()
   let suggestions = spellsuggest(expand("<cword>"))
   return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
 endfunction
@@ -57,7 +57,7 @@ So I could now use the above command to get a VIM list of spelling suggestions. 
 The fzf repo has a [readme](https://github.com/junegunn/fzf/blob/master/README-VIM.md#fzfrun) that details how to use fzf in VIM. I was mostly interested in how to use the `fzf#run` function, which is the main function for calling into fzf. This can take a VIM list as input, so it fits really nicely with the list of spelling suggestions we already generated. We pass this is as the `source` to `fzf#run`. The other important option is `sink` which tells fzf what to do after we have selected a suggestion. Now its time to replace the word under the cursor with our suggestion! One of the accepted types for `sink` is a VIM function reference so I needed another function to call as a callback, which will responsible for actually replacing the word under the cursor. So far we have the following
 
 ~~~vimscript
-function! FzfSpell(...)
+function! FzfSpell()
   let suggestions = spellsuggest(expand("<cword>"))
   return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
 endfunction
@@ -83,7 +83,7 @@ And finally putting it all together we have... :drumroll:
 function! FzfSpellSink(word)
   exe 'normal! "_ciw'.a:word
 endfunction
-function! FzfSpell(...)
+function! FzfSpell()
   let suggestions = spellsuggest(expand("<cword>"))
   return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10 })
 endfunction
