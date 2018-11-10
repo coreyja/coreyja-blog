@@ -46,7 +46,7 @@ VIM has a built in solution to this in the form of the `z=` keyboard shortcut. T
 ## The Solution
 
 The first thing I needed was a list of the spelling suggestions for the word under the current cursor. Getting the current word is simple enough with `expand('<cword>')` so now I just needed to get the spelling suggestions for it.
-After a bit of digging [^1] I found the VIM function `spellsuggest`. This function takes the word we want suggestions for as its furst arguments. It also takes an optional second and third argument, which we are not currently using. The second argument is the number of suggestions to return, the defualt is 25. The third argument is a flag for wether we should filter to only capitalized words.
+After a bit of digging [^1] I found the VIM function `spellsuggest`. This function takes the word we want suggestions for as its first arguments. It also takes an optional second and third argument, which we are not currently using. The second argument is the number of suggestions to return, the default is 25. The third argument is a flag for whether we should filter to only capitalized words.
 
 ~~~vimscript
 spellsuggest(expand('<cword>'))
@@ -90,4 +90,4 @@ endfunction
 nnoremap z= :call FzfSpell()<CR>
 ~~~
 
-[^1]: I eventually found this function by digging into the source code of the [kopischke/unite-spell-suggest](https://github.com/kopischke/unite-spell-suggest/blob/master/autoload/unite/sources/spell_suggest.vim) repo. This plugin did a similiar thing with Unite as the fuzzy finding tool.
+[^1]: I eventually found this function by digging into the source code of the [kopischke/unite-spell-suggest](https://github.com/kopischke/unite-spell-suggest/blob/master/autoload/unite/sources/spell_suggest.vim) repo. This plugin did a similar thing with Unite as the fuzzy finding tool.
