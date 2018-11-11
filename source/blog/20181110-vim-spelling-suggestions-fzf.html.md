@@ -9,8 +9,6 @@ tags:
 color: orange
 ---
 
-# VIM Spelling Suggestions with fzf
-
 ## TlDr
 
  Use fzf to show VIM spelling suggestions, and override the built in `z=` shortcut
