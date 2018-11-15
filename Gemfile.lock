@@ -144,7 +144,7 @@ GEM
     powerpack (0.1.2)
     public_suffix (3.0.2)
     puma (3.10.0)
-    rack (2.0.4)
+    rack (2.0.6)
     rainbow (3.0.0)
     rake (12.3.1)
     rb-fsevent (0.10.3)
@@ -199,7 +199,7 @@ DEPENDENCIES
   middleman-syntax
   mime-types
   puma
-  rake
+  rack (>= 2.0.6)
   rubocop-coreyja (= 0.2.0)
   rubocop-junit-formatter
   scss_lint
