@@ -22,6 +22,7 @@ gem 'middleman-cloudfront', git: 'git://github.com/andrusha/middleman-cloudfront
 gem 'middleman-s3_sync'
 gem 'middleman-search_engine_sitemap'
 gem 'middleman-syntax'
+gem 'middleman-robots'
 
 gem 'mime-types'
 
