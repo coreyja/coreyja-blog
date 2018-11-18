@@ -103,3 +103,9 @@ activate :autoprefixer do |config|
 end
 
 activate :search_engine_sitemap
+
+activate :robots,
+         rules: [
+           { user_agent: '*', allow: %w[/] }
+         ],
+         sitemap: 'https://coreyja.com/sitemap.xml'
