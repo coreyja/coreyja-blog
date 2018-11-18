@@ -50,7 +50,7 @@ pre {
   font-family: Hack, monospace;
   line-height: 1.2;
 
-  .highlight {
+  &.highlight {
     border: 10px solid gray('light');
     max-height: 90vh;
     overflow: auto;
