@@ -40,6 +40,7 @@ a {
   color: darken(gray('dark'), 10%);
 }
 
+
 // scss-lint:disable QualifyingElement
 div.highlight {
   margin: 0 -50px;
@@ -49,6 +50,11 @@ pre.highlight {
   border: 10px solid gray('light');
   max-height: 90vh;
   overflow: auto;
+}
+
+pre {
+  font-family: Hack, monospace;
+  line-height: 1.2;
 }
 // scss-lint:enable QualifyingElement
 
