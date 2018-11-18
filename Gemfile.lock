@@ -63,7 +63,7 @@ GEM
     i18n (0.7.0)
     ipaddress (0.8.3)
     jaro_winkler (1.5.1)
-    kramdown (1.16.2)
+    kramdown (1.17.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -130,7 +130,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
-    nokogiri (1.8.2)
+    nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
     padrino-helpers (0.13.3.4)
       i18n (~> 0.6, >= 0.6.7)
@@ -143,8 +143,8 @@ GEM
       ast (~> 2.4.0)
     powerpack (0.1.2)
     public_suffix (3.0.2)
-    puma (3.10.0)
-    rack (2.0.4)
+    puma (3.12.0)
+    rack (2.0.6)
     rainbow (3.0.0)
     rake (12.3.1)
     rb-fsevent (0.10.3)
@@ -199,7 +199,7 @@ DEPENDENCIES
   middleman-syntax
   mime-types
   puma
-  rake
+  rack (>= 2.0.6)
   rubocop-coreyja (= 0.2.0)
   rubocop-junit-formatter
   scss_lint
