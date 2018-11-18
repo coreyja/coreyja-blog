@@ -233,6 +233,8 @@ fn main() {
 
 I plugged this new version into vim, by simply changing the source to pipe to my new Rust built binary, instead of the prototype bash script. And :drumroll:, it worked and was significantly faster than the bash version! It wasn't even noticeably slower than the default `:Files` command!
 
+## Performance
+
 Here is a very unscientific single trial test where I timed three different commands in a large directpry.
 
 1. Using my defauly FZF command alone
@@ -263,6 +265,10 @@ real    0m0.409s
 user    0m0.743s
 sys     0m1.535s
 ~~~
+
+For an even less scientific test, I took the original implementation and the final rust version, in VIM. Since I was doing the tests inside VIM, and am timing until a window appears, there wasn't an easy way to time this automatically. So I broke out my stopwatch for this one. Using my rust implementation `:call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)` the fzf window came up pretty much instantaneously, and all the results were already populated! With the original VIM implementation `:call Fzf_dev()` it took around 4.5 seconds for the window to load. And when it loaded it was fully populated with all the files.
+
+This was a huge improvement, and the performance is now definitely acceptable for me and has been added to my dotfiles!
 
 ## Final Version
 
@@ -301,9 +307,9 @@ endfunction
         \ 'down':    '40%' })
 endfunction
  " Open fzf Files " Open fzf Files
-map <C-f> :Files<CR>  map <C-f> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)<CR>
-map <C-d> :GFiles?<CR>  map <C-d> :call Fzf_git_diff_files_with_dev_icons()<CR>
-map <C-g> :GFiles<CR> map <C-g> :call Fzf_files_with_dev_icons("git ls-files \| uniq")<CR>
+map <C-f> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)<CR>
+map <C-d> :call Fzf_git_diff_files_with_dev_icons()<CR>
+map <C-g> :call Fzf_files_with_dev_icons("git ls-files \| uniq")<CR>
 ~~~
 
 I also released the Rust code as a [crate](https://crates.io/crates/devicon-lookup) which you can install with
