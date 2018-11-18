@@ -307,9 +307,9 @@ endfunction
         \ 'down':    '40%' })
 endfunction
  " Open fzf Files " Open fzf Files
-map <C-f> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)<CR>
-map <C-d> :call Fzf_git_diff_files_with_dev_icons()<CR>
-map <C-g> :call Fzf_files_with_dev_icons("git ls-files \| uniq")<CR>
+map <C-f> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)<CR> " :Files
+map <C-d> :call Fzf_git_diff_files_with_dev_icons()<CR> " :GFiles?
+map <C-g> :call Fzf_files_with_dev_icons("git ls-files \| uniq")<CR> " :GFiles
 ~~~
 
 I also released the Rust code as a [crate](https://crates.io/crates/devicon-lookup) which you can install with
@@ -319,6 +319,10 @@ cargo install devicon-lookup
 ~~~
 
 This will give you the `devicon-lookup` binary, that you can use in your VIM setup!
+
+## Acknowledgments
+
+As I get ready to publish this blog post I realized I didn't mention the [`fzf.vim`](https://github.com/junegunn/fzf.vim) plugin at all! This is what I refer to as the 'default' implementation, for the fzf :Files view and is am amazing plugin! I basically tried to copy this plugin as closely as possible, especially when trying to reimplement the `:GFiles?` support.
 
 [^1]: After that fact I found and looked into [phf](https://github.com/sfackler/rust-phf) which DOES provide compile time static maps. It doesn't use the Rust HashMap, and instead implements it's own hashing functionality. Their implementation of hashing also differs from the Rust HashMap is ways that weren't meaningful for this project. I wanted to use stable Rust for this which meant I couldn't use `phf_macros` which has the much prettier syntax. Being on Stable rust meant I would be forced to use the codegen option, which requires a preliminary 'compile' step, where you run a build script which outputs a rust source file containing the hash code. This seemed like a lot of extra work, and according to [this blog](http://siciarz.net/24-days-rust-static-initialization/) the speed benefits of upgrading would have existed, but would not have been an order of magnitude increase, and I was already happy with the performance.
 
