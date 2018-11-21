@@ -10,7 +10,7 @@
   }
 
   &-post {
-    color: gray('dark');
+    color: gray('high-contrast');
     flex: 1 1 auto;
     line-height: 1.5;
   }
@@ -21,7 +21,7 @@
   }
 
   &-tag {
-    color: gray('dark');
+    color: gray('high-contrast');
     text-decoration: none;
 
     &:not(:first-child)::before {
