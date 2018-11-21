@@ -27,7 +27,8 @@ $grays: (
   'white': #ffffff,
   'background': #dadada,
   'light': #bcbcbc,
-  'dark': #9a9a9a,
+  'dark': #767676,
+  'high-contrast': #575757,
 );
 
 @function gray($key) {

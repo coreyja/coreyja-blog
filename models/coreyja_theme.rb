@@ -6,17 +6,18 @@ class CoreyjaTheme < Rouge::CSSTheme
   name 'coreyja'
 
   palette black: '#000000'
+  palette near_black: '#1a1a1a'
   palette bright_green: '#99cc00'
   palette bright_pink: '#ff5374'
   palette carmine: '#96376a'
   palette dark: '#49483e'
-  palette dark_grey: '#888888'
+  palette dark_grey: '#1e1e1e'
   palette dark_red: '#942828'
   palette dimgrey: '#75715e'
   palette dimgreen: '#324932'
   palette dimred: '#401010'
   palette emperor: '#555555'
-  palette grey: '#999999'
+  palette grey: '#575757'
   palette light_grey: '#aaaaaa'
   palette light_violet: '#aa66cc'
   palette soft_cyan: '#33b5e5'
@@ -27,17 +28,17 @@ class CoreyjaTheme < Rouge::CSSTheme
 
   style Comment,
         Comment::Multiline,
-        Comment::Single,                  fg: :dimgrey, italic: true
-  style Comment::Preproc,                 fg: :dimgrey, bold: true
-  style Comment::Special,                 fg: :dimgrey, italic: true, bold: true
-  style Error,                            fg: :carmine, bg: :very_dark
+        Comment::Single,                  fg: :light_grey, italic: true
+  style Comment::Preproc,                 fg: :light_grey, bold: true
+  style Comment::Special,                 fg: :light_grey, italic: true, bold: true
+  style Error,                            fg: :light_violet, bg: :very_dark
   style Generic::Inserted,                fg: :white, bg: :dimgreen
   style Generic::Deleted,                 fg: :white, bg: :dimred
-  style Generic::Emph,                    fg: :black, italic: true
+  style Generic::Emph,                    fg: :white, italic: true
   style Generic::Error,
         Generic::Traceback,               fg: :dark_red
-  style Generic::Heading,                 fg: :grey
-  style Generic::Output,                  fg: :dark_grey
+  style Generic::Heading,                 fg: :white
+  style Generic::Output,                  fg: :white
   style Generic::Prompt,                  fg: :emperor
   style Generic::Strong,                  bold: true
   style Generic::Subheading,              fg: :light_grey
@@ -82,8 +83,8 @@ class CoreyjaTheme < Rouge::CSSTheme
         Name::Variable::Global,
         Name::Variable::Instance,
         Name::Variable,
-        Text::Whitespace, fg: :grey
-  style Name::Label,                      fg: :grey, bold: true
+        Text::Whitespace, fg: :white
+  style Name::Label,                      fg: :white, bold: true
   style Name::Tag,                        fg: :bright_pink
-  style Text,                             fg: :grey, bg: :white
+  style Text,                             fg: :white, bg: :near_black
 end

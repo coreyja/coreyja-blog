@@ -21,7 +21,7 @@ html {
 
 body {
   @include body-font;
-  color: gray('dark');
+  color: gray('high-contrast');
   font-size: 1em;
   min-height: 100%;
 }
@@ -33,11 +33,12 @@ h4,
 h5,
 h6 {
   @include title-font;
+  color: gray('dark');
   line-height: 1em;
 }
 
 a {
-  color: darken(gray('dark'), 10%);
+  color: darken(gray('high-contrast'), 10%);
 }
 
 
@@ -51,11 +52,15 @@ pre {
   line-height: 1.2;
 
   &.highlight {
-    border: 10px solid gray('light');
     max-height: 90vh;
     overflow: auto;
   }
+
+  &.lineno {
+    user-select: none;
+  }
 }
+
 // scss-lint:enable QualifyingElement
 
 img {
