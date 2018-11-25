@@ -16,7 +16,7 @@ I posted my last blog post to Reddit, and one of the responses I got was about h
 
 I found this website that will check the contrast ratio of the text on your website and tell you how you are doing, [https://color.a11y.com/Contrast/](https://color.a11y.com/Contrast/). I ran this on my blog, and every color I was using for text was failing the contrast color checks.
 
-![Panic](https://media.giphy.com/media/HUkOv6BNWc1HO/giphy.gif)
+![Panic](/images/posts/coreyja-dot-com-contrast-improvements/panic.gif)
 
 ## Chrome Devtools
 
