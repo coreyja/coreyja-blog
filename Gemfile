@@ -23,6 +23,7 @@ gem 'middleman-robots'
 gem 'middleman-s3_sync'
 gem 'middleman-search_engine_sitemap'
 gem 'middleman-syntax'
+gem 'middleman-webp'
 
 gem 'mime-types'
 

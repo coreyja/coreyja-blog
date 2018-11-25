@@ -30,6 +30,11 @@ activate :syntax, line_numbers: true
 ###
 # Helpers
 ###
+helpers do
+  def image_tag(path, params = {})
+    super
+  end
+end
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
@@ -109,3 +114,8 @@ activate :robots,
            { user_agent: '*', allow: %w[/] }
          ],
          sitemap: 'https://coreyja.com/sitemap.xml'
+
+activate :webp do |webp|
+  webp.append_extension = true
+  webp.allow_skip = false
+end
