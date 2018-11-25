@@ -13,6 +13,11 @@
     color: gray('high-contrast');
     flex: 1 1 auto;
     line-height: 1.5;
+
+    img {
+      display: block;
+      margin: auto;
+    }
   }
 
   &-tags {
