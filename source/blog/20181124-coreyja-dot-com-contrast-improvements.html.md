@@ -20,7 +20,7 @@ I found this website that will check the contrast ratio of the text on your webs
 
 ## Chrome Devtools
 
-It turns out the Google Chrome has some really nice tools that made it easier to adjust my color screen. If you are looking at a font color, you can open the Color Picker and see more contrast ratio information. Here is a screenshot showing the new body font color for my blog.
+It turns out that Google Chrome has some really nice tools that made it easier to adjust my color scheme. If you are looking at a font color, you can open the Color Picker and see more contrast ratio information. Here is a screenshot showing the new body font color for my blog.
 
 ![Devtool Screenshot](/images/posts/coreyja-dot-com-contrast-improvements/devtools-screenshot.png)
 
@@ -41,7 +41,7 @@ After
 
 ## Code Samples
 
-The other big thing I changed is the code sample styles. I am using some of my blogs accent colors, for the syntax highlighting, and most of the pastel colors I am using weren't high enough contrast on a light background. I actually prefer a dark background for code anyways, so this seemed like a good time to change it! I picked a gray that is close to black, but not a perfect black, for the background for the code samples, I ended up going with `#1a1a1a`. Then I made the code white and some of the comments gray. After this all my pastel colors had some great contrast, and all the code was much easier to read. Again here are some before and after screenshots!
+The other big thing I changed is the code sample styles. I am using some of my blogs accent colors for the syntax highlighting, and most of the pastel colors I am using weren't high enough contrast on a light background. I actually prefer a dark background for code anyways, so this seemed like a good time to change it! I picked a gray that is close to black, but not a perfect black, for the background for the code samples, I ended up going with `#1a1a1a`. Then I made the code white and some of the comments gray. After this all my pastel colors had some great contrast, and all the code was much easier to read. Again here are some before and after screenshots!
 
 Before
 ![Code Colors Before](/images/posts/coreyja-dot-com-contrast-improvements/code-colors-before.png)
