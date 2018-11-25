@@ -27,7 +27,7 @@ It turns out that Google Chrome has some really nice tools that made it easier t
 You can see the current contrast ratio is 7.23. The `AA` rating is the lower acceptable value, while `AAA` is the ideal value. I tried to make sure all my colors were above the `AAA` category. With this current background color and font-size, the `AA` value is 4.5, and the `AAA` value is 7.0.
 On the color chart, you can see a white line that is overlayed on the colors. This represents the `AAA` contrast ratio, if you pick any color under that curve, the contrast ratio will be greater than or equal to 7.0.
 
-Chrome also has a built in tool for checking the contrast ratios, which I used extensively when playing around with the different colors for my blog. To access this do to the `Audits` tab in the Devtools, and select the `Accessibility` audit. One of the things this audit will do is check the contrast ratio of your font colors.
+Chrome also has a built in tool for checking the contrast ratios, which I used extensively when playing around with the different colors for my blog. To access this go to the `Audits` tab in the Devtools, and select the `Accessibility` audit. One of the things this audit will do is check the contrast ratio of your font colors.
 
 ## Font Colors
 
