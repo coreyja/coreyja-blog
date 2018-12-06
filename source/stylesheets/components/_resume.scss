@@ -6,13 +6,10 @@
   &-contactInfoSection {
     display: grid;
     grid-gap: 1px;
-    grid-template-areas: 'email number' 'address address';
+    grid-template-areas: 'email number';
+    grid-template-columns: 1fr 1fr;
     height: 100%;
 
-    @include bigger-than-600 {
-      grid-template-areas: 'email number address';
-      grid-template-columns: 1fr 1fr 1fr;
-    }
   }
 
   &-contactInfo {
@@ -130,6 +127,7 @@
 
     .Header-titleContainer {
       padding-bottom: 0;
+      padding-top: 0;
     }
   }
 }
