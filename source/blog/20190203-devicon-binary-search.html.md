@@ -1,0 +1,57 @@
+---
+title: Devicon Lookup - Binary Search Experiment
+author: Corey Alexander
+date: 2019-02-03
+tags:
+  - devicons
+  - rust
+  - binary-search
+  - cache
+color: red
+---
+
+## Background
+
+Recently I wrote, and [blogged about](), writing the [`devicon-lookup`]() tool. Which is intended to be used in VIM and fzf to provide icons for the corresponding file types. It got posted to the Rust sub-reddit, and got a few comments. I chatted a bit with one commenter about some possible speed improvements, and he mentioned that he might use a sorted list, and do a binary search for the lookup instead of taking the time to build a HashMap.
+
+I decided to give this a shot, and this is a blog post explaining what I did, and the results I found!
+
+## Existing Implementation
+
+The existing implementation available, used the Rust crate `lazy_static` to create a static at runtime HashMap, which the program then used to perform the look ups from file extension to devicon symbol.
+
+## Experiments
+
+### Binary Search
+
+A binary search is an efficient way of searching through a sorted list for a specific value. The first step was to take the initialization of HashMap and turn it into a sorted Array. Since I had already sorted the HashMap insertions for code cleanliness, this was as simple as changing the hash to an array of tuples. Where the first element in the tuple was the extension and the second value was the symbol.
+
+```rust
+const SYMBOLS: [(&str, &str); 97] = [
+  ("ai", ""),
+  ...
+  ("zsh", ""),
+  ];
+```
+
+Then I used the Rust collection method `binary_search_by_key` which allows you to pass in both the value you are searching for and a lambda that specifies how to retrieve the `key` to use for the binary search from the underlying objects. The lambda that I supplied simply returned the extension value from the tuple.
+
+```rust
+  let index = SYMBOLS.binary_search_by_key(&extension, |&(ext, _sym)| ext);
+```
+
+#### Results
+
+ADD RESULTS HERE
+
+### Binary Search with HashMap cache
+
+The results from the standard Binary Search weren't much better, if at all better than the original implementation. So I wanted to see if adding a HashMap, cache would help. The idea being that you would build up the HashMap, slowly as you found the symbols you needed. This would in theory avoid the upfront initialization cost of creating the HashMap.
+
+This part took me awhile to work out correctly, and this was mostly due to fighting with Rust's borrow checker. There was two major things that helped me get over some hurdles.
+The first hurdle was this Stack-Overflow answer that helped me figure out how to use a HashMap as a cache as it relates to ownership. This example gave me a great place to start, especially related to the usages of `to_owned()`. STACKOVERFLOW LINK HERE
+The second was realizing that I probably wanted the cache HashMap to be `<String,String>` instead of the `<&str,&str>` that it was before. Previously I was using the reference type because before all the strings I was dealing with in the HashMap were static. Once I made this change I was able to get my code to compile much easier.
+
+This is the current state of the code that lives on the `binary-seach` branch on [GitHub](https://github.com/coreyja/devicon-lookup/tree/binary-search)
+
+#### Results
