@@ -43,7 +43,7 @@ jobs:
   deploy:
     working_directory: ~/coreyja-blog
     docker:
-      - image: circleci/ruby:latest-node
+      - image: circleci/ruby:2.3.3-node
     steps:
       - checkout
 
