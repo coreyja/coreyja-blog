@@ -64,7 +64,8 @@ ADD RESULTS HERE
 The results from the standard Binary Search weren't much better, if at all better than the original implementation. So I wanted to see if adding a HashMap, cache would help. The idea being that you would build up the HashMap, slowly as you found the symbols you needed. This would in theory avoid the upfront initialization cost of creating the HashMap.
 
 This part took me awhile to work out correctly, and this was mostly due to fighting with Rust's borrow checker. There was two major things that helped me get over some hurdles.
-The thing that helped me over my first hurdle was this Rust Lang forum answer that helped me figure out how to use a HashMap as a cache as it relates to ownership. This example gave me a great place to start, especially related to the usages of `to_owned()`. STACKOVERFLOW LINK HERE
+The thing that helped me over my first hurdle was this Rust Lang forum answer that helped me figure out how to use a HashMap as a cache as it relates to ownership. This example gave me a great place to start, especially related to the usages of `to_owned()`. https://users.rust-lang.org/t/borrow-checker-stopping-update-to-hashmap-cache/5300/3
+
 The second was realizing that I probably wanted the cache HashMap to be `<String,String>` instead of the `<&str,&str>` that it was before. Previously I was using the reference type because before all the strings I was dealing with in the HashMap were static. Once I made this change I was able to get my code to compile much easier.
 
 This is the current state of the code that lives on the `binary-seach` branch on [GitHub](https://github.com/coreyja/devicon-lookup/tree/binary-search)
