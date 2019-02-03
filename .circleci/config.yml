@@ -3,7 +3,7 @@ jobs:
   test:
     working_directory: ~/coreyja-blog
     docker:
-      - image: circleci/ruby:latest
+      - image: circleci/ruby:2.3.3
         environment:
           RAILS_ENV: test
     steps:
