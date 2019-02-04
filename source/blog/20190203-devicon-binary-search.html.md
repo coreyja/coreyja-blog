@@ -26,19 +26,19 @@ The existing implementation available, used the Rust crate `lazy_static` to crea
 
 A binary search is an efficient way of searching through a sorted list for a specific value. The first step was to take the initialization of HashMap and turn it into a sorted Array. Since I had already sorted the HashMap insertions for code cleanliness, this was as simple as changing the hash to an array of tuples. Where the first element in the tuple was the extension and the second value was the symbol.
 
-```rust
+~~~rust
 const SYMBOLS: [(&str, &str); 97] = [
   ("ai", ""),
   ...
   ("zsh", ""),
   ];
-```
+~~~
 
 Then I used the Rust collection method `binary_search_by_key` which allows you to pass in both the value you are searching for and a lambda that specifies how to retrieve the `key` to use for the binary search from the underlying objects. The lambda that I supplied simply returned the extension value from the tuple.
 
-```rust
+~~~rust
   let index = SYMBOLS.binary_search_by_key(&extension, |&(ext, _sym)| ext);
-```
+~~~
 
 ### Binary Search with HashMap cache
 
