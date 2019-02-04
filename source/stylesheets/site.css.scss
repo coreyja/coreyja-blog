@@ -47,8 +47,12 @@ div.highlight {
   margin: 0 -50px;
 }
 
+code {
+  font-family: 'Hack Nerd Font Mono';
+}
+
 pre {
-  font-family: Hack, monospace;
+  font-family: 'Hack Nerd Font Mono', monospace;
   line-height: 1.2;
 
   &.highlight {
