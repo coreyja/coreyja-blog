@@ -96,6 +96,7 @@ end
 app.config[:asset_extensions] += %w[.json]
 activate :asset_hash do |opts|
   opts.sources += %w[.json]
+  # opts.ignore = [/.*\.woff/, /.*\.woff2/]
 end
 
 activate :autoprefixer do |config|
