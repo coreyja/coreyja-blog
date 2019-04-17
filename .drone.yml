@@ -29,13 +29,13 @@ steps:
         from_secret: AWS_DISTRIBUTION_ID
     commands:
       - ./script/deploy.sh
-    when:
-      branch:
-        - master
-      event:
-        - push
+    # when:
+    #   branch:
+    #     - master
+    #   event:
+    #     - push
 ---
 kind: signature
-hmac: 254a1f06f56e6200644f7dfab1ccc6378025ea4e41226bd4754844c295b1d0a9
+hmac: f262e104711db76acd23e799366f7efc0a6f272bec624aa397bb3fd664b6cdd6
 
 ...
