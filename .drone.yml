@@ -1,0 +1,43 @@
+---
+kind: pipeline
+name: default
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: test
+    image: ruby:2.3.3
+    environment:
+      RAILS_ENV: test
+    commands:
+      - bundle config --local path "vendor/bundle"
+      - bundle install --frozen --jobs 5 --retry 5
+      - bundle exec rubocop
+      - bundle exec scss-lint
+  - name: deploy
+    image: timbru31/ruby-node:2.3
+    environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: AWS_SECRET_ACCESS_KEY
+      AWS_BUCKET:
+        from_secret: AWS_BUCKET
+      AWS_DISTRIBUTION_ID:
+        from_secret: AWS_DISTRIBUTION_ID
+    commands:
+      - bundle config --local path "vendor/bundle"
+      - bundle install --frozen --jobs 5 --retry 5
+      - ./script/deploy.sh
+    when:
+      branch:
+        - master
+      event:
+        - push
+---
+kind: signature
+hmac: adccf6085aa0be8a49d050feac0b77b2643019ffcf2fd98e5e0f0ce9a15f229f
+
+...
