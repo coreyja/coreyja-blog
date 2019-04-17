@@ -31,13 +31,13 @@ steps:
       - bundle config --local path "vendor/bundle"
       - bundle install --frozen --jobs 5 --retry 5
       - ./script/deploy.sh
-    # when:
-    #   branch:
-    #     - master
-    #   event:
-    #     - push
+    when:
+      branch:
+        - master
+      event:
+        - push
 ---
 kind: signature
-hmac: 36e5fcc592527ef77b7c2454c6f65a4f73a533a6fb5f45e313131cbf63fee7ca
+hmac: 97a810e4ce0df664c5c9f1ed6c2c1e9b8d2428b6a8a13cbb5f57d2825cfac7a2
 
 ...
