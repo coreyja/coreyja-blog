@@ -31,7 +31,7 @@ gem 'kramdown'
 # For feed.xml.builder
 gem 'builder', '~> 3.0'
 
-gem 'rubocop-coreyja', '0.3.0'
+gem 'rubocop-coreyja', '0.4.0'
 gem 'rubocop-junit-formatter', require: false
 
 gem 'scss_lint', require: false
