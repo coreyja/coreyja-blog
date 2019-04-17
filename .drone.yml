@@ -12,6 +12,7 @@ steps:
     environment:
       RAILS_ENV: test
     commands:
+      - bundle config --local path "vendor/bundle"
       - bundle install --frozen --jobs 5 --retry 5
       - bundle exec rubocop
       - bundle exec scss-lint
@@ -35,6 +36,6 @@ steps:
         - push
 ---
 kind: signature
-hmac: 6c13944365d77999dffd6479e0e1062510c41d416bb99fa5e2fd691febb12317
+hmac: 254a1f06f56e6200644f7dfab1ccc6378025ea4e41226bd4754844c295b1d0a9
 
 ...
