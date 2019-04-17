@@ -1,0 +1,16 @@
+kind: pipeline
+name: default
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: test
+    image: ruby:2.3.3
+    environment:
+      RAILS_ENV: test
+    commands:
+      - bundle install --frozen --jobs 5 --retry 5
+      - bundle exec rubocop
+      - bundle exec scss-lint
