@@ -28,6 +28,8 @@ steps:
       AWS_DISTRIBUTION_ID:
         from_secret: AWS_DISTRIBUTION_ID
     commands:
+      - bundle config --local path "vendor/bundle"
+      - bundle install --frozen --jobs 5 --retry 5
       - ./script/deploy.sh
     # when:
     #   branch:
@@ -36,6 +38,6 @@ steps:
     #     - push
 ---
 kind: signature
-hmac: f262e104711db76acd23e799366f7efc0a6f272bec624aa397bb3fd664b6cdd6
+hmac: 286c45dd071f627d24cb7c1dde32670cf20ea3111f981f412a424b256e00192c
 
 ...
