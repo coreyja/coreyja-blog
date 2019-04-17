@@ -1,3 +1,4 @@
+---
 kind: pipeline
 name: default
 
@@ -14,3 +15,15 @@ steps:
       - bundle install --frozen --jobs 5 --retry 5
       - bundle exec rubocop
       - bundle exec scss-lint
+  - name: deploy
+    image: ruby:2.3.3
+    commands:
+      - ./script/deploy.sh
+    when:
+      branch:
+        - master
+---
+kind: signature
+hmac: 55142bb89e871a3fec050e09832e813359438b2a9c3c9a9032faba1232e46123
+
+...
