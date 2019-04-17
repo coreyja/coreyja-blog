@@ -17,6 +17,15 @@ steps:
       - bundle exec scss-lint
   - name: deploy
     image: ruby:2.3.3
+    environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: AWS_SECRET_ACCESS_KEY
+      AWS_BUCKET:
+        from_secret: AWS_BUCKET
+      AWS_DISTRIBUTION_ID:
+        from_secret: AWS_DISTRIBUTION_ID
     commands:
       - ./script/deploy.sh
     when:
@@ -24,6 +33,6 @@ steps:
         - master
 ---
 kind: signature
-hmac: 55142bb89e871a3fec050e09832e813359438b2a9c3c9a9032faba1232e46123
+hmac: 9851a257da07b50b5ae5a710e71f4521f96ad174074cd125e5232341f051716f
 
 ...
