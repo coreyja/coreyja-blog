@@ -70,3 +70,9 @@ pre {
 img {
   max-width: 100%;
 }
+
+// Antiliase fonts in OSX
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
