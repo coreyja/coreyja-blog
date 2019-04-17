@@ -17,7 +17,7 @@ steps:
       - bundle exec rubocop
       - bundle exec scss-lint
   - name: deploy
-    image: ruby:2.3.3
+    image: timbru31/ruby-node:2.3
     environment:
       AWS_ACCESS_KEY_ID:
         from_secret: AWS_ACCESS_KEY_ID
@@ -38,6 +38,6 @@ steps:
     #     - push
 ---
 kind: signature
-hmac: 286c45dd071f627d24cb7c1dde32670cf20ea3111f981f412a424b256e00192c
+hmac: 36e5fcc592527ef77b7c2454c6f65a4f73a533a6fb5f45e313131cbf63fee7ca
 
 ...
