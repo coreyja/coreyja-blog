@@ -40,6 +40,10 @@
     &-contactValue {
       margin: 0;
     }
+
+    &-educationSection {
+      page-break-before: always;
+    }
   }
 }
 
