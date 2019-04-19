@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'models/coreyja_theme'
+
 ## Set the Time Zone
 Time.zone = 'America/New_York'
 
@@ -26,7 +28,7 @@ page 'resume.html', layout: :base
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 set :markdown_engine, :kramdown
-activate :syntax, line_numbers: true
+activate :syntax, line_numbers: true, inline_theme: CoreyjaTheme
 ###
 # Helpers
 ###
