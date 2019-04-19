@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'models/coreyja_theme'
-
 ## Set the Time Zone
 Time.zone = 'America/New_York'
 
