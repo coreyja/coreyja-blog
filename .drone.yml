@@ -58,7 +58,7 @@ steps:
         from_secret: CACHE_AWS_SECRET_ACCESS_KEY
       mount:
         - vendor/bundle
-  - name: rebuild
+  - name: flush-cache
     image: plugins/s3-cache
     settings:
       flush: true
@@ -70,6 +70,6 @@ steps:
         from_secret: CACHE_AWS_SECRET_ACCESS_KEY
 ---
 kind: signature
-hmac: 96925aad2e5ebef79087a4a008fe9d0200b25d581143f539795173ccdb6b784e
+hmac: 8ad8d21fa02ca8c3aa6f18cb4398bf6f381eff4969c9d071b2166ce41f60b2c0
 
 ...
