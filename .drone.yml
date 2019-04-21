@@ -61,6 +61,6 @@ steps:
         - vendor/bundle
 ---
 kind: signature
-hmac: f085e6ead2af9489e21c62c9f01742ac8c59ce6ffc7b45aa6242699911cb3f79
+hmac: bb947fdadb844a5ec0e1f7379816d68a4b75ef51b73d3313d06f93bc8d55b802
 
 ...
