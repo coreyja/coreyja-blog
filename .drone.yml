@@ -7,6 +7,16 @@ platform:
   arch: amd64
 
 steps:
+  - name: restore
+    image: plugins/s3-cache
+    settings:
+      pull: true
+      restore: true
+      root: cache.dokku.coreyja
+      access_key:
+        from_secret: CACHE_AWS_ACCESS_KEY_ID
+      secret_key:
+        from_secret: CACHE_AWS_SECRET_ACCESS_KEY
   - name: test
     image: ruby:2.3.3
     environment:
@@ -36,8 +46,30 @@ steps:
         - master
       event:
         - push
+  - name: rebuild
+    image: plugins/s3-cache
+    settings:
+      pull: true
+      rebuild: true
+      root: cache.dokku.coreyja
+      access_key:
+        from_secret: CACHE_AWS_ACCESS_KEY_ID
+      secret_key:
+        from_secret: CACHE_AWS_SECRET_ACCESS_KEY
+      mount:
+        - vendor/bundle
+  - name: flush-cache
+    image: plugins/s3-cache
+    settings:
+      flush: true
+      flush_age: 30
+      root: cache.dokku.coreyja
+      access_key:
+        from_secret: CACHE_AWS_ACCESS_KEY_ID
+      secret_key:
+        from_secret: CACHE_AWS_SECRET_ACCESS_KEY
 ---
 kind: signature
-hmac: adccf6085aa0be8a49d050feac0b77b2643019ffcf2fd98e5e0f0ce9a15f229f
+hmac: 8ad8d21fa02ca8c3aa6f18cb4398bf6f381eff4969c9d071b2166ce41f60b2c0
 
 ...
