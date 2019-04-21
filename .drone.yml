@@ -11,7 +11,6 @@ steps:
     image: plugins/s3-cache
     settings:
       pull: true
-      debug: true
       root: cache.dokku.coreyja
       access_key:
         from_secret: CACHE_AWS_ACCESS_KEY_ID
@@ -51,7 +50,7 @@ steps:
     image: plugins/s3-cache
     settings:
       pull: true
-      debug: true
+      flush: true
       root: cache.dokku.coreyja
       access_key:
         from_secret: CACHE_AWS_ACCESS_KEY_ID
