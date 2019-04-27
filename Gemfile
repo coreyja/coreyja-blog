@@ -15,7 +15,7 @@ gem 'tzinfo-data', platforms: %i[mswin mingw jruby]
 gem 'rack', '>= 2.0.6'
 
 # Middleman Gems
-gem 'middleman', '~> 4.1'
+gem 'middleman', '~> 4.3'
 gem 'middleman-autoprefixer'
 gem 'middleman-blog'
 gem 'middleman-cloudfront', git: 'git://github.com/andrusha/middleman-cloudfront.git'
