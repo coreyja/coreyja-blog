@@ -13,7 +13,7 @@ steps:
       pull: true
       cache_download: true
       cache_bucket: cache.dokku.coreyja
-      aws_access_key:
+      aws_access_key_id:
         from_secret: CACHE_AWS_ACCESS_KEY_ID
       aws_secret_key:
         from_secret: CACHE_AWS_SECRET_ACCESS_KEY
@@ -50,12 +50,12 @@ steps:
     image: coreyja/rust-cache
     settings:
       cache_bucket: cache.dokku.coreyja
-      aws_access_key:
+      aws_access_key_id:
         from_secret: CACHE_AWS_ACCESS_KEY_ID
       aws_secret_key:
         from_secret: CACHE_AWS_SECRET_ACCESS_KEY
 ---
 kind: signature
-hmac: ab83fcd737ee2cb1ef4373c089ab24d0373a8c9af8a8c4408284681a4d099d91
+hmac: 58d0e207c3e3f533355ad308586541fc18fcabe52951ddffbc6116d8d8bd85cb
 
 ...
