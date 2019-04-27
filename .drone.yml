@@ -15,7 +15,7 @@ steps:
       cache_bucket: cache.dokku.coreyja
       aws_access_key_id:
         from_secret: CACHE_AWS_ACCESS_KEY_ID
-      aws_secret_key:
+      aws_secret_access_key:
         from_secret: CACHE_AWS_SECRET_ACCESS_KEY
   - name: test
     image: ruby:2.3.3
@@ -52,10 +52,10 @@ steps:
       cache_bucket: cache.dokku.coreyja
       aws_access_key_id:
         from_secret: CACHE_AWS_ACCESS_KEY_ID
-      aws_secret_key:
+      aws_secret_access_key:
         from_secret: CACHE_AWS_SECRET_ACCESS_KEY
 ---
 kind: signature
-hmac: 58d0e207c3e3f533355ad308586541fc18fcabe52951ddffbc6116d8d8bd85cb
+hmac: 4a40dcf94be0be5ac9bb8b073241299e689d47774dc094d4cce86a859808946e
 
 ...
