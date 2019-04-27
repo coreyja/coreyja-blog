@@ -8,14 +8,14 @@ platform:
 
 steps:
   - name: restore
-    image: plugins/s3-cache
+    image: coreyja/rust-cache
     settings:
       pull: true
-      restore: true
-      root: cache.dokku.coreyja
-      access_key:
+      cache_download: true
+      cache_bucket: cache.dokku.coreyja
+      aws_access_key:
         from_secret: CACHE_AWS_ACCESS_KEY_ID
-      secret_key:
+      aws_secret_key:
         from_secret: CACHE_AWS_SECRET_ACCESS_KEY
   - name: test
     image: ruby:2.3.3
@@ -47,29 +47,16 @@ steps:
       event:
         - push
   - name: rebuild
-    image: plugins/s3-cache
+    image: coreyja/rust-cache
     settings:
-      pull: true
-      rebuild: true
-      root: cache.dokku.coreyja
-      access_key:
+      cache_download: true
+      cache_bucket: cache.dokku.coreyja
+      aws_access_key:
         from_secret: CACHE_AWS_ACCESS_KEY_ID
-      secret_key:
-        from_secret: CACHE_AWS_SECRET_ACCESS_KEY
-      mount:
-        - vendor/bundle
-  - name: flush-cache
-    image: plugins/s3-cache
-    settings:
-      flush: true
-      flush_age: 30
-      root: cache.dokku.coreyja
-      access_key:
-        from_secret: CACHE_AWS_ACCESS_KEY_ID
-      secret_key:
+      aws_secret_key:
         from_secret: CACHE_AWS_SECRET_ACCESS_KEY
 ---
 kind: signature
-hmac: 8ad8d21fa02ca8c3aa6f18cb4398bf6f381eff4969c9d071b2166ce41f60b2c0
+hmac: caa7585df87d39d5b1104c86ae9b8efe556b2039ff6c0b82ea91070ebb64647d
 
 ...
