@@ -49,7 +49,6 @@ steps:
   - name: rebuild
     image: coreyja/rust-cache
     settings:
-      cache_download: true
       cache_bucket: cache.dokku.coreyja
       aws_access_key:
         from_secret: CACHE_AWS_ACCESS_KEY_ID
@@ -57,6 +56,6 @@ steps:
         from_secret: CACHE_AWS_SECRET_ACCESS_KEY
 ---
 kind: signature
-hmac: caa7585df87d39d5b1104c86ae9b8efe556b2039ff6c0b82ea91070ebb64647d
+hmac: ab83fcd737ee2cb1ef4373c089ab24d0373a8c9af8a8c4408284681a4d099d91
 
 ...
