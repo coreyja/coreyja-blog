@@ -19,6 +19,7 @@ page '/*.txt', layout: false
 
 # With alternative layout
 page 'error.html'
+page 'live.html'
 page 'resume.html', layout: :base
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
