@@ -10,10 +10,10 @@ tags:
 color: orange
 ---
 
-I was recently working on adding some Twitch embedding support to dev.to! Part if this was adding webhook support.
+I was recently working on adding some Twitch embedding support to dev.to! Part of this was adding webhook support.
 
-One of the things that Twitch recommends doing that I wanted to do was verify that the webhooks came from Twitch and not a malicious third party.
-The bottom of their Webhook Guide mentions verifying payload but doesn't give a lot of context of how to actually do that, [https://dev.twitch.tv/docs/api/webhooks-guide/](https://dev.twitch.tv/docs/api/webhooks-guide/)
+One of the things that Twitch recommends doing, and I wanted to do, was verify that the webhooks came from Twitch and not a malicious third party. This works by passing a secret when you register for the webhook and using that and the contents of the body to create a hash and verify the payload came from Twitch.
+The bottom of their Webhook Guide mentions verifying payloads but doesn't give a lot of context of how to actually do that, [https://dev.twitch.tv/docs/api/webhooks-guide/](https://dev.twitch.tv/docs/api/webhooks-guide/)
 
 At first I thought I needed to do a 'normal' SHA256 with the secret and payload data concatenated together. But this was not correct I needed to make a SHA256 HMAC using the secret as the HMAC secret, and the payload as the entirety of the body. I figured this out by reading some issues online, but they were all in JS so I had to figure out the right Ruby methods to use and luckily that wasn't too hard.
 
