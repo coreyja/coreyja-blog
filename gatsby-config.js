@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Coreyja Blog`,
+    author: `Corey Alexander`,
+    description: `My personal blog`,
+    siteUrl: `https://coreyja.com/`,
     social: {
-      twitter: `kylemathews`,
+      github: `coreyja`,
+      twitter: `coreyja_dev`,
     },
   },
   plugins: [
@@ -47,21 +48,21 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
+    //{
+    //  resolve: `gatsby-plugin-google-analytics`,
+    //  options: {
+    //    //trackingId: `ADD YOUR TRACKING ID HERE`,
+    //  },
+    //},
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Coreyja Blog`,
+        short_name: `coreyja Blog`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#aa66cc`,
+        theme_color: `#aa66cc`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },
