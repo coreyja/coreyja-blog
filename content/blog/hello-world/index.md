@@ -19,3 +19,28 @@ Oh, and here's a great quote from this Wikipedia on
 > firm-textured, round yolk that is bright orange-red in color.
 
 ![Chinese Salty Egg](./salty_egg.jpg)
+
+```ruby{numberLines: true}
+puts "test #{1 + 1}"
+puts "test #{1 + 1}"
+puts "test #{1 + 1}"
+puts "test #{1 + 1}"
+```
+
+Oh ya I want to test code inline too `test this`
+
+```ruby{numberLines: false}
+puts "test #{1 + 1}"
+puts "test #{1 + 1}"
+puts "test #{1 + 1}"
+puts "test #{1 + 1}"
+```
+
+test
+
+```ruby
+puts "test #{1 + 1}"
+puts "test #{1 + 1}"
+puts "test #{1 + 1}"
+puts "test #{1 + 1}"
+```
