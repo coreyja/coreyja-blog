@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import { rhythm } from "../utils/typography"
 
 import BlogLayout from "../components/blogLayout"
+import PostCards from "../components/postCards"
 import SEO from "../components/seo"
 
 const YearTemplate = ({ location, pageContext, data }) => {
@@ -12,28 +13,7 @@ const YearTemplate = ({ location, pageContext, data }) => {
 			<div className="year-container">
 				<SEO title={`Posts in year "${year}"`} />
 					<h1>{year}</h1>
-          {data.allMarkdownRemark.edges.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            return (
-              <div key={node.fields.slug}>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </div>
-            )
-          })}
+          <PostCards nodes={data.allMarkdownRemark.edges} />
 			</div>
 		</BlogLayout>
 	)
@@ -48,15 +28,7 @@ export const pageQuery = graphql`
 			totalCount
 			edges {
 				node {
-					fields {
-						slug
-						tags
-					}
-					excerpt
-					frontmatter {
-						title
-						date
-					}
+          ...PostCard
 				}
 			}
 		}
