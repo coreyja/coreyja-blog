@@ -32,6 +32,7 @@
     "react-typography": "^0.16.19",
     "typeface-alternate-gothic1": "https://github.com/coreyja/typeface-alternate-gothic1.git",
     "typeface-hack-nerd-font": "https://github.com/coreyja/typeface-hack-nerd-font.git",
+    "typeface-oswald": "^0.0.54",
     "typography": "^0.16.19"
   },
   "devDependencies": {

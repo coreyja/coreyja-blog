@@ -1,11 +1,11 @@
 import Typography from "typography"
 
 const typography = new Typography({
-  baseFontSize: '18px',
+  baseFontSize: '16px',
   baseLineHeight: 1.45,
-  headerFontFamily: ['Alternate Gothic FS No 1', 'sans-serif'],
-  bodyFontFamily: ['Georgia', 'serif'],
-  // See below for the full list of options.
+  headerFontFamily: ['Oswald', 'sans-serif'],
+  bodyFontFamily: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto','Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif'],
+  bodyColor: '#575757',
 })
 
 // Hot reload typography in development.
