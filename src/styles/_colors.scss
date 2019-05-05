@@ -1,0 +1,59 @@
+
+$accent-colors: (
+'red': #ff4444,
+'green': #99cc00,
+'blue': #33b5e5,
+'purple': #aa66cc,
+'orange': #ffbb33,
+);
+
+@function accent-color($key) {
+	@if map-has-key($accent-colors, $key) {
+		@return map-get($accent-colors, $key);
+	}
+
+	@error "Unknown key `#{$key}` in $accent-colors.";
+	@return null;
+}
+
+@mixin accent-color-modifier($property: 'color') {
+	@each $key, $color in $accent-colors {
+		&--#{$key} {
+			#{$property}: $color;
+		}
+	}
+}
+
+$grays: (
+'white': #ffffff,
+'background': #dadada,
+'light': #bcbcbc,
+'dark': #767676,
+'high-contrast': #575757,
+'near-black': #1a1a1a,
+);
+
+@function gray($key) {
+	@if map-has-key($grays, $key) {
+		@return map-get($grays, $key);
+	}
+
+	@error "Unknown key `#{$key}` in $grays.";
+	@return null;
+}
+
+$print-black: '#000000';
+
+:export {
+	red: accent-color('red');
+	green: accent-color('green');
+	blue: accent-color('blue');
+	purple: accent-color('purple');
+	orange: accent-color('orange');
+	orange: accent-color('white');
+	background: accent-color('background');
+	light: accent-color('light');
+	dark: accent-color('dark');
+	high-contrast: accent-color('high-contrast');
+	near-black: accent-color('near-black');
+}

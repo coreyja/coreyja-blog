@@ -1,0 +1,7 @@
+@import './utils';
+@import './colors';
+
+a {
+	color: darken(gray('high-contrast'), 5%);
+}
+
