@@ -6,12 +6,10 @@
  */
 
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 import headerStyles from "./header.module.scss"
+import { Link } from "gatsby"
 
-import { rhythm } from "../utils/typography"
-import Color from '../styles/colors.scss'
+import Color from '../styles/_colors.scss'
 
 const ColoredBar = props => (
 	<div className={headerStyles.coloredBar} style={{ color: Color[props.color] }} data-color={props.color}></div>
@@ -27,9 +25,9 @@ function Header() {
   return (
     <header>
 		  <div className={headerStyles.titleContainer}>
-		    <a href='/' className={headerStyles.title}>
+		    <Link href='/' className={headerStyles.title}>
 		      corey<span style={{ color: Color.red }}>ja</span><span className={headerStyles.titleSymbols}>://</span>
-		    </a>
+		    </Link>
 		    <span className={headerStyles.subTitle}>complex to simple</span>
 		    <div className={headerStyles.socialIcons}>
             <SocialIcon href="https://www.github.com/coreyja" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg" />

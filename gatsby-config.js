@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Coreyja Blog`,
+    title: `COREYJA`,
     author: `Corey Alexander`,
     description: `My personal blog`,
     siteUrl: `https://coreyja.com/`,
@@ -31,7 +31,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 1000,
             },
           },
           {
