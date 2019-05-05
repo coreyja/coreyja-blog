@@ -12,9 +12,20 @@ import { rhythm } from "../utils/typography"
 
 import blogSidebarStyles from "./blogSidebar.module.scss"
 
+function ListItem(props) {
+  return (
+    <li className={blogSidebarStyles.listItem}>
+      <Link to={props.to}>
+        {props.title}
+      </Link>
+    </li>
+  )
+}
+
 function BlogSidebar(props) {
   const data = useStaticQuery(blogSidebarQuery);
   const recentPosts = data.recentPosts.edges
+  const tags = data.tags.group.sort((a,b) => b.count - a.count);
 
   return (
     <div>
@@ -23,17 +34,16 @@ function BlogSidebar(props) {
         {recentPosts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <li className={blogSidebarStyles.listItem}>
-              <Link to={node.fields.slug}>
-                {title}
-              </Link>
-            </li>
+            <ListItem to={node.fields.slug} title={title} />
           )
         })}
       </ul>
 
       <h2 className={blogSidebarStyles.title}>Tags</h2>
       <ul className={blogSidebarStyles.list}>
+        {tags.map(({ count, tag }) =>
+          <ListItem to={`/tags/${tag}`} title={`${tag} (${count})`} />
+        )}
       </ul>
 
       <h2 className={blogSidebarStyles.title}>By Year</h2>
@@ -57,6 +67,12 @@ const blogSidebarQuery = graphql`
             title
           }
         }
+      }
+    }
+    tags: allMarkdownRemark {
+      group(field: fields___tags) {
+        count: totalCount
+        tag: fieldValue
       }
     }
   }
