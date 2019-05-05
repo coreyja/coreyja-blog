@@ -26,6 +26,7 @@ function BlogSidebar(props) {
   const data = useStaticQuery(blogSidebarQuery);
   const recentPosts = data.recentPosts.edges
   const tags = data.tags.group.sort((a,b) => b.count - a.count);
+  const years = data.years.group.sort((a,b) => b.year - a.year);
 
   return (
     <div>
@@ -48,6 +49,9 @@ function BlogSidebar(props) {
 
       <h2 className={blogSidebarStyles.title}>By Year</h2>
       <ul className={blogSidebarStyles.list}>
+        {years.map(({ count, year }) =>
+          <ListItem to={`/year/${year}`} title={`${year} (${count})`} />
+        )}
       </ul>
     </div>
   )
@@ -73,6 +77,12 @@ const blogSidebarQuery = graphql`
       group(field: fields___tags) {
         count: totalCount
         tag: fieldValue
+      }
+    }
+    years: allMarkdownRemark {
+      group(field: fields___year) {
+        count: totalCount
+        year: fieldValue
       }
     }
   }

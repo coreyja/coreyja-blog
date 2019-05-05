@@ -1,10 +1,9 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
-
+function createBlog(graphql, createPage) {
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+
   return graphql(
     `
       {
@@ -52,15 +51,68 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
+function createYears(graphql, createPage) {
+  const yearPage = path.resolve(`./src/templates/year.js`)
+
+  return graphql(
+    `
+      {
+        years: allMarkdownRemark {
+          group(field: fields___year) {
+            count: totalCount
+            year: fieldValue
+          }
+        }
+      }
+    `
+  ).then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+
+    // Create blog posts pages.
+    const years = result.data.years.group
+
+    years.forEach(({count, year}) => {
+      createPage({
+        path: `/year/${year}/`,
+        component: yearPage,
+        context: {
+          year: parseInt(year),
+        },
+      })
+    })
+
+    return null
+  })
+}
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  return Promise.all([
+    createBlog(graphql, createPage),
+    createYears(graphql, createPage),
+  ]);
+}
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
+
+    const date = new Date(node.frontmatter.date);
+
+    createNodeField({
+      node,
+      name: `year`,
+      value: date.getFullYear(),
+    });
     createNodeField({
       name: `slug`,
       node,
       value,
-    })
+    });
   }
 }
