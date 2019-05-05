@@ -7,6 +7,7 @@
 
 import React from "react"
 import Layout from "./layout"
+import BlogSidebar from "./blogSidebar"
 import blogLayoutStyles from "./blogLayout.module.scss"
 
 import Color from '../styles/_colors.scss'
@@ -30,17 +31,7 @@ function BlogLayout(props) {
 		        </section>
 
 		        <aside>
-		          <h2 class="BlogSidebar-title">Recent Articles</h2>
-		          <ul class="BlogSidebar-list">
-		          </ul>
-
-		          <h2 class="BlogSidebar-title">Tags</h2>
-		          <ul class="BlogSidebar-list">
-		          </ul>
-
-		          <h2 class="BlogSidebar-title">By Year</h2>
-		          <ul class="BlogSidebar-list">
-		          </ul>
+              <BlogSidebar />
 		        </aside>
 		      </div>
 		    </div>
