@@ -24,36 +24,10 @@ $accent-colors: (
   }
 }
 
-$grays: (
-'white': #ffffff,
-'background': #dadada,
-'light': #bcbcbc,
-'dark': #767676,
-'high-contrast': #575757,
-'near-black': #1a1a1a,
-);
-
-@function gray($key) {
-  @if map-has-key($grays, $key) {
-    @return map-get($grays, $key);
-  }
-
-  @error "Unknown key `#{$key}` in $grays.";
-  @return null;
-}
-
-$print-black: '#000000';
-
 :export {
   red: accent-color('red');
   green: accent-color('green');
   blue: accent-color('blue');
   purple: accent-color('purple');
   orange: accent-color('orange');
-  white: gray('white');
-  background: gray('background');
-  light: gray('light');
-  dark: gray('dark');
-  highContrast: gray('high-contrast');
-  nearBlack: gray('near-black');
 }
