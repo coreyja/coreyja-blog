@@ -12,7 +12,7 @@ const YearTemplate = ({ location, pageContext, data }) => {
 		<BlogLayout location={location} title={`Posts in year "${year}"`}>
 			<div className="year-container">
 				<SEO title={`Posts in year "${year}"`} />
-					<h1>{year}</h1>
+					<h1>All Posts from {year}</h1>
           <PostCards nodes={data.allMarkdownRemark.edges} />
 			</div>
 		</BlogLayout>

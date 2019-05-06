@@ -12,7 +12,7 @@ const CategoryTemplate = ({ location, pageContext, data }) => {
 		<BlogLayout location={location} title={`Posts in tag "${tag}"`}>
 			<div className="tag-container">
 				<SEO title={`Posts in tag "${tag}"`} />
-					<h1>Tag: {tag}</h1>
+					<h1>Posts tagged with #{tag}</h1>
           <PostCards nodes={data.allMarkdownRemark.edges} />
 			</div>
 		</BlogLayout>

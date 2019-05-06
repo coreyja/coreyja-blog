@@ -1,34 +1,36 @@
 @import '../styles/colors';
 
 .title {
-	border-bottom: 1px solid gray('light');
-	font-size: 22px;
-	font-weight: normal;
-	padding: 5px 0;
-	text-transform: uppercase;
+  border-bottom: 1px solid gray('light');
+  font-size: 22px;
+  font-weight: normal;
+  padding: 5px 0;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;;
 }
 
 .list {
-	list-style: none;
-	padding-left: 20px;
+  list-style: none;
+  padding-left: 20px;
+  margin-left: 0;
 }
 
 .listItem {
-	display: inline;
-	font-style: italic;
-	margin: 5px 0;
+  display: inline;
+  font-style: italic;
+  margin: 5px 0;
 
-	&:not(:last-of-type)::after {
-		content: '\2022';
-		padding: 0 5px;
-	}
+  &:not(:last-of-type)::after {
+    content: '\2022';
+    padding: 0 5px;
+  }
 
-	@media (min-width: 900px) {
-		display: block;
+  @media (min-width: 900px) {
+    display: block;
 
-		&:not(:last-of-type)::after {
-			content: '';
-			padding: 0;
-		}
-	}
+    &:not(:last-of-type)::after {
+      content: '';
+      padding: 0;
+    }
+  }
 }
