@@ -21,7 +21,7 @@ My first thought was maybe there was some settings or configuration options in v
 
 The first option I looked into was the ability to set a custom command to run instead of simply `rspec`. This can be done by a like such as this one in your `.vimrc` [^2]
 
-```vimscript
+```vim
 let g:rspec_command = "Dispatch rspec {spec}"
 ```
 
@@ -40,7 +40,7 @@ Since we are operating outside the context of `vim-rspec` we are acting in the c
 
 Here is an excerpt from my `.vimrc` with the relevant bits of my full solution
 
-```vimscript
+```vim
 fun! SafeCD(dir)
   execute 'cd' fnameescape(a:dir)
 endfun

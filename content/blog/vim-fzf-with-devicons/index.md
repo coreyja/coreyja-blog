@@ -22,7 +22,7 @@ This Github Issue actually already had a really functional solution! Here is the
 
 Here is the source code from that comment:
 
-```vimscript
+```vim
 " Files + devicons
 function! Fzf_dev()
   let l:fzf_files_options = '--preview "rougify {2..-1} | head -'.&lines.'"'
@@ -72,13 +72,13 @@ Recently I (re)discovered [`bat`](https://github.com/sharkdp/bat), which is a `c
 
 So the first thing I did was replace `rougify` with `bat` and had a line like the following
 
-```vimscript
+```vim
 let l:fzf_files_options = '--preview "bat {2..-1} | head -'.&lines.'"'
 ```
 
 This worked! And I was getting near instantaneous results :tada:. Unfortunately it wasn't syntax highlighted. I realized this was due to the fact that `bat` tries to be compatible with `cat` and if it detects you are piping the output (like was happening in the preview) it defaults to acting like a `cat` clone. Luckily fixing this was as easy as passing an option to `bat`, `--color always` did the trick! `bat` also includes line numbers and a header by default. I liked the line numbers, but didn't like the header so I hid it by explicitly saying I only wanted the line number with `--style numbers`. Now my preview line looks like the following:
 
-```vimscript
+```vim
 let l:fzf_files_options = '--preview "bat --color always --style numbers {2..} | head -'.&lines.'"'
 ```
 
@@ -140,7 +140,7 @@ I tested this out with `ls | ./protype_script` and was really pleased with the r
 
 Now we get to take advantage of fzf streaming, and as such are passing a String as the source for fzf. We simply pipe the results of the default command, into our new script. This allows us to delete both `files` and the `prepend_icon` functions, since we replaced their functionality with our script.
 
-```vimscript
+```vim
 call fzf#run({
     \ 'source': $FZF_DEFAULT_COMMAND.' | prototype_script',
     \ 'sink':   function('s:edit_devicon_prepended_file'),
@@ -276,7 +276,7 @@ After I got this Rust version working, I also spent some time refactoring so tha
 
 And here we have it, my final (for now) fzf File Fuzzy Finding with Devicons Powered by Rust!
 
-```vimscript
+```vim
 " Files + devicons
 function! Fzf_files_with_dev_icons(command)
   let l:fzf_files_options = '--preview "bat --color always --style numbers {2..} | head -'.&lines.'"'
