@@ -6,6 +6,7 @@ tags:
   - tag2
   - cool-stuff
   - tagssss
+color: red
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and

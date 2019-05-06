@@ -8,8 +8,10 @@ function PostCard(props) {
   const node = props.node
   const title = node.frontmatter.title || node.fields.slug
   const tags = node.fields.tags || []
+  const color = node.frontmatter.color || 'red';
+
   return (
-    <section className={postCardStyles.card} style={{ background: Color.red }}>
+    <section className={postCardStyles.card} style={{ background: Color[color] }}>
       <Link to={node.fields.slug} className={postCardStyles.title}>
         {title}
       </Link>
@@ -41,6 +43,7 @@ export const postCardFragment = graphql`
     frontmatter {
       date(formatString: "M.D.YY")
       title
+      color
     }
   }
 `

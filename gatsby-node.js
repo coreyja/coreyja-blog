@@ -8,7 +8,7 @@ function createBlog(graphql, createPage) {
     `
       {
         allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
+          sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
         ) {
           edges {
@@ -101,18 +101,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
-
-    const date = new Date(node.frontmatter.date);
-
-    createNodeField({
-      node,
-      name: `year`,
-      value: date.getFullYear(),
-    });
     createNodeField({
       name: `slug`,
       node,
       value,
+    });
+
+    const date = new Date(node.frontmatter.date);
+    createNodeField({
+      node,
+      name: `year`,
+      value: date.getFullYear(),
     });
   }
 }
