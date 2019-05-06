@@ -35,7 +35,7 @@ function BlogSidebar(props) {
         {recentPosts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <ListItem to={node.fields.slug} title={title} />
+            <ListItem to={node.fields.slug} title={title} key={node.fields.slug}  />
           )
         })}
       </ul>
@@ -43,14 +43,14 @@ function BlogSidebar(props) {
       <h2 className={blogSidebarStyles.title}>Tags</h2>
       <ul className={blogSidebarStyles.list}>
         {tags.map(({ count, tag }) =>
-          <ListItem to={`/tags/${tag}`} title={`${tag} (${count})`} />
+          <ListItem to={`/tags/${tag}`} key={`/tags/${tag}`} title={`${tag} (${count})`} />
         )}
       </ul>
 
       <h2 className={blogSidebarStyles.title}>By Year</h2>
       <ul className={blogSidebarStyles.list}>
         {years.map(({ count, year }) =>
-          <ListItem to={`/year/${year}`} title={`${year} (${count})`} />
+          <ListItem to={`/year/${year}`} key={`/year/${year}`} title={`${year} (${count})`} />
         )}
       </ul>
     </div>

@@ -18,7 +18,7 @@ function Header() {
   return (
     <header>
 		  <div className={headerStyles.titleContainer}>
-		    <Link href='/' className={headerStyles.title}>
+		    <Link to='/' className={headerStyles.title}>
 		      corey<span style={{ color: Color.red }}>ja</span><span className={headerStyles.titleSymbols}>://</span>
 		    </Link>
 		    <span className={headerStyles.subTitle}>complex to simple</span>

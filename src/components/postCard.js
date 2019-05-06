@@ -18,7 +18,7 @@ function PostCard(props) {
       </div>
       <div className={postCardStyles.tags}>
         {tags.map((tag) =>
-          <Link to={`/tags/${tag}`} className={postCardStyles.tag}>
+          <Link to={`/tags/${tag}`} key={`/tags/${tag}`} className={postCardStyles.tag}>
             { tag }
           </Link>
         )}
