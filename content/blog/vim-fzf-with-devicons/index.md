@@ -156,7 +156,7 @@ After a few minutes of day to day jumping between files I realized that sometime
 
 I have almost no experience with Rust, but its been a language I've been interested in for awhile. Coincidentally `bat` is also written in Rust, and its speed for the preview part earlier gave me high hopes it would also help out here.
 
-Being fairly new to Rust, my first step was to figure out how best to use a hash map of some sort for the extension to devicon mapping. One of the first things I stumbled upon was [`lazy_static`](https://github.com/rust-lang-nursery/lazy-static.rs), which appeared to do pretty much what I wanted. This was static at run-time, I was looking for something that was static at compile time, but from my very very quick glance it seemed Rust didn't support that easily [1], so static at runtime would be good enough!
+Being fairly new to Rust, my first step was to figure out how best to use a hash map of some sort for the extension to devicon mapping. One of the first things I stumbled upon was [`lazy_static`](https://github.com/rust-lang-nursery/lazy-static.rs), which appeared to do pretty much what I wanted. This was static at run-time, I was looking for something that was static at compile time, but from my very very quick glance it seemed Rust didn't support that easily [^1], so static at runtime would be good enough!
 
 ```rust
 lazy_static! {
