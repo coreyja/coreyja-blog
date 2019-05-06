@@ -17,7 +17,7 @@ Overall I was really happy with how painless the migration to a new machine was,
 
 I didn't record the exact commands I ran but it was something like this
 
-~~~bash
+```bash
 cd ~
 git init .
 git add remote origin https://github.com/coreyja/dotfiles.git
@@ -25,7 +25,7 @@ git fetch origin
 git checkout --track origin/master
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew bundle
-~~~
+```
 
 What this does is checkout my `dotfiles` repo in the home dir. This isn't how some people do their dotfiles, where they store the version controlled files somewhere else and copy or symlink then into their homedir. Instead I keep my actual home directory under version control, but have the `.gitignore` set up as a white-list, where I have to specifically add files to be tracked. This works really well for me since I don't have to maintain two different directories. I wrote a bit more about that [setup here.](blog/2018/01/06/dotfiles-december-2018.html)
 
@@ -48,7 +48,7 @@ However there was one class of options that I did still want to support! And tha
 
 However it is relatively painless to accomplish this! I did it by adding the follow code snippets to my `.bash_profile`. These came directly from the `CAVEATS` section of each of the Brew installs
 
-~~~bash
+```bash
 # Add GnuCoreUtils to the Path
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnubin:$MANPATH"
@@ -58,7 +58,7 @@ export MANPATH="/usr/local/opt/grep/libexec/gnubin:$MANPATH"
 # Add sed to the Path
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-~~~
+```
 
 This actually does one more thing besides just add these utilities to the PATH. It also sets the `MANPATH` so that you can do `man sed` and get the correct documentation for the GNU `sed` tool
 

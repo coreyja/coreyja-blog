@@ -27,7 +27,7 @@ GraphQL is a new way to write APIs, where instead of providing multiple endpoint
 
 Eventually I found a query that would work for the information I was looking for. It would look up the designated branch (ex: 'master') for the given repo. From there it would look at last N commits, and include any status checks that exist for the commit. It includes the overall status of the commit, as well as the as the individual status `contexts`. The following is the query I am using:
 
-~~~graphql
+```graphql
 query($owner: String!, $name: String!, $branch: String!, $pageSize: Int, $cursor: String){
   repository(owner: $owner, name: $name) {
     ref(qualifiedName: $branch) {
@@ -55,7 +55,7 @@ query($owner: String!, $name: String!, $branch: String!, $pageSize: Int, $cursor
     }
   }
 }
-~~~
+```
 
 One thing that I have the basics for in the query that I haven't implemented yet is pagination. The current version just fetches a single page of result, but the basics of pagination are already built into the above query.
 
@@ -74,9 +74,9 @@ The issue I ran into was that `bundle` was not in the limited PATH that cron ran
 
 Here is my current entry in my crontab. I currently have it set to run every 5 minutes. I also pipe everything to /dev/null to that it doesn't send me Terminal mail every time it runs. Ideally it should probably only output on an error so I can not capture all the output and let the mail indicate that there was an issue.
 
-~~~crontab
+```crontab
 */5 * * * * bash -c "source ~/.bash_profile && cd ~/Projects/blink1-github-status && BLINK1_GITHUB_TOKEN=FAKE_TOKEN bundle exec ./exe/set_light.rb coreyja/glassy-collections master" &>/dev/null
-~~~
+```
 
 ## The Future
 

@@ -19,30 +19,30 @@ At first I thought I needed to do a 'normal' SHA256 with the secret and payload 
 
 Here is the long for way to do this in Ruby using the OpenSSL Library
 
-~~~ruby
+```ruby
 digest = OpenSSL::Digest::SHA256.new
 secret = "SECRET_SENT_TO_TWITCH_AT_WEBHOOK_REGISTRATION"
 hmac = OpenSSL::HMAC.new(secret, digest)
 hmac << "BODY_OF_PAYLOAD_HERE"
 hmac.hexdigest
-~~~
+```
 
 There is also a short cut method that looks like this!
 
-~~~ruby
+```ruby
 secret = "SECRET_SENT_TO_TWITCH_AT_WEBHOOK_REGISTRATION"
 OpenSSL::HMAC.hexdigest("SHA256", secret, "BODY_OF_PAYLOAD_HERE")
-~~~
+```
 
 What this actually looked like the in Rails project I was working on was something like this to determine if the request was valid. This assumes the Twitch Secret is stored in an ENV variable.
 
-~~~ruby
+```ruby
 def webhook_verified?
   twitch_sha = request.headers["x-hub-signature"]
   digest = OpenSSL::HMAC.hexdigest("SHA256", ENV["TWITCH_WEBHOOK_SECRET"], request.raw_post)
 
   twitch_sha == "sha256=#{digest}"
 end
-~~~
+```
 
 I used this method in my controller action to determine what action to take in response to the webhook! In case the webhook is not verified I decided to simply reply with a 204 No Content, and make no local changes. This way if some malicious actor was trying to impersonate Twitch I would not immediately alert them of their requests failing.

@@ -22,7 +22,7 @@ This Github Issue actually already had a really functional solution! Here is the
 
 Here is the source code from that comment:
 
-~~~vimscript
+```vimscript
 " Files + devicons
 function! Fzf_dev()
   let l:fzf_files_options = '--preview "rougify {2..-1} | head -'.&lines.'"'
@@ -55,7 +55,7 @@ function! Fzf_dev()
         \ 'options': '-m ' . l:fzf_files_options,
         \ 'down':    '40%' })
 endfunction
-~~~
+```
 
 This does three basic things:
 
@@ -72,15 +72,15 @@ Recently I (re)discovered [`bat`](https://github.com/sharkdp/bat), which is a `c
 
 So the first thing I did was replace `rougify` with `bat` and had a line like the following
 
-~~~vimscript
+```vimscript
 let l:fzf_files_options = '--preview "bat {2..-1} | head -'.&lines.'"'
-~~~
+```
 
 This worked! And I was getting near instantaneous results :tada:. Unfortunately it wasn't syntax highlighted. I realized this was due to the fact that `bat` tries to be compatible with `cat` and if it detects you are piping the output (like was happening in the preview) it defaults to acting like a `cat` clone. Luckily fixing this was as easy as passing an option to `bat`, `--color always` did the trick! `bat` also includes line numbers and a header by default. I liked the line numbers, but didn't like the header so I hid it by explicitly saying I only wanted the line number with `--style numbers`. Now my preview line looks like the following:
 
-~~~vimscript
+```vimscript
 let l:fzf_files_options = '--preview "bat --color always --style numbers {2..} | head -'.&lines.'"'
-~~~
+```
 
 After this I was really happy with the previews that fzf was providing
 
@@ -88,9 +88,9 @@ After this I was really happy with the previews that fzf was providing
 
 One thing that I really enjoy about fzf is that it is a streaming fuzzy finder, which means that you can start fuzzy finding even before it has received all the input. This is important to me, because I have my default fzf command (`$FZF_DEFAULT_COMMAND`) set to the following, which includes most hidden files and respects symlinks. As such I often have tens of thousands of results in a typical rails project, with a node_modules directory.
 
-~~~bash
+```bash
 rg --files --no-ignore --hidden --follow --glob "!.git/*"
-~~~
+```
 
 When I first started testing out these solutions I was doing it sample directories that only had a limited numbed of files. In those directories I didn't notice any slowdown when adding the devicons. But when I moved to some of my actual project directories I realized that fzf would open empty, before populating all the results at once. Again, this delay was annoying me and I was in the mood to optimize!
 
@@ -103,7 +103,7 @@ This works perfectly well, but this is where the lag I noticed was coming from. 
 
 I thought I should look quick to make sure someone hadn't already done this and came across [ryanoasis/devicons-shell](https://github.com/ryanoasis/devicons-shell) which is by the same person as the [`vim-devicons`](https://github.com/ryanoasis/vim-devicons) plugin! It didn't do exactly what I wanted but it was pretty close. I took most of it to write my inital prototype, which ended up looking like the following:
 
-~~~bash
+```bash
 function devicons_get_filetype_symbol {
   declare -A extensions=(
     [ai]=
@@ -134,19 +134,19 @@ function devicons_get_filetype_symbol {
 while IFS= read -r line; do
   echo -e "$(devicons_get_filetype_symbol $line) $line"
 done
-~~~
+```
 
 I tested this out with `ls | ./protype_script` and was really pleased with the results! Now just had to integrate it into VIM, which turned out to be pretty easy and we actually got to remove some of the `.vimrc` code!
 
 Now we get to take advantage of fzf streaming, and as such are passing a String as the source for fzf. We simply pipe the results of the default command, into our new script. This allows us to delete both `files` and the `prepend_icon` functions, since we replaced their functionality with our script.
 
-~~~vimscript
+```vimscript
 call fzf#run({
     \ 'source': $FZF_DEFAULT_COMMAND.' | prototype_script',
     \ 'sink':   function('s:edit_devicon_prepended_file'),
     \ 'options': '-m ' . l:fzf_files_options,
     \ 'down':    '40%' })
-~~~
+```
 
 I tried this out in my small sample directories and it seemed to be working great! Moved onto my bigger directories and everything was looking good! I could see that results were streaming in, as the total number of results in fzf kept rising but I was still able to use it in the meantime!
 
@@ -158,7 +158,7 @@ I have almost no experience with Rust, but its been a language I've been interes
 
 Being fairly new to Rust, my first step was to figure out how best to use a hash map of some sort for the extension to devicon mapping. One of the first things I stumbled upon was [`lazy_static`](https://github.com/rust-lang-nursery/lazy-static.rs), which appeared to do pretty much what I wanted. This was static at run-time, I was looking for something that was static at compile time, but from my very very quick glance it seemed Rust didn't support that easily [1], so static at runtime would be good enough!
 
-~~~rust
+```rust
 lazy_static! {
   static ref SYMBOL_MAP: HashMap<&'static str, &'static str> = {
     let mut m = HashMap::new();
@@ -169,28 +169,28 @@ lazy_static! {
     m
   };
 }
-~~~
+```
 
 After I got my HashMap setup, I needed to do the actual text streaming part. I found [this Stack Overflow answer](https://stackoverflow.com/a/30186553) which was 80% of the work! Here was their simple text streaming example
 
-~~~rust
+```rust
 fn main() {
     let stdin = io::stdin();
     for line in stdin.lock().lines() {
         println!("{}", line.unwrap());
     }
 }
-~~~
+```
 
 Now I just needed to parse the extension and lookup the symbol in my HashMap. Again, the Rust standard libraries came in handy as parsing the extension was a one liner!
 
-~~~rust
+```rust
 Path::new(filename).extension().and_then(OsStr::to_str)
-~~~
+```
 
 Throw in a little Rust type magic and :tada:, the Rust version was ready to test out!
 
-~~~rust
+```rust
 #[macro_use]
 extern crate lazy_static;
 
@@ -229,7 +229,7 @@ fn main() {
     println!("{} {}", symbol, filename);
   }
 }
-~~~
+```
 
 I plugged this new version into vim, by simply changing the source to pipe to my new Rust built binary, instead of the prototype bash script. And :drumroll:, it worked and was significantly faster than the bash version! It wasn't even noticeably slower than the default `:Files` command!
 
@@ -243,7 +243,7 @@ Here is a very unscientific single trial test where I timed three different comm
 
 And going in that order here are my results! The Rust version is only barely slower than not doing any devicons. And it blows the bash implementation out of the water!
 
-~~~bash
+```bash
 coreyja in ~/Projects on ca/master/devicons
 ★  time rg --files --no-ignore --hidden --follow > /dev/null
 
@@ -264,7 +264,7 @@ coreyja in ~/Projects on ca/master/devicons
 real    0m0.409s
 user    0m0.743s
 sys     0m1.535s
-~~~
+```
 
 For an even less scientific test, I took the original implementation and the final rust version, in VIM. Since I was doing the tests inside VIM, and am timing until a window appears, there wasn't an easy way to time this automatically. So I broke out my stopwatch for this one. Using my rust implementation `:call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)` the fzf window came up pretty much instantaneously, and all the results were already populated! With the original VIM implementation `:call Fzf_dev()` it took around 4.5 seconds for the window to load. And when it loaded it was fully populated with all the files.
 
@@ -276,7 +276,7 @@ After I got this Rust version working, I also spent some time refactoring so tha
 
 And here we have it, my final (for now) fzf File Fuzzy Finding with Devicons Powered by Rust!
 
-~~~vimscript
+```vimscript
 " Files + devicons
 function! Fzf_files_with_dev_icons(command)
   let l:fzf_files_options = '--preview "bat --color always --style numbers {2..} | head -'.&lines.'"'
@@ -310,13 +310,13 @@ endfunction
 map <C-f> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)<CR> " :Files
 map <C-d> :call Fzf_git_diff_files_with_dev_icons()<CR> " :GFiles?
 map <C-g> :call Fzf_files_with_dev_icons("git ls-files \| uniq")<CR> " :GFiles
-~~~
+```
 
 I also released the Rust code as a [crate](https://crates.io/crates/devicon-lookup) which you can install with
 
-~~~bash
+```bash
 cargo install devicon-lookup
-~~~
+```
 
 This will give you the `devicon-lookup` binary, that you can use in your VIM setup!
 

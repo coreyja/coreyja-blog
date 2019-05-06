@@ -21,9 +21,9 @@ My first thought was maybe there was some settings or configuration options in v
 
 The first option I looked into was the ability to set a custom command to run instead of simply `rspec`. This can be done by a like such as this one in your `.vimrc` [^2]
 
-~~~ vimscript
+``` vimscript
 let g:rspec_command = "Dispatch rspec {spec}"
-~~~
+```
 
 From here I thought about writing a command that could parse the `{spec}` and `cd` to the correct directory. Sometimes the `spec` will simply be a path, but sometimes it will also contain a `:` and a number at the end to indicate a line number for instance `some/path/to/spec.rb:15`.
 It would be possible to separate the line number from the path, but then I realized the beginning of the path would also contain the dir I needed to cd into. This was helpful, but also meant I would have to modify the `{spec}`, as well as just parse it. I decided to look further and see if I could find a simpler solution that lived outside the configuration offered within `vim-rspec`.
@@ -40,7 +40,7 @@ Since we are operating outside the context of `vim-rspec` we are acting in the c
 
 Here is an excerpt from my `.vimrc` with the relevant bits of my full solution
 
-~~~ vimscript
+``` vimscript
 fun! SafeCD(dir)
   execute 'cd' fnameescape(a:dir)
 endfun
@@ -64,7 +64,7 @@ map <Leader>t :call RunFromGemfileDir(function('RunCurrentSpecFile'))<CR>
 map <Leader>s :call RunFromGemfileDir(function('RunNearestSpec'))<CR>
 map <Leader>l :call RunFromGemfileDir(function('RunLastSpec'))<CR>
 map <Leader>a :call RunFromGemfileDir(function('RunAllSpecs'))<CR>
-~~~
+```
 
 This includes a few fun bits that I didn't know about vimscript before starting on this project. The first was how to modify and work with [paths](http://learnvimscriptthehardway.stevelosh.com/chapters/40.html), and the second was how to pass around vim [functions](http://learnvimscriptthehardway.stevelosh.com/chapters/39.html#functions-as-variables). [Learn Vimscript the Hard Way](http://learnvimscriptthehardway.stevelosh.com/) was an excellent resource for both.
 

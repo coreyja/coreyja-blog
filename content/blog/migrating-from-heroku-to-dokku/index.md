@@ -28,9 +28,9 @@ The first setup step with Dokku is through a web installer. This is accessed by 
 
 Since there is no GUI you interact with the Dokku box over SSH. While you can SSH into the box as root, and run the `dokku` command locally. It is recommended to SSH as the dokku user. Since this user is limited to only run the `dokku` command, you have to use remote commands to send the cli options you want to pass to the `dokku` command. For example to check the version of Dokku you may run a command like
 
-~~~bash
+```bash
 ssh -t dokku@DOKKU_HOST version
-~~~
+```
 
 ## Setting up a Rails App
 
@@ -38,24 +38,24 @@ This mostly follows the [official docs](http://dokku.viewdocs.io/dokku/deploymen
 
 First step was the create the first app we want to deploy
 
-~~~bash
+```bash
 ssh -t dokku@DOKKU_HOST apps:create APP_NAME
-~~~
+```
 
 Next was adding the Postgres plugin for my DB, and linking it to the app. To add Postgres you need to run as sudo, so lets SSH into the box as root.
 
-~~~bash
+```bash
 ssh root@DOKKU_HOST
 sudo dokku plugin:install https://github.com/dokku/dokku-postgres.git
 exit
-~~~
+```
 
 Now we need to create the DB and link it to our app. App and database names to NOT need to be unique. Since I was planning on only running a single env of an app, I decided naming my DB and app the same would be easier to keep track of.
 
-~~~bash
+```bash
 ssh -t dokku@DOKKU_HOST postgres:create APP_NAME
 ssh -t dokku@DOKKU_HOST postgres:link APP_NAME APP_NAME
-~~~
+```
 
 ### Migrating existing DB
 
@@ -63,31 +63,31 @@ If this was a brand new app, we could skip this step. But this app has an existi
 
 Heroku makes it easy to export a backup of our DB and download it using the following commands
 
-~~~bash
+```bash
 heroku pg:backups:capture
 heroku pg:backups:download
-~~~
+```
 
 The Dokku postgres plugin also provides an easy way to import this backup. The only hoop we have to jump through is uploading our DB backup up to our Dokku server so we can import it. This is a job for SCP
 
-~~~bash
+```bash
 scp database.dump root@DOKKU_HOST:/tmp
 ssh -t dokku@DOKKU_HOST postgres:import APP_NAME < /tmp/database.dump
-~~~
+```
 
 ### Environment Variables
 
 Copying the ENV vars from Heroku was pretty simple.
 
-~~~bash
+```bash
 heroku config
-~~~
+```
 
 This will output the ENV vars for an existing Heroku app. Then I simply added each to Dokku using the following command
 
-~~~bash
+```bash
 ssh -t dokku@DOKKU_HOST config:set APP_NAME KEY1=VALUE1 KEY2=VALUE2
-~~~
+```
 
 The one ENV variable you do NOT want to copy down is the `DATABASE_URL`. This is the URL of our Heroku database, and when we linked our new Dokku database and app earlier, we already set a `DATABASE_URL` ENV var that will be available to your app.
 
@@ -97,15 +97,15 @@ By default, if you set up a host name during the initial web GUI setup, your app
 
 You can add custom URLs though. Simply set the domain's DNS to point to the IP of your Dokku host. Then run a command similar to the following
 
-~~~bash
+```bash
 ssh -t dokku@DOKKU_HOST domains:add APP_NAME CUSTOM_DOMAIN
-~~~
+```
 
 We can now cleanup the default if we want to. We can do that using the `domains:remove` command
 
-~~~bash
+```bash
 ssh -t dokku@DOKKU_HOST domains:remove APP_NAME APP_NAME.DOKKU_HOST
-~~~
+```
 
 ### Dockerfile
 
@@ -115,10 +115,10 @@ Following along in that article I got a `Dockerfile` all setup, and added the pr
 
 Now we are just was a push away from deploying our app!
 
-~~~bash
+```bash
 git remote add dokku dokku@DOKKU_HOST
 git push dokku master
-~~~
+```
 
 This will look similar to a Heroku deploy, in that we will see the deploy output in your git push. Here you can see it building your Dockerfile, and when it is done your app will be available!
 
@@ -126,9 +126,9 @@ This will look similar to a Heroku deploy, in that we will see the deploy output
 
 Similar to dynos in Heroku, we can spin up multiple of each different type of process if the apps requires it for horizontal scaling. This is a side project app that has little traffic so we only need one web and one worker process.
 
-~~~bash
+```bash
 ssh -t dokku@DOKKU_HOST ps:scale APP_NAME web=1 worker=1
-~~~
+```
 
 ## Limitations of Dokku
 
