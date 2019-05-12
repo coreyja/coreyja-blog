@@ -1,0 +1,23 @@
+.gatsby-highlight {
+	overflow: auto;
+	background-color: $theme-background;
+}
+
+.gatsby-highlight pre[class*="language-"] {
+	overflow: initial;
+	float: left;
+	min-width: 100%;
+	margin: 0;
+	padding-left: $line-highlight-code-padding-left;
+	background-color: transparent;
+}
+
+.gatsby-highlight-code-line {
+	position: relative;
+	display: block;
+	z-index: 1;
+	margin: 0 $line-highlight-code-line-margin-x;
+	padding: 0 $line-highlight-code-line-padding-x;
+	border-left: $line-highlight-code-line-border $theme-purple;
+	background-color: rgba($theme-purple, $line-highlight-code-line-opacity);
+}

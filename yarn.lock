@@ -4723,20 +4723,6 @@ gatsby-cli@^2.5.12:
     yargs "^12.0.5"
     yurnalist "^1.0.2"
 
-gatsby-code-buttons-dracula@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/gatsby-code-buttons-dracula/-/gatsby-code-buttons-dracula-0.1.2.tgz#ec89bc74ca5651b067d021074074850daafe43c8"
-  integrity sha512-83cgXXumgPjHMnlkJFLP8ySrLqn7nFXsvdlUQPN3wM1Ph8bm3cc+SZFgtftlVHaLWl8ahjuIxYHwKs85W0Sdxw==
-  dependencies:
-    node-sass "^4.11.0"
-
-gatsby-code-titles-dracula@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/gatsby-code-titles-dracula/-/gatsby-code-titles-dracula-0.1.3.tgz#8abed31e766cdb0988dac7d60985690d89911e7f"
-  integrity sha512-8FU7Ryit4QW1UXL31mILNuXdBkS0tqTH7Sdn2rnRpzj0o32xj2kLEA2IQoQWMmYxEC0m4BciBf5nuSYfL7Jhjg==
-  dependencies:
-    node-sass "^4.11.0"
-
 gatsby-image@^2.0.41:
   version "2.0.41"
   resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.41.tgz#d2f41b13013c7294123c341799d3645bb1a6dbe7"
@@ -4745,20 +4731,6 @@ gatsby-image@^2.0.41:
     "@babel/runtime" "^7.0.0"
     object-fit-images "^3.2.4"
     prop-types "^15.6.1"
-
-gatsby-line-highlights-dracula@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/gatsby-line-highlights-dracula/-/gatsby-line-highlights-dracula-0.1.3.tgz#bc51c61dadf0de6562f1a784450ef67856793976"
-  integrity sha512-QmfXdn331U+NHP1BONQOfVVjuzSrdiaQWXc+Zz6tXTjO/BwSdT6rEUjKFr9aYW/mT3wINfQwHqQxoXZc+fjeFw==
-  dependencies:
-    node-sass "^4.11.0"
-
-gatsby-line-numbers-dracula@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/gatsby-line-numbers-dracula/-/gatsby-line-numbers-dracula-0.1.2.tgz#ebb76d989c5815a9f4331eb69bbba3c28b610810"
-  integrity sha512-09vmycgeuHTl6mm822SZo7Y8tJI7hnDWpbI6XpZgiZrvPlvWAjUYJqQvP9g9ksHUflZKr1hZudl3lUsN8WYrRQ==
-  dependencies:
-    node-sass "^4.11.0"
 
 gatsby-link@^2.1.1:
   version "2.1.1"
@@ -4873,18 +4845,6 @@ gatsby-plugin-typography@^2.2.13:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-prismjs-dracula@^0.1.15:
-  version "0.1.15"
-  resolved "https://registry.yarnpkg.com/gatsby-prismjs-dracula/-/gatsby-prismjs-dracula-0.1.15.tgz#ec665f46fafa2292caaa2d51237988eea80bd227"
-  integrity sha512-3IrIZaMXTsj+AqHjGSFr2t1h+VfYAPLQM2Bmd3UruASW9jJjTPMD9RtDaASi8Xb8ahu2XCA2u5FWIqG++J15bg==
-  dependencies:
-    gatsby-code-buttons-dracula "^0.1.2"
-    gatsby-code-titles-dracula "^0.1.3"
-    gatsby-line-highlights-dracula "^0.1.3"
-    gatsby-line-numbers-dracula "^0.1.2"
-    gatsby-syntax-highlights-dracula "^0.1.5"
-    node-sass "^4.11.0"
-
 gatsby-react-router-scroll@^2.0.7:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.0.7.tgz#b9425e366d4be546036080d85664d60ae76e6c29"
@@ -4971,13 +4931,6 @@ gatsby-source-filesystem@^2.0.33:
     slash "^1.0.0"
     valid-url "^1.0.9"
     xstate "^3.1.0"
-
-gatsby-syntax-highlights-dracula@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/gatsby-syntax-highlights-dracula/-/gatsby-syntax-highlights-dracula-0.1.5.tgz#39f30db12109bcb28cbe8b4376f5eada173bc42f"
-  integrity sha512-DTD9AbbrMpPJ78R1cHZCbeIUKIoMuyhA4aPxtKe7HPLRE3774TxOVe0OEvqT3srAyLn+alIUe2EQsX2kzZXPpg==
-  dependencies:
-    node-sass "^4.11.0"
 
 gatsby-telemetry@^1.0.9:
   version "1.0.9"
@@ -7941,7 +7894,7 @@ node-releases@^1.1.17:
   dependencies:
     semver "^5.3.0"
 
-node-sass@^4.11.0, node-sass@^4.12.0:
+node-sass@^4.12.0:
   version "4.12.0"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.12.0.tgz#0914f531932380114a30cc5fa4fa63233a25f017"
   integrity sha512-A1Iv4oN+Iel6EPv77/HddXErL2a+gZ4uBeZUy+a8O35CFYTXhgA8MgLCWBtwpGZdCvTvQ9d+bQxX/QC36GDPpQ==

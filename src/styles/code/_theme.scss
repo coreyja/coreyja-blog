@@ -1,0 +1,208 @@
+code[class*="language-"],
+pre[class*="language-"] {
+	color: $theme-foreground;
+	background: $theme-background;
+	text-shadow: none;
+	font-size: $theme-font-size;
+	font-family: $theme-fonts;
+	line-height: $theme-code-line-height;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	tab-size: $theme-code-tab-size;
+	hyphens: none;
+}
+
+pre[class*="language-"],
+code[class*="language-"] {
+	::selection,
+	&::selection {
+		text-shadow: none;
+		background-color: $theme-purple;
+	}
+}
+
+pre[class*="language-"] {
+	overflow: auto;
+	background: $theme-background;
+}
+
+:not(pre) {
+	> code[class*="language-"] {
+		padding: $theme-inline-code-padding;
+		background: $theme-background;
+		white-space: normal;
+	}
+}
+
+.namespace {
+	opacity: $theme-opacity;
+}
+
+.token {
+	color: $theme-pink;
+
+	&.plain-text {
+		color: $theme-foreground;
+	}
+
+	&.doctype,
+	&.cdata,
+	&.comment {
+		color: $theme-comment;
+	}
+
+	&.boolean,
+	&.constant,
+	&.null,
+	&.number {
+		color: $theme-purple;
+	}
+
+	&.prolog,
+	&.selector,
+	&.entity,
+	&.operator {
+		color: $theme-cyan;
+	}
+
+	&.tag,
+	&.string,
+	&.url,
+	&.attr-value,
+	&.punctuation,
+	&.function {
+		color: $theme-yellow;
+	}
+
+	&.regex,
+	&.variable,
+	&.placeholder
+	&.atrule,
+	&.attr-name,
+	&.statement {
+		color: $theme-green;
+	}
+
+	&.keyword,
+	&.control
+	&.builtin,
+	&.important,
+	&.char,
+	&.tag,
+	&.deleted,
+	&.directive
+	&.namespace {
+		color: $theme-pink;
+	}
+
+	&.unit,
+	&.symbol,
+	&.class-name,
+	&.property,
+	&.interpolation-punctuation {
+		color: $theme-orange;
+	}
+
+	&.important {
+		font-weight: bold;
+	}
+
+	&.bold {
+		font-weight: bold;
+	}
+
+	&.italic,
+	&.plain-text {
+		font-style: italic;
+	}
+
+	&.entity {
+		cursor: help;
+	}
+}
+
+.language-css {
+	.token {
+		&.url,
+		&.function {
+			color: $theme-green;
+		}
+	}
+}
+
+.language-c,
+.language-cpp {
+	.token {
+		&.string {
+			color: $theme-cyan;
+		}
+	}
+}
+
+.language-java {
+	.token {
+		&.class-name {
+			color: $theme-cyan;
+		}
+	}
+
+	span {
+		&.token {
+			&.class-name {
+				color: $theme-cyan;
+			}
+		}
+	}
+}
+
+.language-markup {
+	.token {
+		&.attr-value {
+			color: $theme-cyan;
+		}
+
+		&.tag {
+			$color: $theme-green;
+		}
+	}
+}
+
+.language-objectivec {
+	.token {
+		&.property {
+			color: $theme-cyan;
+		}
+
+		&.string {
+			color: $theme-green;
+		}
+	}
+}
+
+.language-php {
+	.token {
+		&.boolean,
+		&.keyword {
+			color: $theme-cyan;
+		}
+
+		&.function {
+			color: $theme-pink;
+		}
+	}
+}
+
+.language-ruby {
+	.token {
+		&.symbol {
+			color: $theme-cyan;
+		}
+
+		&.class-name {
+			color: $theme-orange;
+		}
+	}
+}
