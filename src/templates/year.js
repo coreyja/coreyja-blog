@@ -1,12 +1,12 @@
-import { graphql, Link } from 'gatsby'
-import React from 'react'
+import { graphql, Link } from "gatsby";
+import React from "react";
 
-import BlogLayout from '../components/blogLayout'
-import PostCards from '../components/postCards'
-import SEO from '../components/seo'
+import BlogLayout from "../components/blogLayout";
+import PostCards from "../components/postCards";
+import SEO from "../components/seo";
 
 const YearTemplate = ({ location, pageContext, data }) => {
-  const { year } = pageContext
+  const { year } = pageContext;
   return (
     <BlogLayout location={location} title={`Posts in year "${year}"`}>
       <div className="year-container">
@@ -15,8 +15,8 @@ const YearTemplate = ({ location, pageContext, data }) => {
         <PostCards nodes={data.allMarkdownRemark.edges} />
       </div>
     </BlogLayout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query YearPage($year: Int) {
@@ -32,6 +32,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default YearTemplate
+export default YearTemplate;

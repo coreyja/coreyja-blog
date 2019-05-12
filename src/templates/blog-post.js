@@ -1,17 +1,21 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
+import React from "react";
+import { Link, graphql } from "gatsby";
 
-import BlogPost from '../components/blogPost'
+import BlogPost from "../components/blogPost";
 
 class BlogPostTemplate extends React.Component {
-  render () {
+  render() {
     return (
-      <BlogPost data={this.props.data} pageContext={this.props.pageContext} location={this.props.location}/>
-    )
+      <BlogPost
+        data={this.props.data}
+        pageContext={this.props.pageContext}
+        location={this.props.location}
+      />
+    );
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -25,4 +29,4 @@ export const pageQuery = graphql`
       ...BlogPost
     }
   }
-`
+`;

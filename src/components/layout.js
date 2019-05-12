@@ -1,20 +1,20 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react";
+import { Link } from "gatsby";
 
-import { rhythm, scale } from '../utils/typography'
-import Header from './header.js'
+import { rhythm, scale } from "../utils/typography";
+import Header from "./header.js";
 
 class Layout extends React.Component {
-  render () {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+  render() {
+    const { location, title, children } = this.props;
+    const rootPath = `${__PATH_PREFIX__}/`;
+    let header;
 
     return (
       <div
         style={{
-          WebkitFontSmoothing: 'antialiased',
-          MozOsxFontSmoothing: 'grayscale'
+          WebkitFontSmoothing: "antialiased",
+          MozOsxFontSmoothing: "grayscale"
         }}
       >
         <Header />
@@ -25,8 +25,8 @@ class Layout extends React.Component {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;
