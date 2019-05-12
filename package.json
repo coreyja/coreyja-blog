@@ -35,7 +35,7 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "typeface-alternate-gothic1": "git+ssh://git@github.com/coreyja/typeface-alternate-gothic1.git",
-    "typeface-hack-nerd-font": "git+ssh://git@github.com/coreyja/typeface-hack-nerd-font.git",
+    "typeface-hack-nerd-font": "git+https://github.com/coreyja/typeface-hack-nerd-font.git",
     "typeface-oswald": "^0.0.54",
     "typography": "^0.16.19"
   },

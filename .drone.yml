@@ -12,37 +12,34 @@ steps:
     environment:
       GITHUB_PRIVATE_SSH:
         from_secret: GITHUB_PRIVATE_SSH
-      GITHUB_PRIVATE_SSH_2:
-        from_secret: GITHUB_PRIVATE_SSH_2
     commands:
       - mkdir $HOME/.ssh
       - echo "$GITHUB_PRIVATE_SSH" > /root/.ssh/id_rsa
-      - echo "$GITHUB_PRIVATE_SSH_2" > /root/.ssh/id_rsa2
-      - chmod 400 /root/.ssh/id_rsa*
+      - chmod 400 /root/.ssh/id_rsa
       - ssh-keyscan github.com >> /root/.ssh/known_hosts
       - yarn install --frozen
       - yarn test
-  - name: deploy
-    image: node:8
-    environment:
-      AWS_ACCESS_KEY_ID:
-        from_secret: AWS_ACCESS_KEY_ID
-      AWS_SECRET_ACCESS_KEY:
-        from_secret: AWS_SECRET_ACCESS_KEY
-      AWS_BUCKET:
-        from_secret: AWS_BUCKET
-      AWS_DISTRIBUTION_ID:
-        from_secret: AWS_DISTRIBUTION_ID
-    commands:
-      - yarn install
-      - yarn build
-    when:
-      # branch:
-      #   - master
-      event:
-        - push
+  # - name: deploy
+  #   image: node:8
+  #   environment:
+  #     AWS_ACCESS_KEY_ID:
+  #       from_secret: AWS_ACCESS_KEY_ID
+  #     AWS_SECRET_ACCESS_KEY:
+  #       from_secret: AWS_SECRET_ACCESS_KEY
+  #     AWS_BUCKET:
+  #       from_secret: AWS_BUCKET
+  #     AWS_DISTRIBUTION_ID:
+  #       from_secret: AWS_DISTRIBUTION_ID
+  #   commands:
+  #     - yarn install
+  #     - yarn build
+  #   when:
+  #     # branch:
+  #     #   - master
+  #     event:
+  #       - push
 ---
 kind: signature
-hmac: dc6d563163da43cf6560e0141ca6c7267b9907a60af3aec7aa190c1e4f2f70a1
+hmac: 07cb89131e45e42b16dd325816257f145750e12d9d1f7e15bc5fc17b146f4576
 
 ...

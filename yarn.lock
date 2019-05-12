@@ -12936,9 +12936,9 @@ typedarray@^0.0.6:
   version "0.0.1"
   resolved "git+ssh://git@github.com/coreyja/typeface-alternate-gothic1.git#15af894d14e8674f297d8ddf79435165dd2d8d05"
 
-"typeface-hack-nerd-font@git+ssh://git@github.com/coreyja/typeface-hack-nerd-font.git":
+"typeface-hack-nerd-font@git+https://github.com/coreyja/typeface-hack-nerd-font.git":
   version "0.0.59"
-  resolved "git+ssh://git@github.com/coreyja/typeface-hack-nerd-font.git#3f9c7b49be01b3c72a9110dfc453de8453bc0799"
+  resolved "git+https://github.com/coreyja/typeface-hack-nerd-font.git#3f9c7b49be01b3c72a9110dfc453de8453bc0799"
 
 typeface-oswald@^0.0.54:
   version "0.0.54"
