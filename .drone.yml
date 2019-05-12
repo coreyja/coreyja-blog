@@ -18,7 +18,7 @@ steps:
       - chmod 400 /root/.ssh/id_rsa
       - echo "Host github.com\n\tIdentityFile /root/.ssh/id_rsa\n" >> /root/.ssh/config
       - ssh-keyscan github.com >> /root/.ssh/known_hosts
-      - yarn install --frozen
+      - yarn install --frozen --verbose
       - yarn test
   # - name: deploy
   #   image: node:8
@@ -41,6 +41,6 @@ steps:
   #       - push
 ---
 kind: signature
-hmac: b08d8a81684368df3725082ad68d96b206e93f1f3089a5e88ecfd16893faa2f9
+hmac: f3a62ce0a226ddbc122001b295085d4b44b2aea815db1fe79e31a6017fee7926
 
 ...
