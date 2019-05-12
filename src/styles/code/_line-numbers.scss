@@ -37,14 +37,6 @@ pre[class*="language-"] {
 			color: rgba($theme-foreground, $line-numbers-rows-opacity);
 			text-align: $line-numbers-rows-text-align;
 			line-height: $line-numbers-rows-line-height;
-			border-bottom: $line-numbers-rows-border-bottom $theme-comment;
-		}
-
-		&:last-child {
-			&:before {
-				margin-bottom: $line-numbers-rows-margin-bottom;
-				border-bottom: none;
-			}
 		}
 	}
 }
