@@ -42,7 +42,7 @@ pre[class*="language-"] {
 }
 
 .token {
-	color: $theme-pink;
+	color: $theme-foreground;
 
 	&.plain-text {
 		color: $theme-foreground;
@@ -58,23 +58,26 @@ pre[class*="language-"] {
 	&.constant,
 	&.null,
 	&.number {
-		color: $theme-purple;
+		color: $theme-green;
 	}
 
 	&.prolog,
 	&.selector,
 	&.entity,
 	&.operator {
-		color: $theme-cyan;
+		color: $theme-blue;
 	}
 
+	&.attr-value,
 	&.tag,
+	&.punctuation {
+		color: $theme-purple;
+  }
+
 	&.string,
 	&.url,
-	&.attr-value,
-	&.punctuation,
 	&.function {
-		color: $theme-yellow;
+		color: $theme-orange;
 	}
 
 	&.regex,
@@ -95,7 +98,7 @@ pre[class*="language-"] {
 	&.deleted,
 	&.directive
 	&.namespace {
-		color: $theme-pink;
+		color: $theme-blue;
 	}
 
 	&.unit,
@@ -103,7 +106,7 @@ pre[class*="language-"] {
 	&.class-name,
 	&.property,
 	&.interpolation-punctuation {
-		color: $theme-orange;
+		color: $theme-red;
 	}
 
 	&.important {
@@ -137,7 +140,7 @@ pre[class*="language-"] {
 .language-cpp {
 	.token {
 		&.string {
-			color: $theme-cyan;
+			color: $theme-blue;
 		}
 	}
 }
@@ -145,14 +148,14 @@ pre[class*="language-"] {
 .language-java {
 	.token {
 		&.class-name {
-			color: $theme-cyan;
+			color: $theme-blue;
 		}
 	}
 
 	span {
 		&.token {
 			&.class-name {
-				color: $theme-cyan;
+				color: $theme-blue;
 			}
 		}
 	}
@@ -161,7 +164,7 @@ pre[class*="language-"] {
 .language-markup {
 	.token {
 		&.attr-value {
-			color: $theme-cyan;
+			color: $theme-blue;
 		}
 
 		&.tag {
@@ -173,7 +176,7 @@ pre[class*="language-"] {
 .language-objectivec {
 	.token {
 		&.property {
-			color: $theme-cyan;
+			color: $theme-blue;
 		}
 
 		&.string {
@@ -186,11 +189,11 @@ pre[class*="language-"] {
 	.token {
 		&.boolean,
 		&.keyword {
-			color: $theme-cyan;
+			color: $theme-blue;
 		}
 
 		&.function {
-			color: $theme-pink;
+			color: $theme-red;
 		}
 	}
 }
@@ -198,11 +201,11 @@ pre[class*="language-"] {
 .language-ruby {
 	.token {
 		&.symbol {
-			color: $theme-cyan;
+			color: $theme-blue;
 		}
 
 		&.class-name {
-			color: $theme-orange;
+			color: $theme-red;
 		}
 	}
 }

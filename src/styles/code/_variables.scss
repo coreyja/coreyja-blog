@@ -1,18 +1,20 @@
+@import '../colors.scss';
+@import '../grays.scss';
+
 // Theme
-$theme-fonts:                        PT Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+$theme-fonts:                        "Hack Nerd Font", PT Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 $theme-font-size:                    16px;
 $theme-code-line-height:             24px;
 $theme-code-tab-size:                4;
 $theme-inline-code-padding:          2px 5px;
-$theme-background:                   #282a36;
+$theme-background:                   gray('near-black');
 $theme-foreground:                   #f8f8f2;
 $theme-comment:                      #6272a4;
-$theme-cyan:                         #8be9fd;
-$theme-green:                        #50fa7b;
-$theme-orange:                       #ffb86c;
-$theme-pink:                         #ff79c6;
-$theme-purple:                       #bd93f9;
-$theme-yellow:                       #f1fa8c;
+$theme-blue:                         accent-color('blue');
+$theme-green:                        accent-color('green');
+$theme-orange:                       accent-color('orange');
+$theme-red:                          accent-color('red');
+$theme-purple:                       accent-color('purple');
 $theme-opacity:                      0.7;
 
 // Line hightlights
