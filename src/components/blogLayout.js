@@ -5,15 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import Layout from "./layout"
-import BlogSidebar from "./blogSidebar"
-import blogLayoutStyles from "./blogLayout.module.scss"
+import React from 'react'
+import Layout from './layout'
+import BlogSidebar from './blogSidebar'
+import blogLayoutStyles from './blogLayout.module.scss'
 
 import Color from '../styles/_colors.scss'
 
-
-function BlogLayout(props) {
+function BlogLayout (props) {
   return (
     <Layout location={props.location} title={props.title}>
       <div className={blogLayoutStyles.BlogLayout}>
@@ -31,11 +30,11 @@ function BlogLayout(props) {
 		        </section>
 
 		        <aside>
-              <BlogSidebar />
+            <BlogSidebar />
 		        </aside>
 		      </div>
 		    </div>
-      </Layout>
+    </Layout>
   )
 }
 

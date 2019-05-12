@@ -1,7 +1,7 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-function createBlog(graphql, createPage) {
+function createBlog (graphql, createPage) {
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
 
   return graphql(
@@ -42,8 +42,8 @@ function createBlog(graphql, createPage) {
         context: {
           slug: post.node.fields.slug,
           previous,
-          next,
-        },
+          next
+        }
       })
     })
 
@@ -51,7 +51,7 @@ function createBlog(graphql, createPage) {
   })
 }
 
-function createYears(graphql, createPage) {
+function createYears (graphql, createPage) {
   const yearPage = path.resolve(`./src/templates/year.js`)
 
   return graphql(
@@ -73,13 +73,13 @@ function createYears(graphql, createPage) {
     // Create blog posts pages.
     const years = result.data.years.group
 
-    years.forEach(({count, year}) => {
+    years.forEach(({ count, year }) => {
       createPage({
         path: `/year/${year}/`,
         component: yearPage,
         context: {
-          year: parseInt(year),
-        },
+          year: parseInt(year)
+        }
       })
     })
 
@@ -92,8 +92,8 @@ exports.createPages = ({ graphql, actions }) => {
 
   return Promise.all([
     createBlog(graphql, createPage),
-    createYears(graphql, createPage),
-  ]);
+    createYears(graphql, createPage)
+  ])
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -104,14 +104,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value,
-    });
+      value
+    })
 
-    const date = new Date(node.frontmatter.date);
+    const date = new Date(node.frontmatter.date)
     createNodeField({
       node,
       name: `year`,
-      value: date.getFullYear(),
-    });
+      value: date.getFullYear()
+    })
   }
 }

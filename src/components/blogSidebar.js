@@ -5,14 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import React from 'react'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from '../utils/typography'
 
-import blogSidebarStyles from "./blogSidebar.module.scss"
+import blogSidebarStyles from './blogSidebar.module.scss'
 
-function ListItem(props) {
+function ListItem (props) {
   return (
     <li className={blogSidebarStyles.listItem}>
       <Link to={props.to}>
@@ -22,11 +22,11 @@ function ListItem(props) {
   )
 }
 
-function BlogSidebar(props) {
-  const data = useStaticQuery(blogSidebarQuery);
+function BlogSidebar (props) {
+  const data = useStaticQuery(blogSidebarQuery)
   const recentPosts = data.recentPosts.edges
-  const tags = data.tags.group.sort((a,b) => b.count - a.count);
-  const years = data.years.group.sort((a,b) => b.year - a.year);
+  const tags = data.tags.group.sort((a, b) => b.count - a.count)
+  const years = data.years.group.sort((a, b) => b.year - a.year)
 
   return (
     <div>
@@ -35,7 +35,7 @@ function BlogSidebar(props) {
         {recentPosts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <ListItem to={node.fields.slug} title={title} key={node.fields.slug}  />
+            <ListItem to={node.fields.slug} title={title} key={node.fields.slug} />
           )
         })}
       </ul>
