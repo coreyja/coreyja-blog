@@ -11,6 +11,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+          bucketName: process.env.AWS_BUCKET,
+          protocol: process.env.AWS_PROTOCOL,
+          hostname: process.env.AWS_HOSTNAME,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -88,6 +96,6 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`
       }
-    }
+    },
   ]
 }

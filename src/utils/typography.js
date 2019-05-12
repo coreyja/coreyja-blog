@@ -1,5 +1,5 @@
 import Typography from "typography";
-import Grays from "../styles/_grays.scss";
+import Grays from "../utils/grays";
 
 const typography = new Typography({
   baseFontSize: "16px",

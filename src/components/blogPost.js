@@ -12,7 +12,7 @@ import SEO from "../components/seo";
 import blogPostStyles from "./blogPost.module.scss";
 import { Link, graphql } from "gatsby";
 
-import Color from "../styles/_colors.scss";
+import Color from "../utils/colors";
 
 function BlogPost(props) {
   const post = props.data.markdownRemark;

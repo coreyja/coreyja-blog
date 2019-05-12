@@ -1,14 +1,14 @@
 import React from "react";
 import postCardStyles from "./postCard.module.scss";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 
-import Color from "../styles/_colors.scss";
+import Color from "../utils/colors";
 
 function PostCard(props) {
   const node = props.node;
   const title = node.frontmatter.title || node.fields.slug;
   const tags = node.fields.tags || [];
-  const color = node.frontmatter.color || "red";
+  const color = node.frontmatter.color || "purple";
 
   return (
     <section

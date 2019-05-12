@@ -2,7 +2,7 @@ import React from "react";
 import headerStyles from "./header.module.scss";
 import { Link } from "gatsby";
 
-import Color from "../styles/_colors.scss";
+import Color from "../utils/colors";
 
 const ColoredBar = props => (
   <div
