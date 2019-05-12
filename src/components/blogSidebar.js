@@ -25,7 +25,7 @@ function ListItem (props) {
 function BlogSidebar (props) {
   const data = useStaticQuery(blogSidebarQuery)
   const recentPosts = data.recentPosts.edges
-  const tags = data.tags.group.sort((a, b) => b.count - a.count)
+  const tags = data.tags.group.sort((a, b) => b.count - a.count).slice(0,15)
   const years = data.years.group.sort((a, b) => b.year - a.year)
 
   return (
@@ -42,7 +42,7 @@ function BlogSidebar (props) {
 
       <h2 className={blogSidebarStyles.title}>Tags</h2>
       <ul className={blogSidebarStyles.list}>
-        {tags.map(({ count, tag }) =>
+        {tags.slice(0,15).map(({ count, tag }) =>
           <ListItem to={`/tags/${tag}`} key={`/tags/${tag}`} title={`${tag} (${count})`} />
         )}
       </ul>

@@ -7,6 +7,7 @@ tags:
   - blink1
   - github
   - graphql
+  - ruby
 ---
 
 A little while back I got a [blink(1)](https://blink1.thingm.com/){:target="_blank"}, which is a cool little USB light that is fully programable. While it's been really fun to play with but I haven't really used it for much. Recently I was talking with some coworkers and realized that a great use for it would be as a Github status indicator, telling me the status of a specific Github branch. I'll have it set up to track our master branch and report on the CI status.

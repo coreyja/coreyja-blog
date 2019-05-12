@@ -3,8 +3,9 @@ title:  The Making of COREYJA
 author: Corey Alexander
 date:   2017-02-18
 tags:
-    - first
     - making-of
+    - middleman
+    - ruby
 color: purple
 ---
 
@@ -22,14 +23,14 @@ There are some things I wanted whatever engine I picked to be able to support.
   - I’ve run Wordpress blogs in the past, but I didn’t want to maintain a dynamically generated blog like that
 - Written in Ruby, and using the ERB tempting engine
   - Just a personal preference, but I enjoy being able to extend my tools and I’m currently working in Ruby and like the ERB syntax
-  
+
 ## Middleman Blog
 
 With these requirements I found the `middleman` ([github.com/middleman/middleman](https://github.com/middleman/middleman)) gem! And some extensions to it, including `middleman-blog` ([github.com/middleman/middleman-blog](https://github.com/middleman/middleman-blog)), and  `middleman-syntax` ([github.com/middleman/middleman-syntax](https://github.com/middleman/middleman-syntax)).
 
 Middleman describes itself as a static site generator, and is exactly what I was looking for. Coming from a Rails background I was right at home in the Middleman environment. Getting started was as easy as running the blog generator, `middleman init coreyja-blog --template=blog` and editing some ERB files.
 
-Middleman also provides a Rack compatible `config.ru` file, which made developing using [POW](http://pow.cx/) a breeze. Simply linked the project to POW, and was able to view the site locally and have changes appear when I reloaded. I didn’t enable live-reload, but there is an extension for that as well. 
+Middleman also provides a Rack compatible `config.ru` file, which made developing using [POW](http://pow.cx/) a breeze. Simply linked the project to POW, and was able to view the site locally and have changes appear when I reloaded. I didn’t enable live-reload, but there is an extension for that as well.
 
 ## Design
 

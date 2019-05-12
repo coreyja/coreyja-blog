@@ -5,7 +5,6 @@ date: 2019-04-19
 tags:
   - homebrew
   - macos
-  - homebrew2
 color: purple
 ---
 

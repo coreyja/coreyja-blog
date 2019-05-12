@@ -3,8 +3,6 @@ title: coreyja.com Contrast Improvements
 author: Corey Alexander
 date: 2018-11-24
 tags:
-  - blog
-  - improvements
   - accessibility
   - contrast
 color: green

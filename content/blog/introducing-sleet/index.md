@@ -8,6 +8,7 @@ tags:
   - sleet
   - circleci
   - rspec
+  - ruby
 color: blue
 
 ---
