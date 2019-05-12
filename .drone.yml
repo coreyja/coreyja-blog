@@ -7,27 +7,24 @@ platform:
   arch: amd64
 
 steps:
-  - name: restore
-    image: coreyja/rust-cache
-    settings:
-      pull: true
-      cache_download: true
-      cache_bucket: cache.dokku.coreyja
-      aws_access_key_id:
-        from_secret: CACHE_AWS_ACCESS_KEY_ID
-      aws_secret_access_key:
-        from_secret: CACHE_AWS_SECRET_ACCESS_KEY
   - name: test
-    image: ruby:2.3.3
+    image: node:8
     environment:
-      RAILS_ENV: test
+      GITHUB_PRIVATE_SSH:
+        from_secret: GITHUB_PRIVATE_SSH
+      GITHUB_PRIVATE_SSH_2:
+        from_secret: GITHUB_PRIVATE_SSH_2
     commands:
-      - bundle config --local path "vendor/bundle"
-      - bundle install --frozen --jobs 5 --retry 5
-      - bundle exec rubocop
-      - bundle exec scss-lint
+      - mkdir $HOME/.ssh
+      - echo "$GITHUB_PRIVATE_SSH" > $HOME/.ssh/id_rsa
+      - echo "$GITHUB_PRIVATE_SSH_2" > $HOME/.ssh/id_rsa2
+      - chmod 400 $HOME/.ssh/id_rsa*
+      - ssh-keyscan github.com >> $HOME/.ssh/known_hosts
+      - echo "Host github.com\n\tIdentityFile $HOME/.ssh/id_rsa\n\tIdentityFile $HOME/.ssh/id_rsa2\n" >> ~/.ssh/config
+      - yarn install --frozen
+      - yarn test
   - name: deploy
-    image: timbru31/ruby-node:2.3
+    image: node:8
     environment:
       AWS_ACCESS_KEY_ID:
         from_secret: AWS_ACCESS_KEY_ID
@@ -38,24 +35,15 @@ steps:
       AWS_DISTRIBUTION_ID:
         from_secret: AWS_DISTRIBUTION_ID
     commands:
-      - bundle config --local path "vendor/bundle"
-      - bundle install --frozen --jobs 5 --retry 5
-      - ./script/deploy.sh
+      - yarn install
+      - yarn build
     when:
-      branch:
-        - master
+      # branch:
+      #   - master
       event:
         - push
-  - name: rebuild
-    image: coreyja/rust-cache
-    settings:
-      cache_bucket: cache.dokku.coreyja
-      aws_access_key_id:
-        from_secret: CACHE_AWS_ACCESS_KEY_ID
-      aws_secret_access_key:
-        from_secret: CACHE_AWS_SECRET_ACCESS_KEY
 ---
 kind: signature
-hmac: 4a40dcf94be0be5ac9bb8b073241299e689d47774dc094d4cce86a859808946e
+hmac: dc6d563163da43cf6560e0141ca6c7267b9907a60af3aec7aa190c1e4f2f70a1
 
 ...

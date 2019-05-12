@@ -4808,10 +4808,10 @@ gatsby-plugin-sass@^2.0.11:
     "@babel/runtime" "^7.0.0"
     sass-loader "^7.0.1"
 
-gatsby-plugin-sharp@^2.0.36:
-  version "2.0.36"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.36.tgz#a8877cea81a7f2f6a0a1af2d0b96705a03b943d2"
-  integrity sha512-/JD6JalZEXHmotdshITazIe0nWUIgZ29JIv1KiDZIwSlSPi7Mlg0n6FJLA0OlxLvc2q5+0NwbSAoegqVLV/qZA==
+gatsby-plugin-sharp@^2.0.37:
+  version "2.0.37"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.37.tgz#3cc07de6b3eb13df80317ad45bd639074a4f2d59"
+  integrity sha512-SB0aLXx+wP6dm9ph5r+4TKHyaBdOWmADADIzyxvWF3BQiL2ErqSvoRc16GuAhQUeUJYNkU5cUs+NvA0lVMz0Mg==
   dependencies:
     "@babel/runtime" "^7.0.0"
     async "^2.1.2"
@@ -11426,13 +11426,13 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-"typeface-alternate-gothic1@https://github.com/coreyja/typeface-alternate-gothic1.git":
+"typeface-alternate-gothic1@git+ssh://git@github.com/coreyja/typeface-alternate-gothic1.git":
   version "0.0.1"
-  resolved "https://github.com/coreyja/typeface-alternate-gothic1.git#15af894d14e8674f297d8ddf79435165dd2d8d05"
+  resolved "git+ssh://git@github.com/coreyja/typeface-alternate-gothic1.git#15af894d14e8674f297d8ddf79435165dd2d8d05"
 
-"typeface-hack-nerd-font@https://github.com/coreyja/typeface-hack-nerd-font.git":
+"typeface-hack-nerd-font@git+ssh://git@github.com/coreyja/typeface-hack-nerd-font.git":
   version "0.0.59"
-  resolved "https://github.com/coreyja/typeface-hack-nerd-font.git#3f9c7b49be01b3c72a9110dfc453de8453bc0799"
+  resolved "git+ssh://git@github.com/coreyja/typeface-hack-nerd-font.git#3f9c7b49be01b3c72a9110dfc453de8453bc0799"
 
 typeface-oswald@^0.0.54:
   version "0.0.54"
