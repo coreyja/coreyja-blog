@@ -10,8 +10,6 @@ import Layout from "./layout";
 import BlogSidebar from "./blogSidebar";
 import blogLayoutStyles from "./blogLayout.module.scss";
 
-import Color from "../styles/_colors.scss";
-
 function BlogLayout(props) {
   return (
     <Layout location={props.location} title={props.title}>

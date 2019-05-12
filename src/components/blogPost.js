@@ -10,7 +10,6 @@ import Bio from "../components/bio";
 import BlogLayout from "./blogLayout";
 import SEO from "../components/seo";
 import blogPostStyles from "./blogPost.module.scss";
-import { rhythm, scale } from "../utils/typography";
 import { Link, graphql } from "gatsby";
 
 import Color from "../styles/_colors.scss";

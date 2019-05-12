@@ -17,9 +17,9 @@ const SocialIcon = props => (
     href={props.href}
     className={headerStyles.socialIcon}
     target="_blank"
-    rel="noopener"
+    rel="noopener noreferrer"
   >
-    <img src={props.src} />
+    <img src={props.src} alt={props.alt}/>
   </a>
 );
 
@@ -36,10 +36,12 @@ function Header() {
           <SocialIcon
             href="https://www.github.com/coreyja"
             src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg"
+            alt="Github Icon"
           />
           <SocialIcon
             href="https://dev.to/coreyja"
             src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+            alt="Dev.to Icon"
           />
         </div>
       </div>

@@ -8,8 +8,6 @@
 import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 
-import { rhythm } from "../utils/typography";
-
 import blogSidebarStyles from "./blogSidebar.module.scss";
 
 function ListItem(props) {

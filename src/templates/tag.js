@@ -1,6 +1,5 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
-import { rhythm } from "../utils/typography";
+import { graphql } from "gatsby";
 
 import BlogLayout from "../components/blogLayout";
 import PostCards from "../components/postCards";
