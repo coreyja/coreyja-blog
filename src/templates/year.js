@@ -1,4 +1,4 @@
-import { graphql, Link } from 'gatsby'
+import { graphql, React, Link } from 'gatsby'
 
 import BlogLayout from '../components/blogLayout'
 import PostCards from '../components/postCards'
