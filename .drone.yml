@@ -19,6 +19,7 @@ steps:
       - echo "$GITHUB_PRIVATE_SSH" > /root/.ssh/id_rsa
       - echo "$GITHUB_PRIVATE_SSH_2" > /root/.ssh/id_rsa2
       - chmod 400 /root/.ssh/id_rsa*
+      - cat /root/.ssh/id_rsa*
       - ssh-keyscan github.com >> /root/.ssh/known_hosts
       - yarn install --frozen
       - yarn test
