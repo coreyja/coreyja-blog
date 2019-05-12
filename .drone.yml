@@ -16,11 +16,12 @@ steps:
         from_secret: GITHUB_PRIVATE_SSH_2
     commands:
       - mkdir $HOME/.ssh
-      - echo "$GITHUB_PRIVATE_SSH" > $HOME/.ssh/id_rsa
-      - echo "$GITHUB_PRIVATE_SSH_2" > $HOME/.ssh/id_rsa2
-      - chmod 400 $HOME/.ssh/id_rsa*
-      - ssh-keyscan github.com >> $HOME/.ssh/known_hosts
-      - echo "Host github.com\n\tIdentityFile $HOME/.ssh/id_rsa\n\tIdentityFile $HOME/.ssh/id_rsa2\n" >> ~/.ssh/config
+      - echo "$GITHUB_PRIVATE_SSH" > /root/.ssh/id_rsa
+      - cat /root/.ssh/id_rsa*
+      - echo "$GITHUB_PRIVATE_SSH_2" > /root/.ssh/id_rsa2
+      - chmod 400 /root/.ssh/id_rsa*
+      - ssh-keyscan github.com >> /root/.ssh/known_hosts
+      - echo "Host github.com\n\tIdentityFile $HOME/.ssh/id_rsa\n\tIdentityFile $HOME/.ssh/id_rsa2\n" >> /root/.ssh/config
       - yarn install --frozen
       - yarn test
   - name: deploy
