@@ -16,6 +16,7 @@ steps:
       - mkdir $HOME/.ssh
       - echo "$GITHUB_PRIVATE_SSH" > /root/.ssh/id_rsa
       - chmod 400 /root/.ssh/id_rsa
+      - echo "Host github.com\n\tIdentityFile /root/.ssh/id_rsa\n" >> /root/.ssh/config
       - ssh-keyscan github.com >> /root/.ssh/known_hosts
       - yarn install --frozen
       - yarn test
@@ -40,6 +41,6 @@ steps:
   #       - push
 ---
 kind: signature
-hmac: 07cb89131e45e42b16dd325816257f145750e12d9d1f7e15bc5fc17b146f4576
+hmac: b08d8a81684368df3725082ad68d96b206e93f1f3089a5e88ecfd16893faa2f9
 
 ...
