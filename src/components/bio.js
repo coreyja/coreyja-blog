@@ -37,7 +37,12 @@ function Bio() {
                 borderRadius: `50%`
               }}
             />
-            <p>
+            <p
+              style={{
+                marginTop: 0,
+                marginBottom: 0
+              }}
+            >
               Written by <strong>{author}</strong> who lives and works in NYC
               building useful things.
               {` `}
