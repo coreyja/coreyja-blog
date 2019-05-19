@@ -1,8 +1,8 @@
 import React from "react";
 import headerStyles from "./header.module.scss";
 import { Link } from "gatsby";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faDev } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faDev } from "@fortawesome/free-brands-svg-icons";
 
 import Color from "../utils/colors";
 import Gray from "../utils/grays";
@@ -21,7 +21,7 @@ const SocialIcon = props => (
     className={headerStyles.socialIcon}
     target="_blank"
     rel="noopener noreferrer"
-    style={{ color: Gray['near-black'] }}
+    style={{ color: Gray["near-black"] }}
   >
     <FontAwesomeIcon icon={props.icon} size="2x" />
   </a>
@@ -37,14 +37,8 @@ function Header() {
         </Link>
         <span className={headerStyles.subTitle}>complex to simple</span>
         <div className={headerStyles.socialIcons}>
-          <SocialIcon
-            href="https://www.github.com/coreyja"
-            icon={faGithub}
-          />
-          <SocialIcon
-            href="https://dev.to/coreyja"
-            icon={faDev}
-          />
+          <SocialIcon href="https://www.github.com/coreyja" icon={faGithub} />
+          <SocialIcon href="https://dev.to/coreyja" icon={faDev} />
         </div>
       </div>
 
