@@ -12,6 +12,8 @@ steps:
     environment:
       NPM_AUTH_TOKEN:
         from_secret: NPM_AUTH_TOKEN
+      FONTAWESOME_AUTH_TOKEN:
+        from_secret: FONTAWESOME_AUTH_TOKEN
     commands:
       - echo "//my-registry.dokku.coreyja.com/:_authToken=$NPM_AUTH_TOKEN" >> .npmrc
       - echo "//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN" >> .npmrc
@@ -50,6 +52,6 @@ steps:
         - push
 ---
 kind: signature
-hmac: 61999bec3adf85a9eb4c28fa9502787aa5a16a8736d60a986d085dd6b4f30792
+hmac: 4a7fc472d53defec82a6a19de85c334eb7b6a5137f18720a99180496eb54c9ae
 
 ...
