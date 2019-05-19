@@ -25,6 +25,9 @@ steps:
       - yarn test
   - name: build
     image: node:8
+    environment:
+      AWS_BUCKET: coreyja-blog-staging
+        # from_secret: AWS_BUCKET
     commands:
       - yarn install --frozen
       - yarn build
@@ -49,6 +52,6 @@ steps:
         - push
 ---
 kind: signature
-hmac: aebdfebdc61d109ec0e8787117d32a387012e771e01ea8a45670c636bcb985a2
+hmac: 21a3ace1d099fdcb3803c95b0dd760c88f87107799f957f4b7047157ef33e23b
 
 ...
