@@ -47,6 +47,7 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "lint-staged": "^8.1.7",
     "prettier": "^1.17.0"
   },
   "homepage": "https://github.com/coreyja/coreyja-blog#readme",
@@ -67,5 +68,25 @@
     "serve": "gatsby serve",
     "test": "prettier --check src/**/*.{js,jsx}",
     "deploy": "gatsby-plugin-s3 deploy"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.md": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
