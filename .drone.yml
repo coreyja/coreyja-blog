@@ -26,8 +26,8 @@ steps:
   - name: build
     image: node:8
     environment:
-      AWS_BUCKET: coreyja-blog-staging
-        # from_secret: AWS_BUCKET
+      AWS_BUCKET:
+        from_secret: AWS_BUCKET
     commands:
       - yarn install --frozen
       - yarn build
@@ -38,8 +38,8 @@ steps:
         from_secret: AWS_ACCESS_KEY_ID
       AWS_SECRET_ACCESS_KEY:
         from_secret: AWS_SECRET_ACCESS_KEY
-      AWS_BUCKET: coreyja-blog-staging
-        # from_secret: AWS_BUCKET
+      AWS_BUCKET:
+        from_secret: AWS_BUCKET
       AWS_DISTRIBUTION_ID:
         from_secret: AWS_DISTRIBUTION_ID
     commands:
@@ -52,6 +52,6 @@ steps:
         - push
 ---
 kind: signature
-hmac: 21a3ace1d099fdcb3803c95b0dd760c88f87107799f957f4b7047157ef33e23b
+hmac: 90adc3af933a2bd481cb743aa50f9b76ed961ade312fccb1c773f0d5213b28b0
 
 ...
