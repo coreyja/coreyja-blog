@@ -19,7 +19,7 @@ const SocialIcon = props => (
     target="_blank"
     rel="noopener noreferrer"
   >
-    <img src={props.src} alt={props.alt}/>
+    <img src={props.src} alt={props.alt} />
   </a>
 );
 
