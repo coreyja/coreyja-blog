@@ -14,8 +14,8 @@ steps:
         from_secret: NPM_AUTH_TOKEN
     commands:
       - yarn config set registry https://my-registry.dokku.coreyja.com
-      - echo "//my-registry.dokku.coreyja.com/:_authToken=$NPM_AUTH_TOKEN" >> ~/.npmrc
-      - echo "//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN" >> ~/.npmrc
+      - echo "//my-registry.dokku.coreyja.com/:_authToken=$NPM_AUTH_TOKEN" >> .npmrc
+      - echo "//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN" >> .npmrc
       - yarn install --frozen
   - name: test
     image: node:8
@@ -51,6 +51,6 @@ steps:
         - push
 ---
 kind: signature
-hmac: 42dd48091c73b843760055b8f1c86b127efb0f55c8b2a506b5e42ed16fc3c239
+hmac: 9b1a333cd0bad180c07f84787ae59cbc33315437ab61eb87c699a3e3c93a633c
 
 ...
