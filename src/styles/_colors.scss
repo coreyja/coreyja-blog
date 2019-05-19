@@ -1,0 +1,33 @@
+
+$accent-colors: (
+'red': #ff4444,
+'green': #99cc00,
+'blue': #33b5e5,
+'purple': #aa66cc,
+'orange': #ffbb33,
+);
+
+@function accent-color($key) {
+  @if map-has-key($accent-colors, $key) {
+    @return map-get($accent-colors, $key);
+  }
+
+  @error "Unknown key `#{$key}` in $accent-colors.";
+  @return null;
+}
+
+@mixin accent-color-modifier($property: 'color') {
+  @each $key, $color in $accent-colors {
+    &--#{$key} {
+      #{$property}: $color;
+    }
+  }
+}
+
+:export {
+  red: accent-color('red');
+  green: accent-color('green');
+  blue: accent-color('blue');
+  purple: accent-color('purple');
+  orange: accent-color('orange');
+}

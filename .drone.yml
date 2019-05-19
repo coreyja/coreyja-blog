@@ -7,27 +7,32 @@ platform:
   arch: amd64
 
 steps:
-  - name: restore
-    image: coreyja/rust-cache
-    settings:
-      pull: true
-      cache_download: true
-      cache_bucket: cache.dokku.coreyja
-      aws_access_key_id:
-        from_secret: CACHE_AWS_ACCESS_KEY_ID
-      aws_secret_access_key:
-        from_secret: CACHE_AWS_SECRET_ACCESS_KEY
-  - name: test
-    image: ruby:2.3.3
+  - name: install
+    image: node:8
     environment:
-      RAILS_ENV: test
+      NPM_AUTH_TOKEN:
+        from_secret: NPM_AUTH_TOKEN
+      FONTAWESOME_AUTH_TOKEN:
+        from_secret: FONTAWESOME_AUTH_TOKEN
     commands:
-      - bundle config --local path "vendor/bundle"
-      - bundle install --frozen --jobs 5 --retry 5
-      - bundle exec rubocop
-      - bundle exec scss-lint
+      - echo "//my-registry.dokku.coreyja.com/:_authToken=$NPM_AUTH_TOKEN" >> .npmrc
+      - echo "//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN" >> .npmrc
+      - yarn install --frozen
+  - name: test
+    image: node:8
+    commands:
+      - yarn install --frozen
+      - yarn test
+  - name: build
+    image: node:8
+    environment:
+      AWS_BUCKET:
+        from_secret: AWS_BUCKET
+    commands:
+      - yarn install --frozen
+      - yarn build
   - name: deploy
-    image: timbru31/ruby-node:2.3
+    image: node:8
     environment:
       AWS_ACCESS_KEY_ID:
         from_secret: AWS_ACCESS_KEY_ID
@@ -38,24 +43,15 @@ steps:
       AWS_DISTRIBUTION_ID:
         from_secret: AWS_DISTRIBUTION_ID
     commands:
-      - bundle config --local path "vendor/bundle"
-      - bundle install --frozen --jobs 5 --retry 5
-      - ./script/deploy.sh
+      - yarn install --frozen
+      - yarn deploy
     when:
       branch:
         - master
       event:
         - push
-  - name: rebuild
-    image: coreyja/rust-cache
-    settings:
-      cache_bucket: cache.dokku.coreyja
-      aws_access_key_id:
-        from_secret: CACHE_AWS_ACCESS_KEY_ID
-      aws_secret_access_key:
-        from_secret: CACHE_AWS_SECRET_ACCESS_KEY
 ---
 kind: signature
-hmac: 4a40dcf94be0be5ac9bb8b073241299e689d47774dc094d4cce86a859808946e
+hmac: 4a7fc472d53defec82a6a19de85c334eb7b6a5137f18720a99180496eb54c9ae
 
 ...

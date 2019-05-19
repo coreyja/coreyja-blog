@@ -1,0 +1,21 @@
+@mixin bigger-than-600 {
+	@media (min-width: 600px) {
+		@content;
+	}
+}
+
+@mixin smaller-than-600 {
+	@media (max-width: 600px) {
+		@content;
+	}
+}
+
+@mixin outside-padding {
+	padding-left: 20px;
+	padding-right: 20px;
+
+	@include bigger-than-600 {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+}

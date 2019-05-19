@@ -1,0 +1,84 @@
+@import '../styles/utils';
+@import '../styles/colors';
+@import '../styles/grays';
+
+.BlogPost {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  word-break: break-word;
+}
+
+.titleContainer {
+  flex: 0 0 auto;
+}
+
+.post {
+  color: gray('high-contrast');
+  flex: 1 1 auto;
+  line-height: 1.5;
+
+  img {
+    display: block;
+    margin: auto;
+  }
+}
+
+.tags {
+  border-top: 2px solid currentColor;
+  padding: 5px 0;
+}
+
+.tag {
+  color: gray('high-contrast');
+  text-decoration: none;
+
+  &:not(:first-child)::before {
+    content: ' / ';
+  }
+}
+
+.PostTitle {
+  align-items: flex-start;
+  border-bottom: 2px solid currentColor;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media (min-width: 600px) {
+    align-items: flex-end;
+    flex-direction: row;
+  }
+}
+
+.title,
+.date,
+.author {
+  flex: 0 0 auto;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 10px 0;
+}
+
+.date,
+.author {
+  color: gray('dark');
+}
+
+.title {
+  font-size: 30px;
+  margin-right: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.date {
+  flex-grow: 1;
+  margin-right: 20px;
+  text-align: right;
+}
+
+.author {
+  font-size: 20px;
+  text-transform: uppercase;
+}

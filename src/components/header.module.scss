@@ -1,0 +1,82 @@
+@import '../styles/utils';
+@import '../styles/colors';
+@import '../styles/grays';
+
+.titleContainer {
+  @include outside-padding;
+
+  align-items: center;
+  background-color: gray('white');
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
+
+  @include bigger-than-600 {
+    align-items: baseline;
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.title {
+  font-family: 'Alternate Gothic FS No 1';
+  color: gray('dark');
+  font-size: 65px;
+  margin: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @include bigger-than-600 {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+
+}
+.titleSymbols {
+  color: gray('light');
+}
+
+.subTitle {
+  color: gray('dark');
+  font-size: 20px;
+  font-style: italic;
+  font-weight: normal;
+  margin: 10px 0;
+
+  @include bigger-than-600 {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+.socialIcons {
+  @include bigger-than-600 {
+    margin-left: auto;
+  }
+}
+
+.socialIcon {
+  display: inline-block;
+  height: 32px;
+  margin: 0 3px;
+  width: 32px;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.coloredBars {
+  display: flex;
+  height: 5px;
+}
+
+.coloredBar {
+  background: currentColor;
+  flex: 1 0 auto;
+}

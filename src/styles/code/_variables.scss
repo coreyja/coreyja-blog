@@ -1,0 +1,35 @@
+@import '../colors.scss';
+@import '../grays.scss';
+
+// Theme
+$theme-fonts:                        "Hack Nerd Font", PT Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+$theme-font-size:                    16px;
+$theme-code-line-height:             24px;
+$theme-code-tab-size:                4;
+$theme-inline-code-padding:          2px 5px;
+$theme-background:                   gray('near-black');
+$theme-foreground:                   #f8f8f2;
+$theme-comment:                      #6272a4;
+$theme-blue:                         accent-color('blue');
+$theme-green:                        accent-color('green');
+$theme-orange:                       accent-color('orange');
+$theme-red:                          accent-color('red');
+$theme-purple:                       accent-color('purple');
+$theme-opacity:                      0.7;
+
+// Line hightlights
+$line-highlight-code-padding-left:   55px;
+$line-highlight-code-line-margin-x:  -15px;
+$line-highlight-code-line-padding-x: 12px;
+$line-highlight-code-line-border:    3px solid;
+$line-highlight-code-line-opacity:   0.25;
+
+// Line numbers
+$line-numbers-padding-left:          15px;
+$line-numbers-rows-font-size:        16px;
+$line-numbers-rows-letter-spacing:   -2px;
+$line-numbers-rows-border-bottom:    1px solid;
+$line-numbers-rows-min-width:        40px;
+$line-numbers-rows-opacity:          0.25;
+$line-numbers-rows-text-align:       center;
+$line-numbers-rows-line-height:      24px;
