@@ -10,11 +10,11 @@ tags:
   - ruby
 ---
 
-A little while back I got a [blink(1)](https://blink1.thingm.com/){:target="_blank"}, which is a cool little USB light that is fully programable. While it's been really fun to play with but I haven't really used it for much. Recently I was talking with some coworkers and realized that a great use for it would be as a Github status indicator, telling me the status of a specific Github branch. I'll have it set up to track our master branch and report on the CI status.
+A little while back I got a [blink(1)](https://blink1.thingm.com/), which is a cool little USB light that is fully programable. While it's been really fun to play with but I haven't really used it for much. Recently I was talking with some coworkers and realized that a great use for it would be as a Github status indicator, telling me the status of a specific Github branch. I'll have it set up to track our master branch and report on the CI status.
 
 Right now it turns the light red to indicate failure, green to indicate success and purple to indicate failure. If the status is pending it will flash yellow and then show the color of the previous status, dimmed out by how long the status has been pending.
 
-Before we get too far, here is a link to the repo: [https://github.com/coreyja/blink1-github-status](https://github.com/coreyja/blink1-github-status){:target="_blank"}
+Before we get too far, here is a link to the repo: [https://github.com/coreyja/blink1-github-status](https://github.com/coreyja/blink1-github-status)
 
 # Github Status API
 
@@ -24,7 +24,7 @@ With this requirement we needed to also look the history of commits and their st
 
 # GraphQL
 
-GraphQL is a new way to write APIs, where instead of providing multiple endpoints you provide a single endpoint and consumers right queries to get the data they want from your API. So for this example, instead of finding the correct APIs to get the history of a branches status, I needed to write a GraphQL query to get that data. The most indispensable tool while working on this was Github's [Explorer](https://developer.github.com/v4/explorer/){:target="_blank"} which is a usage of the [GraphiQL](https://github.com/graphql/graphiql){:target="_blank"}. This provides a real-time way to write a query and see what data Github will return. This is how I played with my query, to get it right, before I integrated it into my program.
+GraphQL is a new way to write APIs, where instead of providing multiple endpoints you provide a single endpoint and consumers right queries to get the data they want from your API. So for this example, instead of finding the correct APIs to get the history of a branches status, I needed to write a GraphQL query to get that data. The most indispensable tool while working on this was Github's [Explorer](https://developer.github.com/v4/explorer/) which is a usage of the [GraphiQL](https://github.com/graphql/graphiql). This provides a real-time way to write a query and see what data Github will return. This is how I played with my query, to get it right, before I integrated it into my program.
 
 Eventually I found a query that would work for the information I was looking for. It would look up the designated branch (ex: 'master') for the given repo. From there it would look at last N commits, and include any status checks that exist for the commit. It includes the overall status of the commit, as well as the as the individual status `contexts`. The following is the query I am using:
 
@@ -62,7 +62,7 @@ One thing that I have the basics for in the query that I haven't implemented yet
 
 ## blink(1)
 
-I have the blink(1) m2 which has 2 leds that can be controlled independently. The ruby gem for interacting with the blink(1) is [rb-blink1](http://ngs.github.io/rb-blink1/){:target="_blank"}. Unfortunately it currently doesn't support setting the two leds independently. It is a wrapper around the official C API, which also powers the CLI tool. The CLI tool does support setting each LED, and the gem hasn't been updated recently. So the gem could be updated to support both LEDs, which is a project I'm interested in working on in the future!
+I have the blink(1) m2 which has 2 leds that can be controlled independently. The ruby gem for interacting with the blink(1) is [rb-blink1](http://ngs.github.io/rb-blink1/). Unfortunately it currently doesn't support setting the two leds independently. It is a wrapper around the official C API, which also powers the CLI tool. The CLI tool does support setting each LED, and the gem hasn't been updated recently. So the gem could be updated to support both LEDs, which is a project I'm interested in working on in the future!
 
 
 ## The Code and Crontab
