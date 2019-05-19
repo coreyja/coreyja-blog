@@ -19,27 +19,27 @@ steps:
       - echo "always-auth=true" >> ~/.npmrc
       - yarn install --frozen
       - yarn test
-  # - name: deploy
-  #   image: node:8
-  #   environment:
-  #     AWS_ACCESS_KEY_ID:
-  #       from_secret: AWS_ACCESS_KEY_ID
-  #     AWS_SECRET_ACCESS_KEY:
-  #       from_secret: AWS_SECRET_ACCESS_KEY
-  #     AWS_BUCKET:
-  #       from_secret: AWS_BUCKET
-  #     AWS_DISTRIBUTION_ID:
-  #       from_secret: AWS_DISTRIBUTION_ID
-  #   commands:
-  #     - yarn install
-  #     - yarn build
-  #   when:
-  #     # branch:
-  #     #   - master
-  #     event:
-  #       - push
+  - name: deploy
+    image: node:8
+    environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: AWS_SECRET_ACCESS_KEY
+      AWS_BUCKET: coreyja-blog-staging
+        # from_secret: AWS_BUCKET
+      AWS_DISTRIBUTION_ID:
+        from_secret: AWS_DISTRIBUTION_ID
+    commands:
+      - yarn install
+      - yarn build
+    when:
+      # branch:
+      #   - master
+      event:
+        - push
 ---
 kind: signature
-hmac: 43a14c030a8c5dd4823a3d3fc7c5eefbb64430a2ad3269a09d5dbeb4b38b5a8f
+hmac: 37d3f638737f5c8d1a51539213a0ef4fbcbf692211eac4e3c2207732824598f8
 
 ...
