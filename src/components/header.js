@@ -1,8 +1,11 @@
 import React from "react";
 import headerStyles from "./header.module.scss";
 import { Link } from "gatsby";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faDev } from '@fortawesome/free-brands-svg-icons'
 
 import Color from "../utils/colors";
+import Gray from "../utils/grays";
 
 const ColoredBar = props => (
   <div
@@ -18,8 +21,9 @@ const SocialIcon = props => (
     className={headerStyles.socialIcon}
     target="_blank"
     rel="noopener noreferrer"
+    style={{ color: Gray['near-black'] }}
   >
-    <img src={props.src} alt={props.alt} />
+    <FontAwesomeIcon icon={props.icon} size="2x" />
   </a>
 );
 
@@ -35,13 +39,11 @@ function Header() {
         <div className={headerStyles.socialIcons}>
           <SocialIcon
             href="https://www.github.com/coreyja"
-            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg"
-            alt="Github Icon"
+            icon={faGithub}
           />
           <SocialIcon
             href="https://dev.to/coreyja"
-            src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
-            alt="Dev.to Icon"
+            icon={faDev}
           />
         </div>
       </div>
