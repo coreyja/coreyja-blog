@@ -15,7 +15,7 @@ steps:
     commands:
       - yarn config set registry https://my-registry.dokku.coreyja.com
       - echo "registry=https://my-registry.dokku.coreyja.com/" > ~/.npmrc
-      - echo "//my-registry.dokku.coreyja.com/:_authToken=${NPM_AUTH_TOKEN}" >> ~/.npmrc
+      - echo "//my-registry.dokku.coreyja.com/:_authToken=$NPM_AUTH_TOKEN" >> ~/.npmrc
       - echo "always-auth=true" >> ~/.npmrc
       - yarn install --frozen
       - yarn test
@@ -40,6 +40,6 @@ steps:
   #       - push
 ---
 kind: signature
-hmac: f9c019adaeefa7e95d8a264099582ff4ec309a0044b4c0925327c1cf5af2e3ad
+hmac: 43a14c030a8c5dd4823a3d3fc7c5eefbb64430a2ad3269a09d5dbeb4b38b5a8f
 
 ...
