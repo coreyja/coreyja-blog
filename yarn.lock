@@ -12932,13 +12932,15 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-"typeface-alternate-gothic1@git+ssh://git@github.com/coreyja/typeface-alternate-gothic1.git":
+typeface-alternate-gothic1@0.0.1:
   version "0.0.1"
-  resolved "git+ssh://git@github.com/coreyja/typeface-alternate-gothic1.git#15af894d14e8674f297d8ddf79435165dd2d8d05"
+  resolved "https://my-registry.dokku.coreyja.com/typeface-alternate-gothic1/-/typeface-alternate-gothic1-0.0.1.tgz#7862b260c485cd5c8f4b2e83c225bb675d83ef64"
+  integrity sha512-PktI/Wc4zlQ11RjBz9XWD/21hBz6ZXco4LXoclr5pdrRmOfHq1Tdeq2T+UTAj3nMLnyu0V8BTlOj2+K7nwhNxw==
 
-"typeface-hack-nerd-font@git+https://github.com/coreyja/typeface-hack-nerd-font.git":
+typeface-hack-nerd-font@0.0.59:
   version "0.0.59"
-  resolved "git+https://github.com/coreyja/typeface-hack-nerd-font.git#3f9c7b49be01b3c72a9110dfc453de8453bc0799"
+  resolved "https://my-registry.dokku.coreyja.com/typeface-hack-nerd-font/-/typeface-hack-nerd-font-0.0.59.tgz#f77a1d41dda56b57b2cfbe7f2caf1f2e9c38a138"
+  integrity sha512-g9XXgnmRS+hEjHdoEUjy9W0GQrAzdrc2zF0ZWrO0nD3Fl8bjjzazg30AihuiRCkbiYerVgol/OhGTxiCiChF/A==
 
 typeface-oswald@^0.0.54:
   version "0.0.54"
