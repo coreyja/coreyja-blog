@@ -10,11 +10,14 @@ steps:
   - name: test
     image: node:8
     environment:
-      GITHUB_PRIVATE_SSH:
-        from_secret: GITHUB_PRIVATE_SSH
+      NPM_AUTH_TOKEN:
+        from_secret: NPM_AUTH_TOKEN
     commands:
       - yarn config set registry https://my-registry.dokku.coreyja.com
-      - yarn install --frozen --verbose
+      - echo "registry=https://my-registry.dokku.coreyja.com/" > ~/.npmrc
+      - echo "//my-registry.dokku.coreyja.com/:_authToken=${NPM_AUTH_TOKEN}" >> ~/.npmrc
+      - echo "always-auth=true" >> ~/.npmrc
+      - yarn install --frozen
       - yarn test
   # - name: deploy
   #   image: node:8
@@ -37,6 +40,6 @@ steps:
   #       - push
 ---
 kind: signature
-hmac: db357a16afe0bd9efe98d93ff6811ffcb0f124c6a0c401e571396fbb233ab123
+hmac: f9c019adaeefa7e95d8a264099582ff4ec309a0044b4c0925327c1cf5af2e3ad
 
 ...
