@@ -13,7 +13,6 @@ steps:
       NPM_AUTH_TOKEN:
         from_secret: NPM_AUTH_TOKEN
     commands:
-      - yarn config set registry https://my-registry.dokku.coreyja.com
       - echo "//my-registry.dokku.coreyja.com/:_authToken=$NPM_AUTH_TOKEN" >> .npmrc
       - echo "//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN" >> .npmrc
       - yarn install --frozen
@@ -51,6 +50,6 @@ steps:
         - push
 ---
 kind: signature
-hmac: 9b1a333cd0bad180c07f84787ae59cbc33315437ab61eb87c699a3e3c93a633c
+hmac: 61999bec3adf85a9eb4c28fa9502787aa5a16a8736d60a986d085dd6b4f30792
 
 ...
