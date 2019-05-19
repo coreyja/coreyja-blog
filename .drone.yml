@@ -46,12 +46,12 @@ steps:
       - yarn install --frozen
       - yarn deploy
     when:
-      # branch:
-      #   - master
+      branch:
+        - master
       event:
         - push
 ---
 kind: signature
-hmac: 90adc3af933a2bd481cb743aa50f9b76ed961ade312fccb1c773f0d5213b28b0
+hmac: e713640a77c90ea0cd9168586d96beded78e5b28bab69d09aa3718bc239de831
 
 ...
