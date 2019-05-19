@@ -13,11 +13,7 @@ steps:
       GITHUB_PRIVATE_SSH:
         from_secret: GITHUB_PRIVATE_SSH
     commands:
-      - mkdir $HOME/.ssh
-      - echo "$GITHUB_PRIVATE_SSH" > /root/.ssh/id_rsa
-      - chmod 400 /root/.ssh/id_rsa
-      - echo "Host github.com\n\tIdentityFile /root/.ssh/id_rsa\n" >> /root/.ssh/config
-      - ssh-keyscan github.com >> /root/.ssh/known_hosts
+      - yarn config set registry https://my-registry.dokku.coreyja.com
       - yarn install --frozen --verbose
       - yarn test
   # - name: deploy
@@ -41,6 +37,6 @@ steps:
   #       - push
 ---
 kind: signature
-hmac: f3a62ce0a226ddbc122001b295085d4b44b2aea815db1fe79e31a6017fee7926
+hmac: db357a16afe0bd9efe98d93ff6811ffcb0f124c6a0c401e571396fbb233ab123
 
 ...
