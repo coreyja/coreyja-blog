@@ -7,7 +7,7 @@ platform:
   arch: amd64
 
 steps:
-  - name: test
+  - name: install
     image: node:8
     environment:
       NPM_AUTH_TOKEN:
@@ -18,7 +18,16 @@ steps:
       - echo "//my-registry.dokku.coreyja.com/:_authToken=$NPM_AUTH_TOKEN" >> ~/.npmrc
       - echo "always-auth=true" >> ~/.npmrc
       - yarn install --frozen
+  - name: test
+    image: node:8
+    commands:
+      - yarn install --frozen
       - yarn test
+  - name: build
+    image: node:8
+    commands:
+      - yarn install --frozen
+      - yarn build
   - name: deploy
     image: node:8
     environment:
@@ -31,8 +40,8 @@ steps:
       AWS_DISTRIBUTION_ID:
         from_secret: AWS_DISTRIBUTION_ID
     commands:
-      - yarn install
-      - yarn build
+      - yarn install --frozen
+      - yarn deploy
     when:
       # branch:
       #   - master
@@ -40,6 +49,6 @@ steps:
         - push
 ---
 kind: signature
-hmac: 37d3f638737f5c8d1a51539213a0ef4fbcbf692211eac4e3c2207732824598f8
+hmac: aebdfebdc61d109ec0e8787117d32a387012e771e01ea8a45670c636bcb985a2
 
 ...
