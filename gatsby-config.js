@@ -13,10 +13,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-          bucketName: process.env.AWS_BUCKET,
-          protocol: process.env.AWS_PROTOCOL,
-          hostname: process.env.AWS_HOSTNAME,
-      },
+        bucketName: process.env.AWS_BUCKET,
+        protocol: process.env.AWS_PROTOCOL,
+        hostname: process.env.AWS_HOSTNAME
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -70,15 +70,9 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //  resolve: `gatsby-plugin-google-analytics`,
-    //  options: {
-    //    //trackingId: `ADD YOUR TRACKING ID HERE`,
-    //  },
-    // },
     `gatsby-plugin-sass`,
     {
-      resolve: 'gatsby-plugin-tags',
+      resolve: "gatsby-plugin-tags",
       options: {
         templatePath: `${__dirname}/src/templates/tag.js`
       }
@@ -103,6 +97,6 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`
       }
-    },
+    }
   ]
-}
+};
