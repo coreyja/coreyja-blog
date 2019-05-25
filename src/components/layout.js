@@ -1,6 +1,7 @@
 import React from "react";
 
 import Header from "./header.js";
+import SimpleAnalytics from "./simpleAnalytics.js";
 
 class Layout extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class Layout extends React.Component {
       >
         <Header />
         <main>{children}</main>
+        <SimpleAnalytics />
       </div>
     );
   }
