@@ -73,9 +73,11 @@ steps:
     aws_secret_access_key:
       from_secret: CACHE_AWS_SECRET_ACCESS_KEY
     cache_bucket: cache.dokku.coreyja
+  depends_on:
+  - install
 
 ---
 kind: signature
-hmac: 80c93dd854df5832f2b029889bf9952ae55ead4e2ebe3497861781e0cf40fd72
+hmac: 1acae9d76d15f6b387f5068286b3e5d89529e25b9593ffc5591255ddb025b020
 
 ...
