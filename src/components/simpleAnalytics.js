@@ -4,9 +4,9 @@ class SimpleAnalytics extends React.Component {
   render() {
     return (
       <div>
-        <script async defer src="https://cdn.simpleanalytics.io/hello.js" />
+        <script async defer src="//simple.coreyja.com/app.js" />
         <noscript>
-          <img src="https://api.simpleanalytics.io/hello.gif" alt="" />
+          <img src="//simple.coreyja.com/image.gif" alt="" />
         </noscript>
       </div>
     );
