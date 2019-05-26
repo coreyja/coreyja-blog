@@ -65,6 +65,10 @@ steps:
       from_secret: AWS_BUCKET
     AWS_DISTRIBUTION_ID:
       from_secret: AWS_DISTRIBUTION_ID
+    AWS_HOSTNAME:
+      from_secret: AWS_HOSTNAME
+    AWS_PROTOCOL:
+      from_secret: AWS_PROTOCOL
     AWS_SECRET_ACCESS_KEY:
       from_secret: AWS_SECRET_ACCESS_KEY
   when:
@@ -88,6 +92,6 @@ steps:
 
 ---
 kind: signature
-hmac: fe4fa1c0ac3dbd1747d8875724f44ca9d1a0c37ca2b3b237c14d9e41ad25afae
+hmac: 0b151e541035a20b11475beb8a86b57987e494a335aaa2f8dc3115f5efdc8847
 
 ...
