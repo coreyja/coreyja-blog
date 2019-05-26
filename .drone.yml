@@ -17,6 +17,8 @@ steps:
       from_secret: CACHE_AWS_SECRET_ACCESS_KEY
     cache_bucket: cache.dokku.coreyja
     cache_download: true
+  depends_on:
+  - clone
 
 - name: install
   image: node:8
@@ -29,12 +31,16 @@ steps:
       from_secret: FONTAWESOME_AUTH_TOKEN
     NPM_AUTH_TOKEN:
       from_secret: NPM_AUTH_TOKEN
+  depends_on:
+  - restore
 
 - name: test
   image: node:8
   commands:
   - yarn install --frozen
   - yarn test
+  depends_on:
+  - install
 
 - name: build
   image: node:8
@@ -44,6 +50,8 @@ steps:
   environment:
     AWS_BUCKET:
       from_secret: AWS_BUCKET
+  depends_on:
+  - test
 
 - name: deploy
   image: node:8
@@ -64,6 +72,8 @@ steps:
     - master
     event:
     - push
+  depends_on:
+  - build
 
 - name: rebuild
   image: coreyja/rust-cache:yarn
@@ -78,6 +88,6 @@ steps:
 
 ---
 kind: signature
-hmac: 1acae9d76d15f6b387f5068286b3e5d89529e25b9593ffc5591255ddb025b020
+hmac: fe4fa1c0ac3dbd1747d8875724f44ca9d1a0c37ca2b3b237c14d9e41ad25afae
 
 ...
