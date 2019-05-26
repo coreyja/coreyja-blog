@@ -23,7 +23,6 @@ steps:
   commands:
   - "echo \"//my-registry.dokku.coreyja.com/:_authToken=$NPM_AUTH_TOKEN\" >> .npmrc"
   - "echo \"//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN\" >> .npmrc"
-  - yarn config set cache-folder "$(pwd)/cache/yarn"
   - yarn install --frozen
   environment:
     FONTAWESOME_AUTH_TOKEN:
@@ -77,6 +76,6 @@ steps:
 
 ---
 kind: signature
-hmac: 8b2a51cc01220e3b9d15b99090333184317a62cc566af6c2bcab12c3b4645cdc
+hmac: f0597bac7e73fe145b1551d8bf43b93bf5f37930348fc418377112bc10e3a44f
 
 ...
