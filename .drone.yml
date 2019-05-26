@@ -7,51 +7,59 @@ platform:
   arch: amd64
 
 steps:
-  - name: install
-    image: node:8
-    environment:
-      NPM_AUTH_TOKEN:
-        from_secret: NPM_AUTH_TOKEN
-      FONTAWESOME_AUTH_TOKEN:
-        from_secret: FONTAWESOME_AUTH_TOKEN
-    commands:
-      - echo "//my-registry.dokku.coreyja.com/:_authToken=$NPM_AUTH_TOKEN" >> .npmrc
-      - echo "//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN" >> .npmrc
-      - yarn install --frozen
-  - name: test
-    image: node:8
-    commands:
-      - yarn install --frozen
-      - yarn test
-  - name: build
-    image: node:8
-    environment:
-      AWS_BUCKET:
-        from_secret: AWS_BUCKET
-    commands:
-      - yarn install --frozen
-      - yarn build
-  - name: deploy
-    image: node:8
-    environment:
-      AWS_ACCESS_KEY_ID:
-        from_secret: AWS_ACCESS_KEY_ID
-      AWS_SECRET_ACCESS_KEY:
-        from_secret: AWS_SECRET_ACCESS_KEY
-      AWS_BUCKET:
-        from_secret: AWS_BUCKET
-      AWS_DISTRIBUTION_ID:
-        from_secret: AWS_DISTRIBUTION_ID
-    commands:
-      - yarn install --frozen
-      - yarn deploy
-    when:
-      branch:
-        - master
-      event:
-        - push
+- name: install
+  image: node:8
+  commands:
+  - "echo \"//my-registry.dokku.coreyja.com/:_authToken=$NPM_AUTH_TOKEN\" >> .npmrc"
+  - "echo \"//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN\" >> .npmrc"
+  - yarn install --frozen
+  environment:
+    FONTAWESOME_AUTH_TOKEN:
+      from_secret: FONTAWESOME_AUTH_TOKEN
+    NPM_AUTH_TOKEN:
+      from_secret: NPM_AUTH_TOKEN
+
+- name: test
+  image: node:8
+  commands:
+  - yarn install --frozen
+  - yarn test
+
+- name: build
+  image: node:8
+  commands:
+  - yarn install --frozen
+  - yarn build
+  environment:
+    AWS_BUCKET:
+      from_secret: AWS_BUCKET
+
+- name: deploy
+  image: node:8
+  commands:
+  - yarn install --frozen
+  - yarn deploy
+  environment:
+    AWS_ACCESS_KEY_ID:
+      from_secret: AWS_ACCESS_KEY_ID
+    AWS_BUCKET:
+      from_secret: AWS_BUCKET
+    AWS_DISTRIBUTION_ID:
+      from_secret: AWS_DISTRIBUTION_ID
+    AWS_HOSTNAME:
+      from_secret: AWS_HOSTNAME
+    AWS_PROTOCOL:
+      from_secret: AWS_PROTOCOL
+    AWS_SECRET_ACCESS_KEY:
+      from_secret: AWS_SECRET_ACCESS_KEY
+  when:
+    branch:
+    - master
+    event:
+    - push
+
 ---
 kind: signature
-hmac: 4a7fc472d53defec82a6a19de85c334eb7b6a5137f18720a99180496eb54c9ae
+hmac: 8b44c6f2f39759e97dc08fc910f1fe4e48b4396cce3ec7c73d3b5eb206704784
 
 ...
