@@ -5467,13 +5467,13 @@ gatsby-plugin-sharp@^2.1.1:
     sharp "^0.22.1"
     svgo "^1.2.0"
 
-gatsby-plugin-tags@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-tags/-/gatsby-plugin-tags-2.3.0.tgz#c1ebaaac134a698b7a24d70f5ad1278635207096"
-  integrity sha512-/G0Mc1afhsufFh/Qi2Qlb4Ii3kJ0oR2Goj82Q25TvK9WQ+vqZyGL1Pzw2YNPprlYP6Vdp3jgJEf0Y5dm6ea8DQ==
+gatsby-plugin-tags@^2.3.1:
+  version "2.3.1"
+  resolved "https://my-registry.dokku.coreyja.com/gatsby-plugin-tags/-/gatsby-plugin-tags-2.3.1.tgz#b2ab69f480b17627a45c87dece724cb6472b07f5"
+  integrity sha512-+kfz48dP0Q/o5ovoJtE932i1jEjQAZbGzFjxRila8SKlR4cV8vQfAxnytdnXiW1wR5VmvJmZ/lSDoKQ45325zA==
   dependencies:
     lodash "^4.17.10"
-    slug "^0.9.3"
+    slug "^1.1.0"
 
 gatsby-plugin-typography@^2.2.13:
   version "2.2.13"
@@ -12430,10 +12430,10 @@ slice-ansi@^2.1.0:
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
 
-slug@^0.9.3:
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/slug/-/slug-0.9.4.tgz#fad5f1ef33150830c7688cd8500514576eccabd8"
-  integrity sha512-3YHq0TeJ4+AIFbJm+4UWSQs5A1mmeWOTQqydW3OoPmQfNKxlO96NDRTIrp+TBkmvEsEFrd+Z/LXw8OD/6OlZ5g==
+slug@^1.1.0:
+  version "1.1.0"
+  resolved "https://my-registry.dokku.coreyja.com/slug/-/slug-1.1.0.tgz#73eef5710416f515077bdf70c683bde4915913c9"
+  integrity sha512-NuIOjDQeTMPm+/AUIHJ5636mF3jOsYLFnoEErl9Tdpt4kpt4fOrAJxscH9mUgX1LtPaEqgPCawBg7A4yhoSWRg==
   dependencies:
     unicode ">= 0.3.1"
 
