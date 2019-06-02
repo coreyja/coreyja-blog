@@ -2,7 +2,8 @@ import React from "react";
 import headerStyles from "./header.module.scss";
 import { Link } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faDev } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faDev, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faRss } from "@fortawesome/pro-solid-svg-icons";
 
 import Color from "../utils/colors";
 import Gray from "../utils/grays";
@@ -47,6 +48,12 @@ function Header() {
             icon={faDev}
             title="Dev.to Profile Icon"
           />
+          <SocialIcon
+            href="https://twitter.com/coreyja_dev"
+            icon={faTwitter}
+            title="Twitter Profile Icon"
+          />
+          <SocialIcon href="/rss.xml" icon={faRss} title="RSS Icon" />
         </div>
       </div>
 
