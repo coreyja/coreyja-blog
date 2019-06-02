@@ -35,7 +35,7 @@ steps:
   - restore
 
 - name: test
-  image: node:8
+  image: node:11.9
   commands:
   - yarn install --frozen
   - yarn test
@@ -43,7 +43,7 @@ steps:
   - install
 
 - name: build
-  image: node:8
+  image: node:11.9
   commands:
   - yarn install --frozen
   - yarn build
@@ -54,7 +54,7 @@ steps:
   - test
 
 - name: deploy
-  image: node:8
+  image: node:11.9
   commands:
   - yarn install --frozen
   - yarn deploy
@@ -92,6 +92,6 @@ steps:
 
 ---
 kind: signature
-hmac: 0b151e541035a20b11475beb8a86b57987e494a335aaa2f8dc3115f5efdc8847
+hmac: 24df2c6eb14906098ca9da46b7e3133a9b6842cde2726cf17903f2b5c1cdd86b
 
 ...
