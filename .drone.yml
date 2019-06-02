@@ -21,7 +21,7 @@ steps:
   - clone
 
 - name: install
-  image: node:8
+  image: node:11.9
   commands:
   - "echo \"//my-registry.dokku.coreyja.com/:_authToken=$NPM_AUTH_TOKEN\" >> .npmrc"
   - "echo \"//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN\" >> .npmrc"

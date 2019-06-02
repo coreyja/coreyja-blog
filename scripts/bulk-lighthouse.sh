@@ -16,11 +16,4 @@ parse_xml() {
 
 urls=$(parse_xml $SITEMAP_URL | paste -sd "," -)
 
-# for url in $urls; do
-#   hash=$(echo $url | md5sum | awk '{print $1}')
-#   echo "$url -> $hash"
-#   mkdir "./reports/lighthouse/$hash/"
-#   lighthouse $url --output json --output-path=./reports/lighthouse/$hash/report.json --save-assets --quiet --chrome-flags="--headless"
-# done
-
 yarn run lighthouse-batch -s "$urls"
