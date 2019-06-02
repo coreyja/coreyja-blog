@@ -23,7 +23,7 @@ const SocialIcon = props => (
     rel="noopener noreferrer"
     style={{ color: Gray["near-black"] }}
   >
-    <FontAwesomeIcon icon={props.icon} size="2x" />
+    <FontAwesomeIcon icon={props.icon} title={props.title} size="2x" />
   </a>
 );
 
@@ -37,8 +37,16 @@ function Header() {
         </Link>
         <span className={headerStyles.subTitle}>complex to simple</span>
         <div className={headerStyles.socialIcons}>
-          <SocialIcon href="https://www.github.com/coreyja" icon={faGithub} />
-          <SocialIcon href="https://dev.to/coreyja" icon={faDev} />
+          <SocialIcon
+            href="https://www.github.com/coreyja"
+            icon={faGithub}
+            title="Github Profile Icon"
+          />
+          <SocialIcon
+            href="https://dev.to/coreyja"
+            icon={faDev}
+            title="Dev.to Profile Icon"
+          />
         </div>
       </div>
 
