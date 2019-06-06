@@ -47,7 +47,7 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
-    "husky": "^2.3.0",
+    "husky": "^2.4.0",
     "lighthouse": "^5.1.0",
     "lighthouse-batch": "^4.0.0",
     "lint-staged": "^8.1.7",
