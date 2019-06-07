@@ -8382,10 +8382,10 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lighthouse-batch@^4.0.0:
-  version "4.0.0"
-  resolved "https://my-registry.dokku.coreyja.com/lighthouse-batch/-/lighthouse-batch-4.0.0.tgz#3c2484688c501bcfb4c4dca800a0b49ae76ed308"
-  integrity sha512-KUCTzmb6OaZLthGtO9cZlMGRUfwDxJ99A6iMkyCBWZ2zhaTxtN7z+GiRcyRtuxO8jH6IfCTUOmVStJPWAGUeVw==
+lighthouse-batch@^4.0.1:
+  version "4.0.1"
+  resolved "https://my-registry.dokku.coreyja.com/lighthouse-batch/-/lighthouse-batch-4.0.1.tgz#92ea350037986ab36e2b2c783d50dead776e3f8e"
+  integrity sha512-28IKRFB3C5Q/Bvl5JdmhfM+TzQ1CJHoqhVeY5wRRilXcapFCPPZzICKE/tIzWILKnkPwDod3SkU8yFyf4KfRKA==
   dependencies:
     commander "^2.9.0"
     lighthouse "^4.2.0"
