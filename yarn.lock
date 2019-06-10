@@ -5517,10 +5517,10 @@ gatsby-plugin-sitemap@^2.1.0:
     pify "^3.0.0"
     sitemap "^1.12.0"
 
-gatsby-plugin-tags@^2.3.1:
-  version "2.3.1"
-  resolved "https://my-registry.dokku.coreyja.com/gatsby-plugin-tags/-/gatsby-plugin-tags-2.3.1.tgz#b2ab69f480b17627a45c87dece724cb6472b07f5"
-  integrity sha512-+kfz48dP0Q/o5ovoJtE932i1jEjQAZbGzFjxRila8SKlR4cV8vQfAxnytdnXiW1wR5VmvJmZ/lSDoKQ45325zA==
+gatsby-plugin-tags@^2.3.2:
+  version "2.3.2"
+  resolved "https://my-registry.dokku.coreyja.com/gatsby-plugin-tags/-/gatsby-plugin-tags-2.3.2.tgz#448edfc6dbb5a14888a0ede95f3c1ab1b2ba23a6"
+  integrity sha512-ZyvUC7Bfu0QYMx0VUt6amhNAQkvaMSDOB6mhNM09LuwKahte/WVfWNCaaqfYSjlcmEaW0az6eRKDKRQ/DCZv5w==
   dependencies:
     lodash "^4.17.10"
     slug "^1.1.0"
