@@ -28,9 +28,7 @@ function BlogPost(props) {
 
       <article className={blogPostStyles.BlogPost}>
         <section
-          className={`${blogPostStyles.titleContainer} ${
-            blogPostStyles.PostTitle
-          }`}
+          className={`${blogPostStyles.titleContainer} ${blogPostStyles.PostTitle}`}
           style={{ color: Color[post.frontmatter.color] }}
         >
           <h1
