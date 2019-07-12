@@ -5563,10 +5563,10 @@ gatsby-plugin-s3@^0.3.1:
     stream-to-promise "^2.2.0"
     yargs "^12.0.5"
 
-gatsby-plugin-sass@^2.1.1:
-  version "2.1.1"
-  resolved "https://my-registry.dokku.coreyja.com/gatsby-plugin-sass/-/gatsby-plugin-sass-2.1.1.tgz#00b323dae202c819299c5c291f8c1c52707691d2"
-  integrity sha512-WUKnS9pRUWONdAJ+C0u0soHBB4yOXvaUKOMNywRiMmb5wXaKGLgoYaOz71miRBxJbU5gjpxzXVjpONQIs2mIwA==
+gatsby-plugin-sass@^2.1.2:
+  version "2.1.2"
+  resolved "https://my-registry.dokku.coreyja.com/gatsby-plugin-sass/-/gatsby-plugin-sass-2.1.2.tgz#fe766eb1a8e91bfd1a048b6a8bef3bd65bb0583a"
+  integrity sha512-vQxBHHR0XxB7024Y3PUtINSqaqDN+okxV2XgfDqNyszao3Ba0CbQpGdtYW1pZdLHDYzQRz9PkyZOLCOHxC7rgg==
   dependencies:
     "@babel/runtime" "^7.0.0"
     sass-loader "^7.0.1"
