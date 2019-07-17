@@ -5579,10 +5579,10 @@ gatsby-plugin-sass@^2.1.3:
     "@babel/runtime" "^7.0.0"
     sass-loader "^7.0.1"
 
-gatsby-plugin-sharp@^2.2.5:
-  version "2.2.5"
-  resolved "https://my-registry.dokku.coreyja.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.2.5.tgz#b363c90e71cf913167d23e9cdbcf3810d815145e"
-  integrity sha512-IRCd5pp3y84H2zjT27Z5/qZxFP2GW3dTrgYnfC0Lmoqh7+4qGTsb8BslYuuQW03XeySaOY2rG+KiB6mH7gjvzg==
+gatsby-plugin-sharp@^2.2.7:
+  version "2.2.7"
+  resolved "https://my-registry.dokku.coreyja.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.2.7.tgz#088a51e2e3e034da5ca2bb9531f5687f7ce48656"
+  integrity sha512-aEa8c6f+RY4SnfZh3iyVFwCHd2EuHxOamLuNdS2y345YPpjwHC1rDzkJrFo28iw+wOvk7h+gcZV2qj3+/QjGSg==
   dependencies:
     "@babel/runtime" "^7.0.0"
     async "^2.1.2"
@@ -5593,7 +5593,7 @@ gatsby-plugin-sharp@^2.2.5:
     imagemin-mozjpeg "^8.0.0"
     imagemin-pngquant "^6.0.0"
     imagemin-webp "^5.0.0"
-    lodash "^4.17.10"
+    lodash "^4.17.14"
     mini-svg-data-uri "^1.0.0"
     potrace "^2.1.1"
     probe-image-size "^4.0.0"
