@@ -5749,17 +5749,17 @@ gatsby-telemetry@^1.1.6:
     stack-utils "1.0.2"
     uuid "3.3.2"
 
-gatsby-transformer-remark@^2.6.3:
-  version "2.6.3"
-  resolved "https://my-registry.dokku.coreyja.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.6.3.tgz#501943e809e37a2d4e698a59aff1d6257ca99a7d"
-  integrity sha512-0k3Lz+qhj/tgF7zfBP9NdYlL2+Ugug+Y2C12HI3jPT0qVH8ici7ZBkoyytaN++cl/nbchwdsaj3DU6irpBOlXA==
+gatsby-transformer-remark@^2.6.7:
+  version "2.6.7"
+  resolved "https://my-registry.dokku.coreyja.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.6.7.tgz#8478ca50818f9931004edb8b7fee59eb4e74fd8d"
+  integrity sha512-0Y14p1tpO/KGVHkKbAtYRn7ZjkdBdZzji7S2ZdCOuElGnK0FWTeYvgKCAiMiD0vQIOuuNtFrRovkakcbnLx6HQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
     gray-matter "^4.0.0"
     hast-util-raw "^4.0.0"
     hast-util-to-html "^4.0.0"
-    lodash "^4.17.10"
+    lodash "^4.17.14"
     mdast-util-to-hast "^3.0.0"
     mdast-util-to-string "^1.0.5"
     mdast-util-toc "^2.0.1"
