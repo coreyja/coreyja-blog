@@ -710,10 +710,10 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5":
-  version "7.4.5"
-  resolved "https://my-registry.dokku.coreyja.com/@babel%2fruntime/-/runtime-7.4.5.tgz#582bb531f5f9dc67d2fcb682979894f75e253f12"
-  integrity sha512-TuI4qpWZP6lGOGIuGWtp9sPluqYICmbk8T/1vpSysqJxRPkudh/ofFWyqdcMsDf2s7KvDL4/YHgKyvcS3g9CJQ==
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.2.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5":
+  version "7.5.5"
+  resolved "https://my-registry.dokku.coreyja.com/@babel%2fruntime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
+  integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
   dependencies:
     regenerator-runtime "^0.13.2"
 
@@ -6065,12 +6065,12 @@ gatsby-remark-prismjs@^3.3.8:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-responsive-iframe@^2.2.7:
-  version "2.2.7"
-  resolved "https://my-registry.dokku.coreyja.com/gatsby-remark-responsive-iframe/-/gatsby-remark-responsive-iframe-2.2.7.tgz#8b2c8976efbb5ef2a229f107d3e660beaf68bd13"
-  integrity sha512-E6Jku61fHmzLNZvwwRPnv3eT8PAsBR9aSsozMhXsH3s1fiae2iWYw4NpDAJGA7PaxyVJawdjepJGcNrafGM7/Q==
+gatsby-remark-responsive-iframe@^2.2.8:
+  version "2.2.8"
+  resolved "https://my-registry.dokku.coreyja.com/gatsby-remark-responsive-iframe/-/gatsby-remark-responsive-iframe-2.2.8.tgz#c8ee461f54494d7855905687a87ba2695a5e96d8"
+  integrity sha512-JiiNZWyWFdZrWbeemMSVL5juZvvVIMhoNWyJb05TwFb/VDd7DG2r2fHLdgdMnzOYAUBk43P2g7OWslWMf6bN1A==
   dependencies:
-    "@babel/runtime" "^7.0.0"
+    "@babel/runtime" "^7.5.5"
     bluebird "^3.5.5"
     cheerio "^1.0.0-rc.3"
     lodash "^4.17.15"
