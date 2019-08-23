@@ -23,7 +23,7 @@
     "gatsby-plugin-s3": "^0.3.1",
     "gatsby-plugin-sass": "^2.1.10",
     "gatsby-plugin-sharp": "^2.2.13",
-    "gatsby-plugin-sitemap": "^2.2.7",
+    "gatsby-plugin-sitemap": "^2.2.8",
     "gatsby-plugin-tags": "^2.3.5",
     "gatsby-plugin-typography": "^2.3.3",
     "gatsby-remark-copy-linked-files": "^2.1.7",
