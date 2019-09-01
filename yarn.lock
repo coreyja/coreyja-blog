@@ -6123,10 +6123,10 @@ gatsby-page-utils@^0.0.14:
     micromatch "^3.1.10"
     slash "^3.0.0"
 
-gatsby-plugin-feed@^2.3.9:
-  version "2.3.9"
-  resolved "https://my-registry.dokku.coreyja.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.3.9.tgz#2aea776ab10c78575b434d79bef5274c5d8d8e1f"
-  integrity sha512-gX6ovqpxy/X8igpbaok1+tXNkITOiwSMjlLKFtD1lo6Sh0y1RVoy5C0qijI0aq2m40yjhNT7M6Hm/guYBThu3A==
+gatsby-plugin-feed@^2.3.10:
+  version "2.3.10"
+  resolved "https://my-registry.dokku.coreyja.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.3.10.tgz#6a51d28784e814033c14fdc60fdfb25add329ea9"
+  integrity sha512-fP1uLsyyrz0qzvKHyADO5eH7DlNj6/070X5c3u0NPk6jqa59Xz3uNssYuJZQ1SLTUVLJkll1wuLvGgMhOgxuXA==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@hapi/joi" "^15.1.1"
