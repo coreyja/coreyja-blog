@@ -21,7 +21,7 @@
     "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-react-helmet": "^3.1.7",
     "gatsby-plugin-s3": "^0.3.1",
-    "gatsby-plugin-sass": "^2.1.14",
+    "gatsby-plugin-sass": "^2.1.15",
     "gatsby-plugin-sharp": "^2.2.13",
     "gatsby-plugin-sitemap": "^2.2.13",
     "gatsby-plugin-tags": "^2.3.6",
