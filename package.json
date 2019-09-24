@@ -14,7 +14,7 @@
     "@fortawesome/pro-regular-svg-icons": "^5.11.1",
     "@fortawesome/pro-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "gatsby": "^2.15.21",
+    "gatsby": "^2.15.22",
     "gatsby-image": "^2.2.21",
     "gatsby-plugin-feed": "^2.3.13",
     "gatsby-plugin-manifest": "^2.2.6",
