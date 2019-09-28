@@ -50,7 +50,7 @@
     "husky": "^2.7.0",
     "lighthouse": "^5.4.0",
     "lighthouse-batch": "^4.0.1",
-    "lint-staged": "^8.2.1",
+    "lint-staged": "^9.4.0",
     "prettier": "^1.18.2"
   },
   "homepage": "https://github.com/coreyja/coreyja-blog#readme",
