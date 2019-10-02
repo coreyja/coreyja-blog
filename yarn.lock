@@ -9319,10 +9319,10 @@ lighthouse@^4.2.0:
     yargs "3.32.0"
     yargs-parser "7.0.0"
 
-lighthouse@^5.4.0:
-  version "5.4.0"
-  resolved "https://my-registry.dokku.coreyja.com/lighthouse/-/lighthouse-5.4.0.tgz#e5896e86d7fa954658c31c3b4ccc34f094815ef2"
-  integrity sha512-zVRXTK6uTqYPGEJgcjFIfHzJGjtADMnsSfnFkOaKv6tCUdSyPT4Oo9h8sYanUy1ffxTBEZHQXyKxEfhMyw5bzA==
+lighthouse@^5.5.0:
+  version "5.5.0"
+  resolved "https://my-registry.dokku.coreyja.com/lighthouse/-/lighthouse-5.5.0.tgz#86eb8770f89117dd27075e4f292f181be509f65c"
+  integrity sha512-ZFwadvyjeRaM7l6OI3MKe2Vk8im8GTH/M2dd8jnSc5ePkwDh34VieQCLxN8yJZy5/bK6gJvaUBUtbftLvUrRbg==
   dependencies:
     axe-core "3.3.0"
     chrome-launcher "^0.11.2"
