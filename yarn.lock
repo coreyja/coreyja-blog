@@ -15173,10 +15173,10 @@ typeface-hack-nerd-font@0.0.60:
   resolved "https://my-registry.dokku.coreyja.com/typeface-hack-nerd-font/-/typeface-hack-nerd-font-0.0.60.tgz#1bd8b5464349257c8ecd25118db9bb84f860aea0"
   integrity sha512-zMUjgEWn7TacfnaoAwN7l6yUrRkrQMmFv0rkFUhxaXvPscwHjfHzYcGDPSyrWERsMexwUalCoyfDcWQs/sidpQ==
 
-typeface-oswald@^0.0.54:
-  version "0.0.54"
-  resolved "https://registry.yarnpkg.com/typeface-oswald/-/typeface-oswald-0.0.54.tgz#1e253011622cdd50f580c04e7d625e7f449763d7"
-  integrity sha512-U1WMNp4qfy4/3khIfHMVAIKnNu941MXUfs3+H9R8PFgnoz42Hh9pboSFztWr86zut0eXC8byalmVhfkiKON/8Q==
+typeface-oswald@^0.0.75:
+  version "0.0.75"
+  resolved "https://my-registry.dokku.coreyja.com/typeface-oswald/-/typeface-oswald-0.0.75.tgz#39c9b6d4a08e78bbec0460ee71269b5f3ff5f64b"
+  integrity sha512-nIwDgn0wDb2hawNsxa+ys+r+vaY6sroWZ5Q2DtjUILN/UaDi2XiY6T2zm6IDT3+yei79LhOh7oZe20VXC0wjrA==
 
 typography-normalize@^0.16.19:
   version "0.16.19"
