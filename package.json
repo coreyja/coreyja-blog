@@ -16,7 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "gatsby": "^2.15.34",
     "gatsby-image": "^2.2.29",
-    "gatsby-plugin-feed": "^2.3.19",
+    "gatsby-plugin-feed": "^2.5.11",
     "gatsby-plugin-manifest": "^2.2.6",
     "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-react-helmet": "^3.1.13",
