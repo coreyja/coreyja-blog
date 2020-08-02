@@ -1,0 +1,31 @@
+version: 2.1
+jobs:
+  test:
+    parallelism: 1
+    docker:
+      - image: circleci/node:14.0.0
+    steps:
+      - checkout
+      - run: yarn install --frozen
+      - run: yarn test
+  deploy:
+    parallelism: 1
+    docker:
+      - image: circleci/node:14.0.0
+    steps:
+      - checkout
+      - run: yarn install --frozen
+      - run: yarn build
+      - run: yarn deploy
+workflows:
+  version: 2.1
+  test_and_deploy:
+    jobs:
+      - test
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - test
