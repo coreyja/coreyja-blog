@@ -19,6 +19,7 @@ const typography = new Typography({
     "sans-serif"
   ],
   bodyColor: Grays.highContrast,
+  headerWeight: 600,
   headerColor: Grays.dark,
   overrideThemeStyles: ({ rhythm }, options, styles) => ({
     "p, h1, h2, h3, h4, h5, h6": {
