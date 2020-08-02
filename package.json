@@ -41,7 +41,7 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
-    "typeface-alternate-gothic1": "0.0.1",
+    "@coreyja/typeface-alternate-gothic1": "0.0.1",
     "typeface-hack-nerd-font": "0.0.60",
     "typeface-oswald": "^0.0.54",
     "typography": "^0.16.19"

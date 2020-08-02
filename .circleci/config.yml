@@ -7,6 +7,7 @@ jobs:
     steps:
       - checkout
       - run: "echo \"//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN\" >> .npmrc"
+      - run: "echo \"//npm.pkg.github.com/:_authToken=$GITHUB_PACKAGE_TOKEN\" >> .npmrc"
       - run: yarn install --frozen
       - run: yarn test
   deploy:
