@@ -6,6 +6,7 @@ jobs:
       - image: circleci/node:14.0.0
     steps:
       - checkout
+      - run: "echo \"//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN\" >> .npmrc"
       - run: yarn install --frozen
       - run: yarn test
   deploy:
