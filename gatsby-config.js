@@ -74,7 +74,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-tags",
       options: {
-        templatePath: `${__dirname}/src/templates/tag.js`
+        templatePath: `${__dirname}/src/templates/tag.tsx`
       }
     },
     {

@@ -1,7 +1,7 @@
 import React from "react";
 
-import Header from "./header.js";
-import SimpleAnalytics from "./simpleAnalytics.js";
+import Header from "./header";
+import SimpleAnalytics from "./simpleAnalytics";
 
 class Layout extends React.Component {
   render() {
