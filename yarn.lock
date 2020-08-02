@@ -1013,6 +1013,11 @@
   resolved "https://npm.pkg.github.com/download/@coreyja/typeface-alternate-gothic1/0.0.1/90c498afb6a9d7ce7d506d9c084b8ed82c8b265a7503360d3d6c19ce72a6fe5e#64a323750cf131d681cf56b92dadd2b5ace91296"
   integrity sha512-LDB0aQdKLUh1BJ5XBvgP5TI9Dfd9vTh6+YTSh5kXNSaN+5U442DXaZ+mUP0cseCxX46uw43wz9kZlOm9M2iPTw==
 
+"@coreyja/typeface-hack-nerd-font@0.0.60":
+  version "0.0.60"
+  resolved "https://npm.pkg.github.com/download/@coreyja/typeface-hack-nerd-font/0.0.60/7351fadea3778fa85cd9c62ad5657b0fcb7e687a48696891fb9b74c794043075#3624a2bc03974cb2bd020b67df93f3cb4bd26a0f"
+  integrity sha512-MeXszkrvyxC6MXRfpfyleQdKLLbWIaVemFKju4Fa3NjNUSXv6KM/+SzHczD1VoFNrd9aQ5m1uNhqQ41Ew6uz/A==
+
 "@fortawesome/fontawesome-common-types@^0.2.30":
   version "0.2.30"
   resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-common-types/-/0.2.30/fontawesome-common-types-0.2.30.tgz#2f1cc5b46bd76723be41d0013a8450c9ba92b777"
@@ -15012,11 +15017,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://my-registry.dokku.coreyja.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typeface-hack-nerd-font@0.0.60:
-  version "0.0.60"
-  resolved "https://my-registry.dokku.coreyja.com/typeface-hack-nerd-font/-/typeface-hack-nerd-font-0.0.60.tgz#1bd8b5464349257c8ecd25118db9bb84f860aea0"
-  integrity sha512-zMUjgEWn7TacfnaoAwN7l6yUrRkrQMmFv0rkFUhxaXvPscwHjfHzYcGDPSyrWERsMexwUalCoyfDcWQs/sidpQ==
 
 typeface-oswald@^0.0.54:
   version "0.0.54"
