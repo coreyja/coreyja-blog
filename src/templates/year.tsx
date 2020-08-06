@@ -5,10 +5,10 @@ import BlogLayout from "../components/blogLayout";
 import PostCards from "../components/postCards";
 import SEO from "../components/seo";
 
-const YearTemplate = ({ location, pageContext, data }) => {
+const YearTemplate = ({ pageContext, data }) => {
   const { year } = pageContext;
   return (
-    <BlogLayout location={location} title={`Posts in year "${year}"`}>
+    <BlogLayout>
       <div className="year-container">
         <SEO title={`Posts in year "${year}"`} />
         <h1>All Posts from {year}</h1>

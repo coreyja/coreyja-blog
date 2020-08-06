@@ -3,17 +3,9 @@ import { graphql } from "gatsby";
 
 import BlogPost from "../components/blogPost";
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    return (
-      <BlogPost
-        data={this.props.data}
-        pageContext={this.props.pageContext}
-        location={this.props.location}
-      />
-    );
-  }
-}
+const BlogPostTemplate: React.FunctionComponent = ({ pageContext, data }) => {
+  return <BlogPost data={data} pageContext={pageContext} />;
+};
 
 export default BlogPostTemplate;
 

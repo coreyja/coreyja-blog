@@ -1,4 +1,6 @@
-const Gray = {
+export type GrayKey = 'white' | 'background' | 'light' | 'light-symbols' | 'dark' | 'high-contrast' | 'near-black'
+
+const Gray: Record<GrayKey, string> = {
   white: "#ffffff",
   background: "#dadada",
   light: "#bcbcbc",

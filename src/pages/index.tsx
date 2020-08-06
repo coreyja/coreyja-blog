@@ -5,20 +5,17 @@ import BlogLayout from "../components/blogLayout";
 import PostCards from "../components/postCards";
 import SEO from "../components/seo";
 
-class BlogIndex extends React.Component {
-  render() {
-    const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
-    const posts = data.allMarkdownRemark.edges;
+const BlogIndex: React.FunctionComponent<{ data: never }> = ({ data }) => {
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allMarkdownRemark.edges;
 
-    return (
-      <BlogLayout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" keywords={[`blog`, `coreyja`, `rails`, `dev`]} />
-        <PostCards nodes={posts} />
-      </BlogLayout>
-    );
-  }
-}
+  return (
+    <BlogLayout>
+      <SEO title="All posts" keywords={[`blog`, `coreyja`, `rails`, `dev`]} />
+      <PostCards nodes={posts} />
+    </BlogLayout>
+  );
+};
 
 export default BlogIndex;
 

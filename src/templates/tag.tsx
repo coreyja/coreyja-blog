@@ -5,10 +5,10 @@ import BlogLayout from "../components/blogLayout";
 import PostCards from "../components/postCards";
 import SEO from "../components/seo";
 
-const CategoryTemplate = ({ location, pageContext, data }) => {
+const CategoryTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext;
   return (
-    <BlogLayout location={location} title={`Posts in tag "${tag}"`}>
+    <BlogLayout>
       <div className="tag-container">
         <SEO title={`Posts in tag "${tag}"`} />
         <h1>Posts tagged with #{tag}</h1>

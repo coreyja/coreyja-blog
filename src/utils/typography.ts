@@ -18,10 +18,10 @@ const typography = new Typography({
     "Helvetica Neue",
     "sans-serif"
   ],
-  bodyColor: Grays.highContrast,
+  bodyColor: Grays['high-contrast'],
   headerWeight: 600,
   headerColor: Grays.dark,
-  overrideThemeStyles: ({ rhythm }, options, styles) => ({
+  overrideThemeStyles: ({ rhythm }) => ({
     "p, h1, h2, h3, h4, h5, h6": {
       marginBottom: rhythm(1),
       marginTop: rhythm(1)

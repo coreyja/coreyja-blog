@@ -31,7 +31,7 @@ function PostCard(props) {
         ))}
       </div>
       <Link to={node.fields.slug} className={postCardStyles.more}>
-        More >
+        More &gt;
       </Link>
     </section>
   );

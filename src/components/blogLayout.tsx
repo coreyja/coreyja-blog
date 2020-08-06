@@ -10,28 +10,26 @@ import Layout from "./layout";
 import BlogSidebar from "./blogSidebar";
 import blogLayoutStyles from "./blogLayout.module.scss";
 
-function BlogLayout(props) {
-  return (
-    <Layout location={props.location} title={props.title}>
-      <div className={blogLayoutStyles.BlogLayout}>
-        <header>
-          <h1 className={blogLayoutStyles.headerTitle}>The Blog</h1>
-          <p className={blogLayoutStyles.headerSubTitle}>
-            Where I can tell you what I think...
-          </p>
-        </header>
-        <div className={blogLayoutStyles.container}>
-          <section className={blogLayoutStyles.mainContent}>
-            {props.children}
-          </section>
+const BlogLayout: React.FunctionComponent = props => (
+  <Layout>
+    <div className={blogLayoutStyles.BlogLayout}>
+      <header>
+        <h1 className={blogLayoutStyles.headerTitle}>The Blog</h1>
+        <p className={blogLayoutStyles.headerSubTitle}>
+          Where I can tell you what I think...
+        </p>
+      </header>
+      <div className={blogLayoutStyles.container}>
+        <section className={blogLayoutStyles.mainContent}>
+          {props.children}
+        </section>
 
-          <aside>
-            <BlogSidebar />
-          </aside>
-        </div>
+        <aside>
+          <BlogSidebar />
+        </aside>
       </div>
-    </Layout>
-  );
-}
+    </div>
+  </Layout>
+);
 
 export default BlogLayout;

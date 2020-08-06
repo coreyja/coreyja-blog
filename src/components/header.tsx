@@ -5,10 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faDev, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faRss } from "@fortawesome/pro-solid-svg-icons";
 
-import Color from "../utils/colors";
+import Color, { ColorKeys } from "../utils/colors";
 import Gray from "../utils/grays";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-const ColoredBar = props => (
+const ColoredBar = (props: { color: ColorKeys }) => (
   <div
     className={headerStyles.coloredBar}
     style={{ color: Color[props.color] }}
@@ -16,7 +17,7 @@ const ColoredBar = props => (
   />
 );
 
-const SocialIcon = props => (
+const SocialIcon = (props: { href: string; icon: IconProp; title: string }) => (
   <a
     href={props.href}
     className={headerStyles.socialIcon}
