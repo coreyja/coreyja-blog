@@ -5,7 +5,11 @@ import BlogLayout from "../components/blogLayout";
 import PostCards from "../components/postCards";
 import SEO from "../components/seo";
 
-const YearTemplate = ({ pageContext, data }) => {
+interface YearTemplate {
+  pageContext: { year: number };
+  data: { allMarkdownRemark: { edges: unknown[] } };
+}
+const YearTemplate = ({ pageContext, data }: YearTemplate) => {
   const { year } = pageContext;
   return (
     <BlogLayout>
