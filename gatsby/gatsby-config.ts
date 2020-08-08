@@ -1,4 +1,4 @@
-import { graphql } from "gatsby";
+import gql from 'graphql-tag';
 import {FeedQuery} from "../src/types/generated";
 
 module.exports = {
@@ -115,7 +115,7 @@ module.exports = {
                 });
               });
             },
-            query: graphql`
+            query: gql`
               query Feed {
                 site {
                   siteMetadata { siteUrl }
