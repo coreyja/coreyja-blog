@@ -2,23 +2,38 @@ import React from "react";
 import postCardStyles from "./postCard.module.scss";
 import { Link, graphql } from "gatsby";
 
-import Color from "../utils/colors";
+import Color, { ColorKey } from "../utils/colors";
+import { PostCardFragment } from "../types/generated";
 
-function PostCard(props) {
-  const node = props.node;
-  const title = node.frontmatter.title || node.fields.slug;
-  const tags = node.fields.tags || [];
-  const color = node.frontmatter.color || "purple";
+interface Props {
+  post: PostCardFragment;
+  key: string;
+}
+
+const PostCard: React.FunctionComponent<Props> = ({ post, key }) => {
+  const node = post;
+  const title = node.frontmatter?.title || node.fields?.slug;
+  const tags = node.fields?.tags || [];
+  const colorKey =
+    node.frontmatter?.color &&
+    Object.keys(Color).includes(node.frontmatter?.color)
+      ? (node.frontmatter.color as ColorKey)
+      : "purple";
+
+  const slug = node.fields?.slug;
+  if (!slug) {
+    throw "Slug is required";
+  }
 
   return (
     <section
       className={postCardStyles.card}
-      style={{ background: Color[color] }}
+      style={{ background: Color[colorKey] }}
     >
-      <Link to={node.fields.slug} className={postCardStyles.title}>
+      <Link to={slug} className={postCardStyles.title}>
         {title}
       </Link>
-      <div className={postCardStyles.date}>{node.frontmatter.date}</div>
+      <div className={postCardStyles.date}>{node.frontmatter?.date}</div>
       <div className={postCardStyles.tags}>
         {tags.map(tag => (
           <Link
@@ -30,12 +45,12 @@ function PostCard(props) {
           </Link>
         ))}
       </div>
-      <Link to={node.fields.slug} className={postCardStyles.more}>
+      <Link to={slug} className={postCardStyles.more}>
         More &gt;
       </Link>
     </section>
   );
-}
+};
 
 export default PostCard;
 

@@ -1,3 +1,6 @@
+import { graphql } from "gatsby";
+import {FeedQuery} from "../src/types/generated";
+
 module.exports = {
   siteMetadata: {
     title: `COREYJA`,
@@ -94,23 +97,29 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
+            serialize: ({ query: { site, allMarkdownRemark } }: { query: FeedQuery }) => {
+              const siteUrl = site?.siteMetadata?.siteUrl
+              if (!siteUrl) { throw 'Must have a siteUrl' }
+
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
-                  category: edge.node.fields.tags,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  category: edge.node.fields?.tags,
+                  date: edge.node.frontmatter?.date,
+                  url: siteUrl + edge.node.fields?.slug,
+                  guid: siteUrl + edge.node.fields?.slug,
                   custom_elements: [
                     { "content:encoded": edge.node.html },
-                    { tags: edge.node.fields.tags.join(",") }
+                    { tags: (edge.node.fields?.tags || []).join(",") }
                   ]
                 });
               });
             },
-            query: `
-              {
+            query: graphql`
+              query Feed {
+                site {
+                  siteMetadata { siteUrl }
+                }
                 allMarkdownRemark(
                   sort: { order: DESC, fields: [frontmatter___date] },
                 ) {

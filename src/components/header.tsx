@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faDev, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faRss } from "@fortawesome/pro-solid-svg-icons";
 
-import Color, { ColorKeys } from "../utils/colors";
+import Color, { ColorKey } from "../utils/colors";
 import Gray from "../utils/grays";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-const ColoredBar = (props: { color: ColorKeys }) => (
+const ColoredBar = (props: { color: ColorKey }) => (
   <div
     className={headerStyles.coloredBar}
     style={{ color: Color[props.color] }}

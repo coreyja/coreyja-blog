@@ -3075,6 +3075,41 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars["String"]>;
 };
 
+export type FeedQueryVariables = Exact<{ [key: string]: never }>;
+
+export type FeedQuery = { __typename?: "Query" } & {
+  site?: Maybe<
+    { __typename?: "Site" } & {
+      siteMetadata?: Maybe<
+        { __typename?: "SiteSiteMetadata" } & Pick<SiteSiteMetadata, "siteUrl">
+      >;
+    }
+  >;
+  allMarkdownRemark: { __typename?: "MarkdownRemarkConnection" } & {
+    edges: Array<
+      { __typename?: "MarkdownRemarkEdge" } & {
+        node: { __typename?: "MarkdownRemark" } & Pick<
+          MarkdownRemark,
+          "excerpt" | "html"
+        > & {
+            fields?: Maybe<
+              { __typename?: "MarkdownRemarkFields" } & Pick<
+                MarkdownRemarkFields,
+                "slug" | "tags"
+              >
+            >;
+            frontmatter?: Maybe<
+              { __typename?: "MarkdownRemarkFrontmatter" } & Pick<
+                MarkdownRemarkFrontmatter,
+                "title" | "date" | "description"
+              >
+            >;
+          };
+      }
+    >;
+  };
+};
+
 export type BlogsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type BlogsQuery = { __typename?: "Query" } & {
@@ -3419,21 +3454,9 @@ export type Unnamed_1_Query = { __typename?: "Query" } & {
   >;
 };
 
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never }>;
+export type BlogIndexQueryVariables = Exact<{ [key: string]: never }>;
 
-export type Unnamed_2_Query = { __typename?: "Query" } & {
-  site?: Maybe<
-    { __typename?: "Site" } & {
-      siteMetadata?: Maybe<
-        { __typename?: "SiteSiteMetadata" } & Pick<SiteSiteMetadata, "title">
-      >;
-    }
-  >;
-};
-
-export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never }>;
-
-export type Unnamed_3_Query = { __typename?: "Query" } & {
+export type BlogIndexQuery = { __typename?: "Query" } & {
   site?: Maybe<
     { __typename?: "Site" } & {
       siteMetadata?: Maybe<
@@ -3769,6 +3792,67 @@ export const PostCardFragmentDoc = gql`
     }
   }
 `;
+export const FeedDocument = gql`
+  query Feed {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          excerpt
+          html
+          fields {
+            slug
+            tags
+          }
+          frontmatter {
+            title
+            date
+            description
+          }
+        }
+      }
+    }
+  }
+`;
+
+/**
+ * __useFeedQuery__
+ *
+ * To run a query within a React component, call `useFeedQuery` and pass it any options that fit your needs.
+ * When your component renders, `useFeedQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useFeedQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useFeedQuery(
+  baseOptions?: Apollo.QueryHookOptions<FeedQuery, FeedQueryVariables>
+) {
+  return Apollo.useQuery<FeedQuery, FeedQueryVariables>(
+    FeedDocument,
+    baseOptions
+  );
+}
+export function useFeedLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<FeedQuery, FeedQueryVariables>
+) {
+  return Apollo.useLazyQuery<FeedQuery, FeedQueryVariables>(
+    FeedDocument,
+    baseOptions
+  );
+}
+export type FeedQueryHookResult = ReturnType<typeof useFeedQuery>;
+export type FeedLazyQueryHookResult = ReturnType<typeof useFeedLazyQuery>;
+export type FeedQueryResult = Apollo.QueryResult<FeedQuery, FeedQueryVariables>;
 export const BlogsDocument = gql`
   query Blogs {
     allMarkdownRemark(
@@ -4017,6 +4101,66 @@ export type BlogSidebarQueryLazyQueryHookResult = ReturnType<
 export type BlogSidebarQueryQueryResult = Apollo.QueryResult<
   BlogSidebarQueryQuery,
   BlogSidebarQueryQueryVariables
+>;
+export const BlogIndexDocument = gql`
+  query BlogIndex {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          ...PostCard
+        }
+      }
+    }
+  }
+  ${PostCardFragmentDoc}
+`;
+
+/**
+ * __useBlogIndexQuery__
+ *
+ * To run a query within a React component, call `useBlogIndexQuery` and pass it any options that fit your needs.
+ * When your component renders, `useBlogIndexQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useBlogIndexQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useBlogIndexQuery(
+  baseOptions?: Apollo.QueryHookOptions<BlogIndexQuery, BlogIndexQueryVariables>
+) {
+  return Apollo.useQuery<BlogIndexQuery, BlogIndexQueryVariables>(
+    BlogIndexDocument,
+    baseOptions
+  );
+}
+export function useBlogIndexLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    BlogIndexQuery,
+    BlogIndexQueryVariables
+  >
+) {
+  return Apollo.useLazyQuery<BlogIndexQuery, BlogIndexQueryVariables>(
+    BlogIndexDocument,
+    baseOptions
+  );
+}
+export type BlogIndexQueryHookResult = ReturnType<typeof useBlogIndexQuery>;
+export type BlogIndexLazyQueryHookResult = ReturnType<
+  typeof useBlogIndexLazyQuery
+>;
+export type BlogIndexQueryResult = Apollo.QueryResult<
+  BlogIndexQuery,
+  BlogIndexQueryVariables
 >;
 export const BlogPostBySlugDocument = gql`
   query BlogPostBySlug($slug: String!) {

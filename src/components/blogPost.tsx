@@ -32,7 +32,7 @@ function BlogPost(props: {
   if (!post.frontmatter?.color) {
     throw "Color in frontmatter is required";
   }
-  if (!(post.frontmatter.color in Object.keys(Color))) {
+  if (!Object.keys(Color).includes(post.frontmatter.color)) {
     throw "The color is not a color we can read";
   }
   const colorKey = post.frontmatter.color as ColorKey;

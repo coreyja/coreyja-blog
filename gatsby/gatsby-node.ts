@@ -3,7 +3,8 @@ import {BlogsQuery, YearsQuery} from "../src/types/generated";
 
 import path from 'path'
 import { createFilePath } from 'gatsby-source-filesystem'
-import {PageContext} from "../src/templates/blog-post";
+import {PageContext as BlogPostPageContext} from "../src/templates/blog-post";
+import {PageContext as YearPageContext} from "../src/templates/year";
 
 const createBlog = async ({
   graphql,
@@ -54,7 +55,7 @@ const createBlog = async ({
       throw 'No slug found for this post, one is needed'
     }
 
-    const context: PageContext = {
+    const context: BlogPostPageContext = {
         slug,
         previous,
         next
@@ -98,12 +99,12 @@ const createYears = async ({
       throw 'We dont have a year here and need one'
     }
 
+    const context: YearPageContext = { year: parseInt(year) }
+
     actions.createPage({
       path: `/year/${year}/`,
       component: yearPage,
-      context: {
-        year: parseInt(year)
-      }
+      context,
     });
   });
 }
@@ -126,7 +127,7 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, actions, getNod
       value
     });
 
-    const date = new Date(node.frontmatter.date);
+    const date = new Date((node.frontmatter as { date: string }).date);
     createNodeField({
       node,
       name: `year`,
