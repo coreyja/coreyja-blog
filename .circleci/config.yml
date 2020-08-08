@@ -2,9 +2,19 @@ version: 2.1
 commands:
   yarn-install:
     steps:
+      - restore_cache:
+          keys:
+            # when lock file changes, use increasingly general patterns to restore cache
+            - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-packages-v1-{{ .Branch }}-
+            - yarn-packages-v1-
       - run: "echo \"//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN\" >> .npmrc"
       - run: "echo \"//npm.pkg.github.com/:_authToken=$GITHUB_PACKAGE_TOKEN\" >> .npmrc"
-      - run: yarn install --frozen
+      - run: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn
+      - save_cache:
+          paths:
+            - ~/.cache/yarn
+          key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
 jobs:
   test:
     parallelism: 1
