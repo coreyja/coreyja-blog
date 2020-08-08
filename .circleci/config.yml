@@ -1,4 +1,10 @@
 version: 2.1
+commands:
+  yarn-install:
+    steps:
+      - run: "echo \"//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN\" >> .npmrc"
+      - run: "echo \"//npm.pkg.github.com/:_authToken=$GITHUB_PACKAGE_TOKEN\" >> .npmrc"
+      - run: yarn install --frozen
 jobs:
   test:
     parallelism: 1
@@ -6,9 +12,7 @@ jobs:
       - image: circleci/node:14.0.0
     steps:
       - checkout
-      - run: "echo \"//npm.fontawesome.com/:_authToken=$FONTAWESOME_AUTH_TOKEN\" >> .npmrc"
-      - run: "echo \"//npm.pkg.github.com/:_authToken=$GITHUB_PACKAGE_TOKEN\" >> .npmrc"
-      - run: yarn install --frozen
+      - yarn-install
       - run: yarn test
   deploy:
     parallelism: 1
@@ -16,7 +20,7 @@ jobs:
       - image: circleci/node:14.0.0
     steps:
       - checkout
-      - run: yarn install --frozen
+      - yarn-install
       - run: yarn build
       - run: yarn deploy
 workflows:
