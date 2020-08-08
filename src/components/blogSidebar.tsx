@@ -6,11 +6,12 @@
  */
 
 import React from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { useStaticQuery, graphql, Link, PageProps } from "gatsby";
 
 import blogSidebarStyles from "./blogSidebar.module.scss";
+import { BlogSidebarQueryQuery } from "../types/generated";
 
-function ListItem(props) {
+function ListItem(props: { to: string; title: string }) {
   return (
     <li className={blogSidebarStyles.listItem}>
       <Link to={props.to}>{props.title}</Link>
@@ -18,25 +19,26 @@ function ListItem(props) {
   );
 }
 
-function BlogSidebar(props) {
-  const data = useStaticQuery(blogSidebarQuery);
+function BlogSidebar() {
+  const data = useStaticQuery<BlogSidebarQueryQuery>(blogSidebarQuery);
   const recentPosts = data.recentPosts.edges;
   const tags = data.tags.group.sort((a, b) => b.count - a.count).slice(0, 15);
-  const years = data.years.group.sort((a, b) => b.year - a.year);
+  const years = data.years.group.sort(
+    (a, b) => parseInt(b.year!) - parseInt(a.year!)
+  );
 
   return (
     <div>
       <h2 className={blogSidebarStyles.title}>Recent Articles</h2>
       <ul className={blogSidebarStyles.list}>
         {recentPosts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug;
-          return (
-            <ListItem
-              to={node.fields.slug}
-              title={title}
-              key={node.fields.slug}
-            />
-          );
+          const slug = node.fields?.slug;
+          if (!slug) {
+            throw "Slug is required";
+          }
+
+          const title = node.frontmatter?.title || slug;
+          return <ListItem to={slug} title={title} key={slug} />;
         })}
       </ul>
 

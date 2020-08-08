@@ -1,18 +1,26 @@
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import React from "react";
 
 import BlogLayout from "../components/blogLayout";
 import PostCards from "../components/postCards";
 import SEO from "../components/seo";
+import { YearPageQuery } from "../types/generated";
 
-const YearTemplate = ({ location, pageContext, data }) => {
+export interface PageContext {
+  year: number;
+}
+
+const YearTemplate = ({
+  pageContext,
+  data
+}: PageProps<YearPageQuery, PageContext>) => {
   const { year } = pageContext;
   return (
-    <BlogLayout location={location} title={`Posts in year "${year}"`}>
+    <BlogLayout>
       <div className="year-container">
         <SEO title={`Posts in year "${year}"`} />
         <h1>All Posts from {year}</h1>
-        <PostCards nodes={data.allMarkdownRemark.edges} />
+        <PostCards posts={data.allMarkdownRemark.edges.map(x => x.node)} />
       </div>
     </BlogLayout>
   );

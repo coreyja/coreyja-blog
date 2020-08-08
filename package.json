@@ -8,6 +8,14 @@
     "url": "https://github.com/coreyja/coreyja-blog/issues"
   },
   "dependencies": {
+    "@apollo/client": "^3.1.3",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.0",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "@coreyja/typeface-alternate-gothic1": "0.0.1",
+    "@coreyja/typeface-hack-nerd-font": "0.0.60",
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/pro-light-svg-icons": "^5.11.2",
@@ -41,17 +49,24 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
-    "typeface-alternate-gothic1": "0.0.1",
-    "typeface-hack-nerd-font": "0.0.60",
-    "typeface-oswald": "^0.0.54",
+    "typeface-oswald": "^1.1.4",
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.17.7",
+    "@graphql-codegen/introspection": "^1.17.7",
+    "@graphql-codegen/typescript": "^1.17.7",
+    "@graphql-codegen/typescript-operations": "^1.17.7",
+    "@graphql-codegen/typescript-react-apollo": "^2.0.5",
+    "@types/react-helmet": "^6.0.0",
+    "@types/typography": "^0.16.3",
+    "gatsby-plugin-ts-config": "^0.2.3",
     "husky": "^2.7.0",
     "lighthouse": "^5.6.0",
     "lighthouse-batch": "^4.0.1",
     "lint-staged": "^8.2.1",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "typescript": "^3.9.7"
   },
   "homepage": "https://github.com/coreyja/coreyja-blog#readme",
   "keywords": [
@@ -65,12 +80,16 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "test": "yarn run format:test && yarn run type:test",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "format": "prettier --write src/**/*.{js,jsx,tsx}",
+    "format:test": "prettier --check src/**/*.{js,jsx,tsx}",
+    "start": "yarn run develop",
     "serve": "gatsby serve",
-    "test": "prettier --check src/**/*.{js,jsx}",
-    "deploy": "gatsby-plugin-s3 deploy"
+    "type:test": "tsc --noEmit",
+    "deploy": "gatsby-plugin-s3 deploy",
+    "ggl-types": "graphql-codegen --config codegen.yml",
+    "ggl-types:watch": "graphql-codegen --config codegen.yml -w"
   },
   "husky": {
     "hooks": {
@@ -78,7 +97,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": [
+    "*.{js,jsx,tsx}": [
       "prettier --write",
       "git add"
     ],

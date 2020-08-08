@@ -12,29 +12,45 @@ import SEO from "../components/seo";
 import blogPostStyles from "./blogPost.module.scss";
 import { Link, graphql } from "gatsby";
 
-import Color from "../utils/colors";
+import Color, { ColorKey } from "../utils/colors";
+import { BlogsQuery, BlogPostBySlugQuery } from "../types/generated";
+import { PageContext } from "../templates/blog-post";
 
-function BlogPost(props) {
-  const post = props.data.markdownRemark;
-  const siteTitle = props.data.site.siteMetadata.title;
+function BlogPost(props: {
+  data: BlogPostBySlugQuery;
+  pageContext: PageContext;
+}) {
+  const post = props.data.markdownRemark!;
+  const siteTitle = props.data.site?.siteMetadata?.title;
   const { previous, next } = props.pageContext;
 
+  const title = post.frontmatter?.title;
+  if (!title) {
+    throw "Title is required";
+  }
+
+  if (!post.frontmatter?.color) {
+    throw "Color in frontmatter is required";
+  }
+  if (!Object.keys(Color).includes(post.frontmatter.color)) {
+    throw "The color is not a color we can read";
+  }
+  const colorKey = post.frontmatter.color as ColorKey;
+  const color = Color[colorKey];
+
   return (
-    <BlogLayout location={props.location} title={siteTitle}>
+    <BlogLayout>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={title}
+        description={post.frontmatter?.description || post.excerpt || undefined}
       />
 
       <article className={blogPostStyles.BlogPost}>
         <section
           className={`${blogPostStyles.titleContainer} ${blogPostStyles.PostTitle}`}
-          style={{ color: Color[post.frontmatter.color] }}
+          style={{ color }}
         >
-          <h1
-            className={blogPostStyles.title}
-            style={{ color: Color[post.frontmatter.color] }}
-          >
+          <h1 className={blogPostStyles.title} style={{ color }}>
             {post.frontmatter.title}
           </h1>
           <h4 className={blogPostStyles.date}>{post.frontmatter.date}</h4>
@@ -42,14 +58,11 @@ function BlogPost(props) {
 
         <section
           className={blogPostStyles.post}
-          dangerouslySetInnerHTML={{ __html: post.html }}
+          dangerouslySetInnerHTML={{ __html: post.html! }}
         />
 
-        <section
-          className={blogPostStyles.tags}
-          style={{ color: Color[post.frontmatter.color] }}
-        >
-          {post.fields.tags.map(tag => (
+        <section className={blogPostStyles.tags} style={{ color }}>
+          {post.fields?.tags?.map(tag => (
             <Link to={`/tags/${tag}`} className={blogPostStyles.tag}>
               {tag}
             </Link>
@@ -69,15 +82,15 @@ function BlogPost(props) {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+              <Link to={previous.slug} rel="prev">
+                ← {previous.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+              <Link to={next.slug} rel="next">
+                {next.title} →
               </Link>
             )}
           </li>
@@ -103,6 +116,7 @@ export const blogPostFragment = graphql`
       title
       date(formatString: "M.D.YY")
       color
+      description
     }
   }
 `;

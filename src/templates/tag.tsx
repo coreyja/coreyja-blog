@@ -1,18 +1,26 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 
 import BlogLayout from "../components/blogLayout";
 import PostCards from "../components/postCards";
 import SEO from "../components/seo";
+import { TagPageQuery } from "../types/generated";
 
-const CategoryTemplate = ({ location, pageContext, data }) => {
+export interface PageContext {
+  tag: string;
+}
+
+const CategoryTemplate = ({
+  pageContext,
+  data
+}: PageProps<TagPageQuery, PageContext>) => {
   const { tag } = pageContext;
   return (
-    <BlogLayout location={location} title={`Posts in tag "${tag}"`}>
+    <BlogLayout>
       <div className="tag-container">
         <SEO title={`Posts in tag "${tag}"`} />
         <h1>Posts tagged with #{tag}</h1>
-        <PostCards nodes={data.allMarkdownRemark.edges} />
+        <PostCards posts={data.allMarkdownRemark.edges.map(x => x.node)} />
       </div>
     </BlogLayout>
   );
