@@ -1,9 +1,24 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 
 import BlogPost from "../components/blogPost";
+import { BlogPostBySlugQuery } from "../types/generated";
 
-const BlogPostTemplate: React.FunctionComponent = ({ pageContext, data }) => {
+interface NextPrevPage {
+  slug: string;
+  title: string;
+}
+
+export interface PageContext {
+  slug: string;
+  previous?: NextPrevPage;
+  next?: NextPrevPage;
+}
+
+const BlogPostTemplate = ({
+  pageContext,
+  data
+}: PageProps<BlogPostBySlugQuery, PageContext>) => {
   return <BlogPost data={data} pageContext={pageContext} />;
 };
 

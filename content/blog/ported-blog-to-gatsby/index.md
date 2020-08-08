@@ -8,6 +8,7 @@ tags:
   - react
   - ramblings
 color: blue
+description: "I ported my blog to Gatsby 🎉"
 ---
 
 For a couple years now I've used the Middleman ruby framework to build my static blog site. I choose Middleman initially since it was a very similar environment to Rails, which I have more experience in. This definitely helped my get off the ground quickly!

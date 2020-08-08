@@ -8,6 +8,7 @@
     "url": "https://github.com/coreyja/coreyja-blog/issues"
   },
   "dependencies": {
+    "@apollo/client": "^3.1.3",
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.0",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -52,6 +53,11 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.17.7",
+    "@graphql-codegen/introspection": "^1.17.7",
+    "@graphql-codegen/typescript": "^1.17.7",
+    "@graphql-codegen/typescript-operations": "^1.17.7",
+    "@graphql-codegen/typescript-react-apollo": "^2.0.5",
     "@types/react-helmet": "^6.0.0",
     "@types/typography": "^0.16.3",
     "gatsby-plugin-ts-config": "^0.2.3",
@@ -76,11 +82,13 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx,tsx}",
-    "start": "npm run develop",
+    "start": "yarn run develop",
     "serve": "gatsby serve",
     "test": "prettier --check src/**/*.{js,jsx,tsx}",
     "type-check": "tsc --noEmit",
-    "deploy": "gatsby-plugin-s3 deploy"
+    "deploy": "gatsby-plugin-s3 deploy",
+    "ggl-types": "graphql-codegen --config codegen.yml",
+    "ggl-types:watch": "graphql-codegen --config codegen.yml -w"
   },
   "husky": {
     "hooks": {

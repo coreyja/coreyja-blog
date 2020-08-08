@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import BlogLayout from "../components/blogLayout";
 import PostCards from "../components/postCards";
 import SEO from "../components/seo";
+import { TagPageDocument } from "../types/generated";
 
 const CategoryTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext;
