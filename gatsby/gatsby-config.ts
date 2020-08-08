@@ -1,5 +1,8 @@
-import gql from 'graphql-tag';
-import {FeedQuery} from "../src/types/generated";
+import path from 'path'
+
+import { FeedQuery } from "../src/types/generated";
+
+const graphql = (x: TemplateStringsArray): string => x.join("\n");
 
 module.exports = {
   siteMetadata: {
@@ -77,7 +80,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-tags",
       options: {
-        templatePath: `${__dirname}/../src/templates/tag.tsx`
+        templatePath: path.resolve(`${__dirname}/../src/templates/tag.tsx`)
       }
     },
     {
@@ -115,7 +118,7 @@ module.exports = {
                 });
               });
             },
-            query: gql`
+            query: graphql`
               query Feed {
                 site {
                   siteMetadata { siteUrl }
