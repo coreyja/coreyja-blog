@@ -1,7 +1,7 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 class SimpleAnalytics extends React.Component {
-  render() {
+  render(): ReactNode {
     return (
       <div>
         <script async defer src="//simple.coreyja.com/app.js" />

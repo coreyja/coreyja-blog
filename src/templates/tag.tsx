@@ -10,10 +10,10 @@ export interface PageContext {
   tag: string;
 }
 
-const CategoryTemplate = ({
-  pageContext,
-  data
-}: PageProps<TagPageQuery, PageContext>) => {
+const CategoryTemplate: React.FunctionComponent<PageProps<
+  TagPageQuery,
+  PageContext
+>> = ({ pageContext, data }) => {
   const { tag } = pageContext;
   return (
     <BlogLayout>

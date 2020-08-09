@@ -11,51 +11,49 @@ import Image from "gatsby-image";
 
 import { rhythm } from "../utils/typography";
 
-function Bio() {
-  return (
-    <StaticQuery
-      query={bioQuery}
-      render={data => {
-        const { author, social } = data.site.siteMetadata;
-        return (
-          <div
+const Bio: React.FunctionComponent = () => (
+  <StaticQuery
+    query={bioQuery}
+    render={data => {
+      const { author, social } = data.site.siteMetadata;
+      return (
+        <div
+          style={{
+            display: `flex`,
+            marginBottom: rhythm(2.5)
+          }}
+        >
+          <Image
+            fixed={data.avatar.childImageSharp.fixed}
+            alt={author}
             style={{
-              display: `flex`,
-              marginBottom: rhythm(2.5)
+              marginRight: rhythm(1 / 2),
+              marginBottom: 0,
+              minWidth: 50,
+              borderRadius: `100%`
+            }}
+            imgStyle={{
+              borderRadius: `50%`
+            }}
+          />
+          <p
+            style={{
+              marginTop: 0,
+              marginBottom: 0
             }}
           >
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
-                minWidth: 50,
-                borderRadius: `100%`
-              }}
-              imgStyle={{
-                borderRadius: `50%`
-              }}
-            />
-            <p
-              style={{
-                marginTop: 0,
-                marginBottom: 0
-              }}
-            >
-              Written by <strong>{author}</strong> who lives and works in NYC
-              building useful things.
-              {` `}
-              <a href={`https://github.com/${social.github}`}>
-                You should check out what he's building on Github
-              </a>
-            </p>
-          </div>
-        );
-      }}
-    />
-  );
-}
+            Written by <strong>{author}</strong> who lives and works in NYC
+            building useful things.
+            {` `}
+            <a href={`https://github.com/${social.github}`}>
+              You should check out what he&apos;s building on Github
+            </a>
+          </p>
+        </div>
+      );
+    }}
+  />
+);
 
 const bioQuery = graphql`
   query BioQuery {

@@ -7,10 +7,9 @@ import { PostCardFragment } from "../types/generated";
 
 interface Props {
   post: PostCardFragment;
-  key: string;
 }
 
-const PostCard: React.FunctionComponent<Props> = ({ post, key }) => {
+const PostCard: React.FunctionComponent<Props> = ({ post }) => {
   const node = post;
   const title = node.frontmatter?.title || node.fields?.slug;
   const tags = node.fields?.tags || [];

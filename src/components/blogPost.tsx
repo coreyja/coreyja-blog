@@ -13,23 +13,24 @@ import blogPostStyles from "./blogPost.module.scss";
 import { Link, graphql } from "gatsby";
 
 import Color, { ColorKey } from "../utils/colors";
-import { BlogsQuery, BlogPostBySlugQuery } from "../types/generated";
+import { BlogPostBySlugQuery } from "../types/generated";
 import { PageContext } from "../templates/blog-post";
 
-function BlogPost(props: {
+interface Props {
   data: BlogPostBySlugQuery;
   pageContext: PageContext;
-}) {
-  const post = props.data.markdownRemark!;
-  const siteTitle = props.data.site?.siteMetadata?.title;
+}
+
+const BlogPost: React.FunctionComponent<Props> = props => {
+  const post = props.data.markdownRemark;
   const { previous, next } = props.pageContext;
 
-  const title = post.frontmatter?.title;
+  const title = post?.frontmatter?.title;
   if (!title) {
     throw "Title is required";
   }
 
-  if (!post.frontmatter?.color) {
+  if (!post?.frontmatter?.color) {
     throw "Color in frontmatter is required";
   }
   if (!Object.keys(Color).includes(post.frontmatter.color)) {
@@ -56,17 +57,26 @@ function BlogPost(props: {
           <h4 className={blogPostStyles.date}>{post.frontmatter.date}</h4>
         </section>
 
-        <section
-          className={blogPostStyles.post}
-          dangerouslySetInnerHTML={{ __html: post.html! }}
-        />
+        {post.html && (
+          <section
+            className={blogPostStyles.post}
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+        )}
 
         <section className={blogPostStyles.tags} style={{ color }}>
-          {post.fields?.tags?.map(tag => (
-            <Link to={`/tags/${tag}`} className={blogPostStyles.tag}>
-              {tag}
-            </Link>
-          ))}
+          {post.fields?.tags?.map(
+            tag =>
+              tag && (
+                <Link
+                  to={`/tags/${tag}`}
+                  className={blogPostStyles.tag}
+                  key={tag}
+                >
+                  {tag}
+                </Link>
+              )
+          )}
         </section>
 
         <ul
@@ -100,7 +110,7 @@ function BlogPost(props: {
       <Bio />
     </BlogLayout>
   );
-}
+};
 
 export default BlogPost;
 

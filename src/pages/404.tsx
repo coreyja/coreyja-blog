@@ -1,11 +1,10 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React, { ReactNode } from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 class NotFoundPage extends React.Component {
-  render() {
+  render(): ReactNode {
     return (
       <Layout>
         <SEO title="404: Not Found" />

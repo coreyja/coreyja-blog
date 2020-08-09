@@ -3,14 +3,18 @@ import postCardsStyles from "./postCards.module.scss";
 import PostCard from "./postCard";
 import { PostCardFragment } from "../types/generated";
 
-function PostCards({ posts }: { posts: PostCardFragment[] }) {
+interface Props {
+  posts: PostCardFragment[];
+}
+
+const PostCards: React.FunctionComponent<Props> = ({ posts }) => {
   return (
     <div className={postCardsStyles.container}>
-      {posts.map(node => (
-        <PostCard post={node} key={node.fields!.slug!} />
+      {posts.map((post, index) => (
+        <PostCard post={post} key={post.fields?.slug || index.toString()} />
       ))}
     </div>
   );
-}
+};
 
 export default PostCards;

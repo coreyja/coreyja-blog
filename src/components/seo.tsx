@@ -12,7 +12,6 @@ import { useStaticQuery, graphql } from "gatsby";
 interface SEOProps {
   description?: string;
   lang?: string;
-  meta?: any[];
   keywords?: string[];
   title: string;
 }
@@ -20,7 +19,6 @@ interface SEOProps {
 const SEO: FunctionComponent<SEOProps> = ({
   description,
   lang,
-  meta = [],
   keywords = [],
   title
 }) => {
@@ -80,16 +78,14 @@ const SEO: FunctionComponent<SEOProps> = ({
           name: `twitter:description`,
           content: metaDescription
         }
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `)
-              }
-            : []
-        )
-        .concat(meta)}
+      ].concat(
+        keywords.length > 0
+          ? {
+              name: `keywords`,
+              content: keywords.join(`, `)
+            }
+          : []
+      )}
     />
   );
 };

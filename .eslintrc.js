@@ -35,7 +35,7 @@ module.exports = {
     // interface start with capital I
     "@typescript-eslint/interface-name-prefix": "off",
     // allow @ts-ignore for testing purposes
-    "@typescript-eslint/ban-ts-ignore": "off"
+    "@typescript-eslint/ban-ts-comment": "off"
   },
   ignorePatterns: [
     "node_modules/**/*",

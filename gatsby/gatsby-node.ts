@@ -36,40 +36,49 @@ const createBlog = async ({ graphql, actions }: CreatePagesArgs) => {
   }
 
   // Create blog posts pages.
-  const posts = result.data!.allMarkdownRemark.edges;
+  const posts = result.data?.allMarkdownRemark.edges;
 
-  posts.forEach((post, index) => {
-    const previousNode =
-      index === posts.length - 1 ? undefined : posts[index + 1].node;
-    const nextNode = index === 0 ? undefined : posts[index - 1].node;
+  posts &&
+    posts.forEach((post, index) => {
+      const previousNode =
+        index === posts.length - 1 ? undefined : posts[index + 1].node;
+      const nextNode = index === 0 ? undefined : posts[index - 1].node;
 
-    const previous = previousNode && {
-      slug: previousNode.fields!.slug!,
-      title: previousNode.frontmatter!.title!
-    };
-    const next = nextNode && {
-      slug: nextNode.fields!.slug!,
-      title: nextNode.frontmatter!.title!
-    };
+      const previous =
+        previousNode &&
+        previousNode.fields?.slug &&
+        previousNode.frontmatter?.title
+          ? {
+              slug: previousNode.fields.slug,
+              title: previousNode.frontmatter.title
+            }
+          : undefined;
+      const next =
+        nextNode && nextNode.fields?.slug && nextNode.frontmatter?.title
+          ? {
+              slug: nextNode.fields.slug,
+              title: nextNode.frontmatter.title
+            }
+          : undefined;
 
-    const slug = post.node.fields && post.node.fields.slug;
+      const slug = post.node.fields && post.node.fields.slug;
 
-    if (!slug) {
-      throw "No slug found for this post, one is needed";
-    }
+      if (!slug) {
+        throw "No slug found for this post, one is needed";
+      }
 
-    const context: BlogPostPageContext = {
-      slug,
-      previous,
-      next
-    };
+      const context: BlogPostPageContext = {
+        slug,
+        previous,
+        next
+      };
 
-    actions.createPage({
-      path: slug,
-      component: blogPost,
-      context
+      actions.createPage({
+        path: slug,
+        component: blogPost,
+        context
+      });
     });
-  });
 };
 
 const createYears = async ({ graphql, actions }: CreatePagesArgs) => {
@@ -92,21 +101,22 @@ const createYears = async ({ graphql, actions }: CreatePagesArgs) => {
   }
 
   // Create blog posts pages.
-  const years = result.data!.years.group;
+  const years = result.data?.years.group;
 
-  years.forEach(({ year }) => {
-    if (!year) {
-      throw "We dont have a year here and need one";
-    }
+  years &&
+    years.forEach(({ year }) => {
+      if (!year) {
+        throw "We dont have a year here and need one";
+      }
 
-    const context: YearPageContext = { year: parseInt(year) };
+      const context: YearPageContext = { year: parseInt(year) };
 
-    actions.createPage({
-      path: `/year/${year}/`,
-      component: yearPage,
-      context
+      actions.createPage({
+        path: `/year/${year}/`,
+        component: yearPage,
+        context
+      });
     });
-  });
 };
 
 export const createPages: GatsbyNode["createPages"] = node => {

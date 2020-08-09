@@ -15,10 +15,10 @@ export interface PageContext {
   next?: NextPrevPage;
 }
 
-const BlogPostTemplate = ({
-  pageContext,
-  data
-}: PageProps<BlogPostBySlugQuery, PageContext>) => {
+const BlogPostTemplate: React.FunctionComponent<PageProps<
+  BlogPostBySlugQuery,
+  PageContext
+>> = ({ pageContext, data }) => {
   return <BlogPost data={data} pageContext={pageContext} />;
 };
 

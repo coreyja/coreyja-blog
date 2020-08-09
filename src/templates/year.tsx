@@ -10,10 +10,10 @@ export interface PageContext {
   year: number;
 }
 
-const YearTemplate = ({
-  pageContext,
-  data
-}: PageProps<YearPageQuery, PageContext>) => {
+const YearTemplate: React.FunctionComponent<PageProps<
+  YearPageQuery,
+  PageContext
+>> = ({ pageContext, data }) => {
   const { year } = pageContext;
   return (
     <BlogLayout>

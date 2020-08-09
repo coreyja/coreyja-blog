@@ -6,7 +6,7 @@
  */
 
 import React from "react";
-import { useStaticQuery, graphql, Link, PageProps } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
 import blogSidebarStyles from "./blogSidebar.module.scss";
 import { BlogSidebarQueryQuery } from "../types/generated";
@@ -19,12 +19,12 @@ function ListItem(props: { to: string; title: string }) {
   );
 }
 
-function BlogSidebar() {
+const BlogSidebar: React.FunctionComponent = () => {
   const data = useStaticQuery<BlogSidebarQueryQuery>(blogSidebarQuery);
   const recentPosts = data.recentPosts.edges;
   const tags = data.tags.group.sort((a, b) => b.count - a.count).slice(0, 15);
   const years = data.years.group.sort(
-    (a, b) => parseInt(b.year!) - parseInt(a.year!)
+    (a, b) => parseInt(b.year || "0") - parseInt(a.year || "0")
   );
 
   return (
@@ -65,7 +65,7 @@ function BlogSidebar() {
       </ul>
     </div>
   );
-}
+};
 
 const blogSidebarQuery = graphql`
   query BlogSidebarQuery {

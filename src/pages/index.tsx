@@ -4,9 +4,11 @@ import { graphql, PageProps } from "gatsby";
 import BlogLayout from "../components/blogLayout";
 import PostCards from "../components/postCards";
 import SEO from "../components/seo";
-import { BlogIndexQuery, PostCardFragment } from "../types/generated";
+import { BlogIndexQuery } from "../types/generated";
 
-const BlogIndex = ({ data }: PageProps<BlogIndexQuery>) => {
+const BlogIndex: React.FunctionComponent<PageProps<BlogIndexQuery>> = ({
+  data
+}) => {
   const posts = data.allMarkdownRemark.edges.map(x => x.node);
 
   return (
