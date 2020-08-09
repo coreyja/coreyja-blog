@@ -50,14 +50,14 @@ const createBlog = async ({ graphql, actions }: CreatePagesArgs) => {
         previousNode.frontmatter?.title
           ? {
               slug: previousNode.fields.slug,
-              title: previousNode.frontmatter.title
+              title: previousNode.frontmatter.title,
             }
           : undefined;
       const next =
         nextNode && nextNode.fields?.slug && nextNode.frontmatter?.title
           ? {
               slug: nextNode.fields.slug,
-              title: nextNode.frontmatter.title
+              title: nextNode.frontmatter.title,
             }
           : undefined;
 
@@ -70,13 +70,13 @@ const createBlog = async ({ graphql, actions }: CreatePagesArgs) => {
       const context: BlogPostPageContext = {
         slug,
         previous,
-        next
+        next,
       };
 
       actions.createPage({
         path: slug,
         component: blogPost,
-        context
+        context,
       });
     });
 };
@@ -114,19 +114,19 @@ const createYears = async ({ graphql, actions }: CreatePagesArgs) => {
       actions.createPage({
         path: `/year/${year}/`,
         component: yearPage,
-        context
+        context,
       });
     });
 };
 
-export const createPages: GatsbyNode["createPages"] = node => {
+export const createPages: GatsbyNode["createPages"] = (node) => {
   return Promise.all([createBlog(node), createYears(node)]);
 };
 
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
   actions,
-  getNode
+  getNode,
 }) => {
   const { createNodeField } = actions;
 
@@ -135,14 +135,14 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
     createNodeField({
       name: `slug`,
       node,
-      value
+      value,
     });
 
     const date = new Date((node.frontmatter as { date: string }).date);
     createNodeField({
       node,
       name: `year`,
-      value: date.getFullYear()
+      value: date.getFullYear(),
     });
   }
 };

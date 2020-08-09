@@ -5,6 +5,6 @@ const Color: Record<ColorKey, string> = {
   green: "#99cc00",
   blue: "#33b5e5",
   purple: "#aa66cc",
-  orange: "#ffbb33"
+  orange: "#ffbb33",
 };
 export default Color;

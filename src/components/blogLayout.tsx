@@ -10,7 +10,7 @@ import Layout from "./layout";
 import BlogSidebar from "./blogSidebar";
 import blogLayoutStyles from "./blogLayout.module.scss";
 
-const BlogLayout: React.FunctionComponent = props => (
+const BlogLayout: React.FunctionComponent = (props) => (
   <Layout>
     <div className={blogLayoutStyles.BlogLayout}>
       <header>

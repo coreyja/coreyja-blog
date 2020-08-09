@@ -14,13 +14,13 @@ import { rhythm } from "../utils/typography";
 const Bio: React.FunctionComponent = () => (
   <StaticQuery
     query={bioQuery}
-    render={data => {
+    render={(data) => {
       const { author, social } = data.site.siteMetadata;
       return (
         <div
           style={{
             display: `flex`,
-            marginBottom: rhythm(2.5)
+            marginBottom: rhythm(2.5),
           }}
         >
           <Image
@@ -30,16 +30,16 @@ const Bio: React.FunctionComponent = () => (
               marginRight: rhythm(1 / 2),
               marginBottom: 0,
               minWidth: 50,
-              borderRadius: `100%`
+              borderRadius: `100%`,
             }}
             imgStyle={{
-              borderRadius: `50%`
+              borderRadius: `50%`,
             }}
           />
           <p
             style={{
               marginTop: 0,
-              marginBottom: 0
+              marginBottom: 0,
             }}
           >
             Written by <strong>{author}</strong> who lives and works in NYC
