@@ -40,6 +40,7 @@ module.exports = {
   ignorePatterns: [
     "node_modules/**/*",
     "src/types/generated.tsx",
-    "public/**/*"
+    "public/**/*",
+    "gatsby-config.js"
   ]
 };
