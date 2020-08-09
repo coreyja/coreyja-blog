@@ -1,15 +1,12 @@
-import {GatsbyNode, CreatePagesArgs} from "gatsby";
-import {BlogsQuery, YearsQuery} from "../src/types/generated";
+import { GatsbyNode, CreatePagesArgs } from "gatsby";
+import { BlogsQuery, YearsQuery } from "../src/types/generated";
 
-import path from 'path'
-import { createFilePath } from 'gatsby-source-filesystem'
-import {PageContext as BlogPostPageContext} from "../src/templates/blog-post";
-import {PageContext as YearPageContext} from "../src/templates/year";
+import path from "path";
+import { createFilePath } from "gatsby-source-filesystem";
+import { PageContext as BlogPostPageContext } from "../src/templates/blog-post";
+import { PageContext as YearPageContext } from "../src/templates/year";
 
-const createBlog = async ({
-  graphql,
-  actions,
-}: CreatePagesArgs) => {
+const createBlog = async ({ graphql, actions }: CreatePagesArgs) => {
   const blogPost = path.resolve(`./src/templates/blog-post.tsx`);
 
   const result = await graphql<BlogsQuery>(
@@ -32,7 +29,7 @@ const createBlog = async ({
         }
       }
     `
-  )
+  );
 
   if (result.errors) {
     throw result.errors;
@@ -46,33 +43,36 @@ const createBlog = async ({
       index === posts.length - 1 ? undefined : posts[index + 1].node;
     const nextNode = index === 0 ? undefined : posts[index - 1].node;
 
-    const previous = previousNode && { slug: previousNode.fields!.slug!, title: previousNode.frontmatter!.title! }
-    const next = nextNode && { slug: nextNode.fields!.slug!, title: nextNode.frontmatter!.title! }
+    const previous = previousNode && {
+      slug: previousNode.fields!.slug!,
+      title: previousNode.frontmatter!.title!
+    };
+    const next = nextNode && {
+      slug: nextNode.fields!.slug!,
+      title: nextNode.frontmatter!.title!
+    };
 
-    const slug = post.node.fields && post.node.fields.slug
+    const slug = post.node.fields && post.node.fields.slug;
 
     if (!slug) {
-      throw 'No slug found for this post, one is needed'
+      throw "No slug found for this post, one is needed";
     }
 
     const context: BlogPostPageContext = {
-        slug,
-        previous,
-        next
-      };
+      slug,
+      previous,
+      next
+    };
 
     actions.createPage({
       path: slug,
       component: blogPost,
-      context,
+      context
     });
   });
-}
+};
 
-const createYears = async ({
-  graphql,
-  actions,
-}: CreatePagesArgs) => {
+const createYears = async ({ graphql, actions }: CreatePagesArgs) => {
   const yearPage = path.resolve(`./src/templates/year.tsx`);
 
   const result = await graphql<YearsQuery>(
@@ -86,7 +86,7 @@ const createYears = async ({
         }
       }
     `
-  )
+  );
   if (result.errors) {
     throw result.errors;
   }
@@ -96,27 +96,28 @@ const createYears = async ({
 
   years.forEach(({ year }) => {
     if (!year) {
-      throw 'We dont have a year here and need one'
+      throw "We dont have a year here and need one";
     }
 
-    const context: YearPageContext = { year: parseInt(year) }
+    const context: YearPageContext = { year: parseInt(year) };
 
     actions.createPage({
       path: `/year/${year}/`,
       component: yearPage,
-      context,
+      context
     });
   });
-}
-
-export const createPages: GatsbyNode['createPages'] = (node) => {
-  return Promise.all([
-    createBlog(node),
-    createYears(node)
-  ]);
 };
 
-export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, actions, getNode }) => {
+export const createPages: GatsbyNode["createPages"] = node => {
+  return Promise.all([createBlog(node), createYears(node)]);
+};
+
+export const onCreateNode: GatsbyNode["onCreateNode"] = ({
+  node,
+  actions,
+  getNode
+}) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {

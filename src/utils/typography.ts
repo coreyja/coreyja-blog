@@ -18,7 +18,7 @@ const typography = new Typography({
     "Helvetica Neue",
     "sans-serif"
   ],
-  bodyColor: Grays['high-contrast'],
+  bodyColor: Grays["high-contrast"],
   headerWeight: 600,
   headerColor: Grays.dark,
   overrideThemeStyles: ({ rhythm }) => ({

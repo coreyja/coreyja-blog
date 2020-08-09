@@ -1,4 +1,11 @@
-export type GrayKey = 'white' | 'background' | 'light' | 'light-symbols' | 'dark' | 'high-contrast' | 'near-black'
+export type GrayKey =
+  | "white"
+  | "background"
+  | "light"
+  | "light-symbols"
+  | "dark"
+  | "high-contrast"
+  | "near-black";
 
 const Gray: Record<GrayKey, string> = {
   white: "#ffffff",

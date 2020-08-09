@@ -1,4 +1,4 @@
-export type ColorKey = 'red' | 'green' | 'blue' | 'purple' | 'orange'
+export type ColorKey = "red" | "green" | "blue" | "purple" | "orange";
 
 const Color: Record<ColorKey, string> = {
   red: "#ff4444",

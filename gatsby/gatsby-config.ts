@@ -1,4 +1,4 @@
-import path from 'path'
+import path from "path";
 
 import { FeedQuery } from "../src/types/generated";
 
@@ -100,9 +100,15 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }: { query: FeedQuery }) => {
-              const siteUrl = site?.siteMetadata?.siteUrl
-              if (!siteUrl) { throw 'Must have a siteUrl' }
+            serialize: ({
+              query: { site, allMarkdownRemark }
+            }: {
+              query: FeedQuery;
+            }) => {
+              const siteUrl = site?.siteMetadata?.siteUrl;
+              if (!siteUrl) {
+                throw "Must have a siteUrl";
+              }
 
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
@@ -121,10 +127,12 @@ module.exports = {
             query: graphql`
               query Feed {
                 site {
-                  siteMetadata { siteUrl }
+                  siteMetadata {
+                    siteUrl
+                  }
                 }
                 allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { order: DESC, fields: [frontmatter___date] }
                 ) {
                   edges {
                     node {
@@ -170,6 +178,18 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`
       }
     },
-    `gatsby-plugin-sitemap`
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-eslint",
+      options: {
+        test: /\.js$|\.jsx$|\.ts$|\.tsx$/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ["develop"],
+        options: {
+          emitWarning: true,
+          failOnError: true
+        }
+      }
+    }
   ]
 };
