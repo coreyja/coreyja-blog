@@ -20,7 +20,7 @@ const YearTemplate: React.FunctionComponent<PageProps<
       <div className="year-container">
         <SEO title={`Posts in year "${year}"`} />
         <h1>All Posts from {year}</h1>
-        <PostCards posts={data.allMarkdownRemark.edges.map(x => x.node)} />
+        <PostCards posts={data.allMarkdownRemark.edges.map((x) => x.node)} />
       </div>
     </BlogLayout>
   );

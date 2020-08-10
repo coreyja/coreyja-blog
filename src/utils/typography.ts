@@ -16,7 +16,7 @@ const typography = new Typography({
     "Fira Sans",
     "Droid Sans",
     "Helvetica Neue",
-    "sans-serif"
+    "sans-serif",
   ],
   bodyColor: Grays["high-contrast"],
   headerWeight: 600,
@@ -24,9 +24,9 @@ const typography = new Typography({
   overrideThemeStyles: ({ rhythm }) => ({
     "p, h1, h2, h3, h4, h5, h6": {
       marginBottom: rhythm(1),
-      marginTop: rhythm(1)
-    }
-  })
+      marginTop: rhythm(1),
+    },
+  }),
 });
 
 // Hot reload typography in development.

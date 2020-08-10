@@ -34,7 +34,7 @@ const PostCard: React.FunctionComponent<Props> = ({ post }) => {
       </Link>
       <div className={postCardStyles.date}>{node.frontmatter?.date}</div>
       <div className={postCardStyles.tags}>
-        {tags.map(tag => (
+        {tags.map((tag) => (
           <Link
             to={`/tags/${tag}`}
             key={`/tags/${tag}`}

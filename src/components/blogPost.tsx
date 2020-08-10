@@ -21,7 +21,7 @@ interface Props {
   pageContext: PageContext;
 }
 
-const BlogPost: React.FunctionComponent<Props> = props => {
+const BlogPost: React.FunctionComponent<Props> = (props) => {
   const post = props.data.markdownRemark;
   const { previous, next } = props.pageContext;
 
@@ -66,7 +66,7 @@ const BlogPost: React.FunctionComponent<Props> = props => {
 
         <section className={blogPostStyles.tags} style={{ color }}>
           {post.fields?.tags?.map(
-            tag =>
+            (tag) =>
               tag && (
                 <Link
                   to={`/tags/${tag}`}
@@ -87,7 +87,7 @@ const BlogPost: React.FunctionComponent<Props> = props => {
             listStyle: `none`,
             padding: 0,
             margin: 0,
-            marginBottom: "1em"
+            marginBottom: "1em",
           }}
         >
           <li>

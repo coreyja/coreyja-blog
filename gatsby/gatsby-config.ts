@@ -12,8 +12,8 @@ module.exports = {
     siteUrl: `https://coreyja.com`,
     social: {
       github: `coreyja`,
-      twitter: `coreyja_dev`
-    }
+      twitter: `coreyja_dev`,
+    },
   },
   plugins: [
     {
@@ -21,22 +21,22 @@ module.exports = {
       options: {
         bucketName: process.env.AWS_BUCKET,
         protocol: process.env.AWS_PROTOCOL,
-        hostname: process.env.AWS_HOSTNAME
-      }
+        hostname: process.env.AWS_HOSTNAME,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/../content/blog`,
-        name: `blog`
-      }
+        name: `blog`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/../content/assets`,
-        name: `assets`
-      }
+        name: `assets`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -47,20 +47,20 @@ module.exports = {
             options: {
               maxWidth: 2000,
               withWebp: true,
-              tracedSVG: true
-            }
+              tracedSVG: true,
+            },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`
-            }
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              showLineNumbers: true
-            }
+              showLineNumbers: true,
+            },
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -68,11 +68,11 @@ module.exports = {
             resolve: "gatsby-remark-external-links",
             options: {
               target: "_blank",
-              rel: "noopener"
-            }
-          }
-        ]
-      }
+              rel: "noopener",
+            },
+          },
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -80,8 +80,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-tags",
       options: {
-        templatePath: path.resolve(`${__dirname}/../src/templates/tag.tsx`)
-      }
+        templatePath: path.resolve(`${__dirname}/../src/templates/tag.tsx`),
+      },
     },
     {
       resolve: `gatsby-plugin-feed`,
@@ -101,7 +101,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({
-              query: { site, allMarkdownRemark }
+              query: { site, allMarkdownRemark },
             }: {
               query: FeedQuery;
             }) => {
@@ -110,7 +110,7 @@ module.exports = {
                 throw "Must have a siteUrl";
               }
 
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   category: edge.node.fields?.tags,
@@ -119,8 +119,8 @@ module.exports = {
                   guid: siteUrl + edge.node.fields?.slug,
                   custom_elements: [
                     { "content:encoded": edge.node.html },
-                    { tags: (edge.node.fields?.tags || []).join(",") }
-                  ]
+                    { tags: (edge.node.fields?.tags || []).join(",") },
+                  ],
                 });
               });
             },
@@ -153,10 +153,10 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "COREYJA RSS Feed"
-          }
-        ]
-      }
+            title: "COREYJA RSS Feed",
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -167,16 +167,16 @@ module.exports = {
         background_color: `#aa66cc`,
         theme_color: `#aa66cc`,
         display: `minimal-ui`,
-        icon: `content/assets/favicon.svg`
-      }
+        icon: `content/assets/favicon.svg`,
+      },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`
-      }
+        pathToConfigModule: `src/utils/typography`,
+      },
     },
     `gatsby-plugin-sitemap`,
     {
@@ -187,9 +187,9 @@ module.exports = {
         stages: ["develop"],
         options: {
           emitWarning: true,
-          failOnError: true
-        }
-      }
-    }
-  ]
+          failOnError: true,
+        },
+      },
+    },
+  ],
 };

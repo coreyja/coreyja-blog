@@ -12,7 +12,7 @@ class Layout extends React.Component {
         style={{
           // @ts-expect-error 2322: This is a real prop but TS disagrees
           WebkitFontSmoothing: "antialiased",
-          MozOsxFontSmoothing: "grayscale"
+          MozOsxFontSmoothing: "grayscale",
         }}
       >
         <Header />

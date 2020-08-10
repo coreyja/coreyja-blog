@@ -7,9 +7,9 @@ import SEO from "../components/seo";
 import { BlogIndexQuery } from "../types/generated";
 
 const BlogIndex: React.FunctionComponent<PageProps<BlogIndexQuery>> = ({
-  data
+  data,
 }) => {
-  const posts = data.allMarkdownRemark.edges.map(x => x.node);
+  const posts = data.allMarkdownRemark.edges.map((x) => x.node);
 
   return (
     <BlogLayout>

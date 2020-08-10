@@ -20,7 +20,7 @@ const CategoryTemplate: React.FunctionComponent<PageProps<
       <div className="tag-container">
         <SEO title={`Posts in tag "${tag}"`} />
         <h1>Posts tagged with #{tag}</h1>
-        <PostCards posts={data.allMarkdownRemark.edges.map(x => x.node)} />
+        <PostCards posts={data.allMarkdownRemark.edges.map((x) => x.node)} />
       </div>
     </BlogLayout>
   );
