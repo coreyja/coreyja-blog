@@ -105,16 +105,13 @@
   },
   "lint-staged": {
     "*.{js,jsx,tsx}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.json": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.md": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }
