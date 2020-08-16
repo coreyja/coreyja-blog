@@ -183,7 +183,7 @@ module.exports = {
       resolve: "gatsby-plugin-eslint",
       options: {
         test: /\.js$|\.jsx$|\.ts$|\.tsx$/,
-        exclude: /(node_modules|.cache|public)/,
+        exclude: /(node_modules|.cache|public|_this_is_virtual_fs_path_)/,
         stages: ["develop"],
         options: {
           emitWarning: true,

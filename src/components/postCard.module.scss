@@ -8,8 +8,7 @@
   flex: 0 0 auto;
   flex-direction: column;
   margin: 10px;
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding: 30px 15px;
   text-align: center;
 
   @media (min-width: 600px) {
@@ -40,6 +39,11 @@
 .tags {
   margin-bottom: 15px;
   color: gray('near-black');
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .tag {

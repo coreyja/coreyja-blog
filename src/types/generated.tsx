@@ -273,7 +273,7 @@ export enum DirectoryFieldsEnum {
   internal___ignoreType = "internal___ignoreType",
   internal___mediaType = "internal___mediaType",
   internal___owner = "internal___owner",
-  internal___type = "internal___type"
+  internal___type = "internal___type",
 }
 
 export type DirectoryFilterInput = {
@@ -676,8 +676,8 @@ export enum FileFieldsEnum {
   childMarkdownRemark___frontmatter___title = "childMarkdownRemark___frontmatter___title",
   childMarkdownRemark___frontmatter___author = "childMarkdownRemark___frontmatter___author",
   childMarkdownRemark___frontmatter___date = "childMarkdownRemark___frontmatter___date",
-  childMarkdownRemark___frontmatter___color = "childMarkdownRemark___frontmatter___color",
   childMarkdownRemark___frontmatter___tags = "childMarkdownRemark___frontmatter___tags",
+  childMarkdownRemark___frontmatter___color = "childMarkdownRemark___frontmatter___color",
   childMarkdownRemark___frontmatter___description = "childMarkdownRemark___frontmatter___description",
   childMarkdownRemark___excerpt = "childMarkdownRemark___excerpt",
   childMarkdownRemark___rawMarkdownBody = "childMarkdownRemark___rawMarkdownBody",
@@ -733,7 +733,7 @@ export enum FileFieldsEnum {
   childMarkdownRemark___internal___ignoreType = "childMarkdownRemark___internal___ignoreType",
   childMarkdownRemark___internal___mediaType = "childMarkdownRemark___internal___mediaType",
   childMarkdownRemark___internal___owner = "childMarkdownRemark___internal___owner",
-  childMarkdownRemark___internal___type = "childMarkdownRemark___internal___type"
+  childMarkdownRemark___internal___type = "childMarkdownRemark___internal___type",
 }
 
 export type FileFilterInput = {
@@ -816,7 +816,7 @@ export enum ImageCropFocus {
   WEST = "WEST",
   NORTHWEST = "NORTHWEST",
   ENTROPY = "ENTROPY",
-  ATTENTION = "ATTENTION"
+  ATTENTION = "ATTENTION",
 }
 
 export enum ImageFit {
@@ -824,14 +824,14 @@ export enum ImageFit {
   CONTAIN = "CONTAIN",
   FILL = "FILL",
   INSIDE = "INSIDE",
-  OUTSIDE = "OUTSIDE"
+  OUTSIDE = "OUTSIDE",
 }
 
 export enum ImageFormat {
   NO_CHANGE = "NO_CHANGE",
   JPG = "JPG",
   PNG = "PNG",
-  WEBP = "WEBP"
+  WEBP = "WEBP",
 }
 
 export type ImageSharp = Node & {
@@ -1130,7 +1130,7 @@ export enum ImageSharpFieldsEnum {
   internal___ignoreType = "internal___ignoreType",
   internal___mediaType = "internal___mediaType",
   internal___owner = "internal___owner",
-  internal___type = "internal___type"
+  internal___type = "internal___type",
 }
 
 export type ImageSharpFilterInput = {
@@ -1355,7 +1355,7 @@ export type JSONQueryOperatorInput = {
 export enum MarkdownExcerptFormats {
   PLAIN = "PLAIN",
   HTML = "HTML",
-  MARKDOWN = "MARKDOWN"
+  MARKDOWN = "MARKDOWN",
 }
 
 export type MarkdownHeading = {
@@ -1381,7 +1381,7 @@ export enum MarkdownHeadingLevels {
   h3 = "h3",
   h4 = "h4",
   h5 = "h5",
-  h6 = "h6"
+  h6 = "h6",
 }
 
 export type MarkdownRemark = Node & {
@@ -1465,8 +1465,8 @@ export enum MarkdownRemarkFieldsEnum {
   frontmatter___title = "frontmatter___title",
   frontmatter___author = "frontmatter___author",
   frontmatter___date = "frontmatter___date",
-  frontmatter___color = "frontmatter___color",
   frontmatter___tags = "frontmatter___tags",
+  frontmatter___color = "frontmatter___color",
   frontmatter___description = "frontmatter___description",
   excerpt = "excerpt",
   rawMarkdownBody = "rawMarkdownBody",
@@ -1570,7 +1570,7 @@ export enum MarkdownRemarkFieldsEnum {
   internal___ignoreType = "internal___ignoreType",
   internal___mediaType = "internal___mediaType",
   internal___owner = "internal___owner",
-  internal___type = "internal___type"
+  internal___type = "internal___type",
 }
 
 export type MarkdownRemarkFieldsFilterInput = {
@@ -1603,8 +1603,8 @@ export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars["String"]>;
   author?: Maybe<Scalars["String"]>;
   date?: Maybe<Scalars["Date"]>;
-  color?: Maybe<Scalars["String"]>;
   tags?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  color?: Maybe<Scalars["String"]>;
   description?: Maybe<Scalars["String"]>;
 };
 
@@ -1619,8 +1619,8 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   author?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
-  color?: Maybe<StringQueryOperatorInput>;
   tags?: Maybe<StringQueryOperatorInput>;
+  color?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -1700,7 +1700,7 @@ export enum PotraceTurnPolicy {
   TURNPOLICY_LEFT = "TURNPOLICY_LEFT",
   TURNPOLICY_RIGHT = "TURNPOLICY_RIGHT",
   TURNPOLICY_MINORITY = "TURNPOLICY_MINORITY",
-  TURNPOLICY_MAJORITY = "TURNPOLICY_MAJORITY"
+  TURNPOLICY_MAJORITY = "TURNPOLICY_MAJORITY",
 }
 
 export type Query = {
@@ -2099,7 +2099,7 @@ export enum SiteBuildMetadataFieldsEnum {
   internal___mediaType = "internal___mediaType",
   internal___owner = "internal___owner",
   internal___type = "internal___type",
-  buildTime = "buildTime"
+  buildTime = "buildTime",
 }
 
 export type SiteBuildMetadataFilterInput = {
@@ -2249,7 +2249,7 @@ export enum SiteFieldsEnum {
   internal___ignoreType = "internal___ignoreType",
   internal___mediaType = "internal___mediaType",
   internal___owner = "internal___owner",
-  internal___type = "internal___type"
+  internal___type = "internal___type",
 }
 
 export type SiteFilterInput = {
@@ -2518,6 +2518,11 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___target = "pluginCreator___pluginOptions___target",
   pluginCreator___pluginOptions___rel = "pluginCreator___pluginOptions___rel",
   pluginCreator___pluginOptions___templatePath = "pluginCreator___pluginOptions___templatePath",
+  pluginCreator___pluginOptions___query = "pluginCreator___pluginOptions___query",
+  pluginCreator___pluginOptions___feeds = "pluginCreator___pluginOptions___feeds",
+  pluginCreator___pluginOptions___feeds___query = "pluginCreator___pluginOptions___feeds___query",
+  pluginCreator___pluginOptions___feeds___output = "pluginCreator___pluginOptions___feeds___output",
+  pluginCreator___pluginOptions___feeds___title = "pluginCreator___pluginOptions___feeds___title",
   pluginCreator___pluginOptions___short_name = "pluginCreator___pluginOptions___short_name",
   pluginCreator___pluginOptions___start_url = "pluginCreator___pluginOptions___start_url",
   pluginCreator___pluginOptions___background_color = "pluginCreator___pluginOptions___background_color",
@@ -2530,14 +2535,12 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___theme_color_in_head = "pluginCreator___pluginOptions___theme_color_in_head",
   pluginCreator___pluginOptions___cacheDigest = "pluginCreator___pluginOptions___cacheDigest",
   pluginCreator___pluginOptions___pathToConfigModule = "pluginCreator___pluginOptions___pathToConfigModule",
+  pluginCreator___pluginOptions___stages = "pluginCreator___pluginOptions___stages",
+  pluginCreator___pluginOptions___options___emitWarning = "pluginCreator___pluginOptions___options___emitWarning",
+  pluginCreator___pluginOptions___options___failOnError = "pluginCreator___pluginOptions___options___failOnError",
   pluginCreator___pluginOptions___configDir = "pluginCreator___pluginOptions___configDir",
   pluginCreator___pluginOptions___projectRoot = "pluginCreator___pluginOptions___projectRoot",
   pluginCreator___pluginOptions___pathCheck = "pluginCreator___pluginOptions___pathCheck",
-  pluginCreator___pluginOptions___query = "pluginCreator___pluginOptions___query",
-  pluginCreator___pluginOptions___feeds = "pluginCreator___pluginOptions___feeds",
-  pluginCreator___pluginOptions___feeds___query = "pluginCreator___pluginOptions___feeds___query",
-  pluginCreator___pluginOptions___feeds___output = "pluginCreator___pluginOptions___feeds___output",
-  pluginCreator___pluginOptions___feeds___title = "pluginCreator___pluginOptions___feeds___title",
   pluginCreator___nodeAPIs = "pluginCreator___nodeAPIs",
   pluginCreator___browserAPIs = "pluginCreator___browserAPIs",
   pluginCreator___ssrAPIs = "pluginCreator___ssrAPIs",
@@ -2559,7 +2562,7 @@ export enum SitePageFieldsEnum {
   pluginCreator___packageJson___peerDependencies___version = "pluginCreator___packageJson___peerDependencies___version",
   pluginCreator___packageJson___keywords = "pluginCreator___packageJson___keywords",
   pluginCreatorId = "pluginCreatorId",
-  componentPath = "componentPath"
+  componentPath = "componentPath",
 }
 
 export type SitePageFilterInput = {
@@ -2753,6 +2756,11 @@ export enum SitePluginFieldsEnum {
   pluginOptions___target = "pluginOptions___target",
   pluginOptions___rel = "pluginOptions___rel",
   pluginOptions___templatePath = "pluginOptions___templatePath",
+  pluginOptions___query = "pluginOptions___query",
+  pluginOptions___feeds = "pluginOptions___feeds",
+  pluginOptions___feeds___query = "pluginOptions___feeds___query",
+  pluginOptions___feeds___output = "pluginOptions___feeds___output",
+  pluginOptions___feeds___title = "pluginOptions___feeds___title",
   pluginOptions___short_name = "pluginOptions___short_name",
   pluginOptions___start_url = "pluginOptions___start_url",
   pluginOptions___background_color = "pluginOptions___background_color",
@@ -2765,14 +2773,12 @@ export enum SitePluginFieldsEnum {
   pluginOptions___theme_color_in_head = "pluginOptions___theme_color_in_head",
   pluginOptions___cacheDigest = "pluginOptions___cacheDigest",
   pluginOptions___pathToConfigModule = "pluginOptions___pathToConfigModule",
+  pluginOptions___stages = "pluginOptions___stages",
+  pluginOptions___options___emitWarning = "pluginOptions___options___emitWarning",
+  pluginOptions___options___failOnError = "pluginOptions___options___failOnError",
   pluginOptions___configDir = "pluginOptions___configDir",
   pluginOptions___projectRoot = "pluginOptions___projectRoot",
   pluginOptions___pathCheck = "pluginOptions___pathCheck",
-  pluginOptions___query = "pluginOptions___query",
-  pluginOptions___feeds = "pluginOptions___feeds",
-  pluginOptions___feeds___query = "pluginOptions___feeds___query",
-  pluginOptions___feeds___output = "pluginOptions___feeds___output",
-  pluginOptions___feeds___title = "pluginOptions___feeds___title",
   nodeAPIs = "nodeAPIs",
   browserAPIs = "browserAPIs",
   ssrAPIs = "ssrAPIs",
@@ -2792,7 +2798,7 @@ export enum SitePluginFieldsEnum {
   packageJson___peerDependencies = "packageJson___peerDependencies",
   packageJson___peerDependencies___name = "packageJson___peerDependencies___name",
   packageJson___peerDependencies___version = "packageJson___peerDependencies___version",
-  packageJson___keywords = "packageJson___keywords"
+  packageJson___keywords = "packageJson___keywords",
 }
 
 export type SitePluginFilterInput = {
@@ -2909,6 +2915,8 @@ export type SitePluginPluginOptions = {
   target?: Maybe<Scalars["String"]>;
   rel?: Maybe<Scalars["String"]>;
   templatePath?: Maybe<Scalars["String"]>;
+  query?: Maybe<Scalars["String"]>;
+  feeds?: Maybe<Array<Maybe<SitePluginPluginOptionsFeeds>>>;
   short_name?: Maybe<Scalars["String"]>;
   start_url?: Maybe<Scalars["String"]>;
   background_color?: Maybe<Scalars["String"]>;
@@ -2921,11 +2929,11 @@ export type SitePluginPluginOptions = {
   theme_color_in_head?: Maybe<Scalars["Boolean"]>;
   cacheDigest?: Maybe<Scalars["String"]>;
   pathToConfigModule?: Maybe<Scalars["String"]>;
+  stages?: Maybe<Array<Maybe<Scalars["String"]>>>;
+  options?: Maybe<SitePluginPluginOptionsOptions>;
   configDir?: Maybe<Scalars["String"]>;
   projectRoot?: Maybe<Scalars["String"]>;
   pathCheck?: Maybe<Scalars["Boolean"]>;
-  query?: Maybe<Scalars["String"]>;
-  feeds?: Maybe<Array<Maybe<SitePluginPluginOptionsFeeds>>>;
 };
 
 export type SitePluginPluginOptionsFeeds = {
@@ -2958,6 +2966,8 @@ export type SitePluginPluginOptionsFilterInput = {
   target?: Maybe<StringQueryOperatorInput>;
   rel?: Maybe<StringQueryOperatorInput>;
   templatePath?: Maybe<StringQueryOperatorInput>;
+  query?: Maybe<StringQueryOperatorInput>;
+  feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
   background_color?: Maybe<StringQueryOperatorInput>;
@@ -2970,11 +2980,22 @@ export type SitePluginPluginOptionsFilterInput = {
   theme_color_in_head?: Maybe<BooleanQueryOperatorInput>;
   cacheDigest?: Maybe<StringQueryOperatorInput>;
   pathToConfigModule?: Maybe<StringQueryOperatorInput>;
+  stages?: Maybe<StringQueryOperatorInput>;
+  options?: Maybe<SitePluginPluginOptionsOptionsFilterInput>;
   configDir?: Maybe<StringQueryOperatorInput>;
   projectRoot?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
-  query?: Maybe<StringQueryOperatorInput>;
-  feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>;
+};
+
+export type SitePluginPluginOptionsOptions = {
+  __typename?: "SitePluginPluginOptionsOptions";
+  emitWarning?: Maybe<Scalars["Boolean"]>;
+  failOnError?: Maybe<Scalars["Boolean"]>;
+};
+
+export type SitePluginPluginOptionsOptionsFilterInput = {
+  emitWarning?: Maybe<BooleanQueryOperatorInput>;
+  failOnError?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsPlugins = {
@@ -3063,7 +3084,7 @@ export type SiteSortInput = {
 
 export enum SortOrderEnum {
   ASC = "ASC",
-  DESC = "DESC"
+  DESC = "DESC",
 }
 
 export type StringQueryOperatorInput = {
