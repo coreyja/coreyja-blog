@@ -34,7 +34,7 @@ Middleman also provides a Rack compatible `config.ru` file, which made developin
 
 ## Design
 
-The design of this site was done by Phillip Inge at [phillipthedesigner.com/](http://phillipthedesigner.com/). We worked together years ago as freelancers and I had him design me this blog when we were working together. I think it has definitely stood the test of time, and still looks great a few years later! I originally used the designs for django based Portfolio site that I made at the time, but I am going to be replacing that with this blog. I made some small tweaks to the designs this time around to make them responsive.
+The design of this site was done by Phillip Inge at [philinge.com](http://philinge.com/). We worked together years ago as freelancers and I had him design me this blog when we were working together. I think it has definitely stood the test of time, and still looks great a few years later! I originally used the designs for django based Portfolio site that I made at the time, but I am going to be replacing that with this blog. I made some small tweaks to the designs this time around to make them responsive.
 
 ## Syntax Highlighting
 
