@@ -69,7 +69,7 @@
     "eslint-plugin-react": "^7.20.6",
     "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-ts-config": "^0.2.3",
-    "husky": "^4.2.5",
+    "husky": "^4.3.0",
     "lighthouse": "^6.3.0",
     "lighthouse-batch": "^6.0.0",
     "lint-staged": "^10.3.0",
