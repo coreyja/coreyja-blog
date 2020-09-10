@@ -8,7 +8,7 @@
     "url": "https://github.com/coreyja/coreyja-blog/issues"
   },
   "dependencies": {
-    "@apollo/client": "^3.1.4",
+    "@apollo/client": "^3.1.5",
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
