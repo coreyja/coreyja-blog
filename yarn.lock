@@ -1256,12 +1256,12 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.31"
 
-"@fortawesome/pro-solid-svg-icons@^5.11.2":
-  version "5.14.0"
-  resolved "https://npm.fontawesome.com/@fortawesome/pro-solid-svg-icons/-/5.14.0/pro-solid-svg-icons-5.14.0.tgz#8da47f25a043acd4f47b837a4a696166415c9b97"
-  integrity sha512-+xtjbIy/bjzs4Rv/227uPJQ+b4GNdrW6MP4hWGI/VX33wgMaw+NekK4AK2UC0EDZBqYHp9+8hDzjTE6BxAz0lw==
+"@fortawesome/pro-solid-svg-icons@^5.15.0":
+  version "5.15.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-solid-svg-icons/-/5.15.0/pro-solid-svg-icons-5.15.0.tgz#8c35ce77f75f3f0b49f34b8e574f5d377da832b3"
+  integrity sha512-GZbUZzp4D/rgoKXAdtKyuy26MsD3Vz4AIc2r4dNHOgsUNYntlFygxzlsp1PcN3eyjyg/eqs3+0DsqIzSoahc8g==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.30"
+    "@fortawesome/fontawesome-common-types" "^0.2.31"
 
 "@fortawesome/react-fontawesome@^0.1.4":
   version "0.1.11"
