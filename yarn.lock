@@ -1249,12 +1249,12 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.32"
 
-"@fortawesome/pro-regular-svg-icons@^5.15.0":
-  version "5.15.0"
-  resolved "https://npm.fontawesome.com/@fortawesome/pro-regular-svg-icons/-/5.15.0/pro-regular-svg-icons-5.15.0.tgz#87ead16524630abdec39c386f5801d9319594669"
-  integrity sha512-zbC3s8hV77nRZNaqP5Ia0NUlJgVsfOgNF2JVkysQrbD5XbMHPmHYD5n2Ocf2YtvKK0LED8buDNWRswm9i3rIOg==
+"@fortawesome/pro-regular-svg-icons@^5.15.1":
+  version "5.15.1"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-regular-svg-icons/-/5.15.1/pro-regular-svg-icons-5.15.1.tgz#628d37cff0e0af6575603cf639887a39c3085546"
+  integrity sha512-DsY0Dn9jjt0jJIHHm5AKR3PUDzd5z9KXzwllaxqxk8cAvNZv1+JsBXdsMVe5HQf60Fj8M+G7oRnTg1dpGL2v2A==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.31"
+    "@fortawesome/fontawesome-common-types" "^0.2.32"
 
 "@fortawesome/pro-solid-svg-icons@^5.15.1":
   version "5.15.1"
