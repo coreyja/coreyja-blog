@@ -16996,10 +16996,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typeface-oswald@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/typeface-oswald/-/typeface-oswald-1.1.4.tgz#2025c5b11ba8b40475166edb80d921a707a1f627"
-  integrity sha512-3UxtnnFXc++Qf84KakDGpvQLis/n9KjZ29BRqkfN9HpVK/oMi+Nk0l5LMDSGtlzzAZ2sqbNJszkmIdr5r+zHmQ==
+typeface-oswald@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-oswald/-/typeface-oswald-1.1.13.tgz#eab53dd11e31c011ac2b5570bcfcf64989cfbbd2"
+  integrity sha512-s11l1JHGzN5qjWGlunIxaa9wemc3eA2oObnU4qcFGq62ij8XJ5T2YNeKxOuqv599kAP2ny8zN3liCETkHWqE1g==
 
 typescript@^3.9.7:
   version "3.9.7"
