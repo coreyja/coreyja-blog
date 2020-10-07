@@ -49,7 +49,7 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
-    "typeface-oswald": "^1.1.4",
+    "typeface-oswald": "^1.1.13",
     "typography": "^0.16.19"
   },
   "devDependencies": {
