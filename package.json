@@ -46,7 +46,7 @@
     "node-sass": "^4.12.0",
     "prismjs": "^1.22.0",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "typeface-oswald": "^1.1.13",
