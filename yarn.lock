@@ -16356,10 +16356,10 @@ typeface-oswald@^1.1.13:
   resolved "https://registry.yarnpkg.com/typeface-oswald/-/typeface-oswald-1.1.13.tgz#eab53dd11e31c011ac2b5570bcfcf64989cfbbd2"
   integrity sha512-s11l1JHGzN5qjWGlunIxaa9wemc3eA2oObnU4qcFGq62ij8XJ5T2YNeKxOuqv599kAP2ny8zN3liCETkHWqE1g==
 
-typescript@^3.9.7:
-  version "3.9.7"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
-  integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
+typescript@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.0.5.tgz#ae9dddfd1069f1cb5beb3ef3b2170dd7c1332389"
+  integrity sha512-ywmr/VrTVCmNTJ6iV2LwIrfG1P+lv6luD8sUJs+2eI9NLGigaN+nUQc13iHqisq7bra9lnmUSYqbJvegraBOPQ==
 
 typography-normalize@^0.16.19:
   version "0.16.19"
