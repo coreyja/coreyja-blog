@@ -3920,18 +3920,7 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
-browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.12.2, browserslist@^4.14.5:
-  version "4.14.7"
-  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.14.7.tgz#c071c1b3622c1c2e790799a37bb09473a4351cb6"
-  integrity sha512-BSVRLCeG3Xt/j/1cCGj1019Wbty0H+Yvu2AOuZSuoaUWn3RatbL33Cxk+Q4jRMRAbOm0p7SLravLjpnT6s0vzQ==
-  dependencies:
-    caniuse-lite "^1.0.30001157"
-    colorette "^1.2.1"
-    electron-to-chromium "^1.3.591"
-    escalade "^3.1.1"
-    node-releases "^1.1.66"
-
-browserslist@^4.15.0:
+browserslist@^4.0.0, browserslist@^4.12.0, browserslist@^4.12.2, browserslist@^4.14.5, browserslist@^4.15.0:
   version "4.15.0"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.15.0.tgz#3d48bbca6a3f378e86102ffd017d9a03f122bdb0"
   integrity sha512-IJ1iysdMkGmjjYeRlDU8PQejVwxvVO5QOfXH7ylW31GO6LwNRSmm/SgRXtNsEXqMLl2e+2H5eEJ7sfynF8TCaQ==
@@ -4234,11 +4223,6 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001109:
   version "1.0.30001109"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001109.tgz#a9f3f26a0c3753b063d7acbb48dfb9c0e46f2b19"
   integrity sha512-4JIXRodHzdS3HdK8nSgIqXYLExOvG+D2/EenSvcub2Kp3QEADjo2v2oUn5g0n0D+UNwG9BtwKOyGcSq2qvQXvQ==
-
-caniuse-lite@^1.0.30001157:
-  version "1.0.30001159"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001159.tgz#bebde28f893fa9594dadcaa7d6b8e2aa0299df20"
-  integrity sha512-w9Ph56jOsS8RL20K9cLND3u/+5WASWdhC/PPrf+V3/HsM3uHOavWOR1Xzakbv4Puo/srmPHudkmCRWM7Aq+/UA==
 
 caniuse-lite@^1.0.30001164:
   version "1.0.30001165"
@@ -6005,11 +5989,6 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
-electron-to-chromium@^1.3.591:
-  version "1.3.603"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.603.tgz#1b71bec27fb940eccd79245f6824c63d5f7e8abf"
-  integrity sha512-J8OHxOeJkoSLgBXfV9BHgKccgfLMHh+CoeRo6wJsi6m0k3otaxS/5vrHpMNSEYY4MISwewqanPOuhAtuE8riQQ==
-
 electron-to-chromium@^1.3.612:
   version "1.3.621"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.621.tgz#0bbe2100ef0b28f88d0b1101fbdf433312f69be0"
@@ -7455,10 +7434,10 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
-gatsby-cli@^2.15.0:
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.15.0.tgz#e731b1e16a8ee14bb9bd162c87401fa84943eaf2"
-  integrity sha512-ho6Bji5iOzHEXe1owvhgXip4Xpw71iQML8Kw4VdwGFzMqRxtv0m55Vj5yRKtMefM2hmLrNQ3zamtP6xdwwDk0A==
+gatsby-cli@^2.15.1:
+  version "2.15.1"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.15.1.tgz#f51465db7772f9855346a585a82e82a977e95361"
+  integrity sha512-VSgnjdCmP0pBbpf5zk0CrsyQ7iE8O0NyLpBRZUqAi0xHP53JdKEsYeJB3QKZon6MH/oc6j+pxSBMUHqGzzhyhg==
   dependencies:
     "@babel/code-frame" "^7.10.4"
     "@hapi/joi" "^15.1.1"
@@ -7475,7 +7454,7 @@ gatsby-cli@^2.15.0:
     fs-exists-cached "^1.0.0"
     fs-extra "^8.1.0"
     gatsby-core-utils "^1.6.0"
-    gatsby-recipes "^0.5.0"
+    gatsby-recipes "^0.5.1"
     gatsby-telemetry "^1.6.0"
     hosted-git-info "^3.0.6"
     is-valid-path "^0.1.1"
@@ -7743,10 +7722,10 @@ gatsby-react-router-scroll@^3.3.0:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-gatsby-recipes@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/gatsby-recipes/-/gatsby-recipes-0.5.0.tgz#d9d701ba3dd2d8427ab7f1c9cc14b498ca28b26c"
-  integrity sha512-C0JHy4vDbGYGT3GSACpjGygqJ/kyl+GM+Li19G7LHeBTJ62o1+mF5zkYsBjMl43S4+3yrLeB4ijukPZEQdlIAA==
+gatsby-recipes@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/gatsby-recipes/-/gatsby-recipes-0.5.1.tgz#d6e3d07cc7d0dc0b073e5522e4c3c3d67686e0b0"
+  integrity sha512-6bKV8/vyWNG9mQQUL3XP/ZbiugDQTNxZT+Rs61qDU+0drzMjpIs4YqP1gj9PExp86mqnGlezEyvSK9gEPZjb+g==
   dependencies:
     "@babel/core" "^7.12.3"
     "@babel/generator" "^7.12.5"
@@ -7957,10 +7936,10 @@ gatsby-transformer-sharp@^2.8.0:
     semver "^7.3.2"
     sharp "^0.26.3"
 
-gatsby@^2.28.1:
-  version "2.28.1"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.28.1.tgz#64715ec775de123e0c863fe1b33410d2e11337a2"
-  integrity sha512-9+R4hICVl+EmKS16I3OHS0pCFfP9eV4d6Ee/t9kWvlgXQtgscMRuPxBQ02H4XMqUSPEdamN6Gf6ZN1RtcPZCnA==
+gatsby@^2.28.2:
+  version "2.28.2"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.28.2.tgz#2ca533900f8d4ad983f97981e7b17025d3f1c454"
+  integrity sha512-NnsXUD/u51ykNkOuqt8aAqIXWY9asP0nh0Jcum+pAZ+BBhOQu5cr4nnB6h1NS93ZlEyJxlH6gfle1nN2GoUFDA==
   dependencies:
     "@babel/code-frame" "^7.10.4"
     "@babel/core" "^7.12.3"
@@ -8029,7 +8008,7 @@ gatsby@^2.28.1:
     find-cache-dir "^3.3.1"
     fs-exists-cached "1.0.0"
     fs-extra "^8.1.0"
-    gatsby-cli "^2.15.0"
+    gatsby-cli "^2.15.1"
     gatsby-core-utils "^1.6.0"
     gatsby-graphiql-explorer "^0.7.0"
     gatsby-legacy-polyfills "^0.3.0"
@@ -8095,6 +8074,7 @@ gatsby@^2.28.1:
     st "^2.0.0"
     stack-trace "^0.0.10"
     string-similarity "^1.2.2"
+    strip-ansi "^5.2.0"
     style-loader "^0.23.1"
     terminal-link "^2.1.1"
     terser-webpack-plugin "^2.3.8"
@@ -11784,7 +11764,7 @@ node-object-hash@^2.0.0:
   resolved "https://registry.yarnpkg.com/node-object-hash/-/node-object-hash-2.0.0.tgz#9971fcdb7d254f05016bd9ccf508352bee11116b"
   integrity sha512-VZR0zroAusy1ETZMZiGeLkdu50LGjG5U1KHZqTruqtTyQ2wfWhHG2Ow4nsUbfTFGlaREgNHcCWoM/OzEm6p+NQ==
 
-node-releases@^1.1.66, node-releases@^1.1.67:
+node-releases@^1.1.67:
   version "1.1.67"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.67.tgz#28ebfcccd0baa6aad8e8d4d8fe4cbc49ae239c12"
   integrity sha512-V5QF9noGFl3EymEwUYzO+3NTDpGfQB4ve6Qfnzf3UNydMhjQRVPR1DZTuvWiLzaFJYw2fmDwAfnRNEVb64hSIg==
