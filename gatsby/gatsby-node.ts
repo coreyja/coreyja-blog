@@ -131,7 +131,14 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
+    const parentNode = node.parent ? getNode(node.parent) : null;
+    // We only need to change the base path when the Markdown file comes from
+    // the private post git source where it is in a sub-dir. Elsewhere this isn't needed
+    const basePath =
+      parentNode && parentNode.sourceInstanceName === "private-blog"
+        ? "published"
+        : "";
+    const value = createFilePath({ node, getNode, basePath });
     createNodeField({
       name: `slug`,
       node,
