@@ -31,6 +31,23 @@ module.exports = {
         name: `blog`,
       },
     },
+    process.env.USE_LOCAL_PRIVATE_POSTS === "true"
+      ? {
+          resolve: `gatsby-source-filesystem`,
+          options: {
+            path: `${__dirname}/../../coreyja-blog-posts/published`,
+            name: `local-private-blog`,
+          },
+        }
+      : {
+          resolve: `gatsby-source-git`,
+          options: {
+            name: `private-blog`,
+            remote: `https://coreyja:${process.env.GITHUB_DEPLOY_TOKEN}@github.com/coreyja/blog-posts.git`,
+            branch: `main`,
+            patterns: `published/**`,
+          },
+        },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
