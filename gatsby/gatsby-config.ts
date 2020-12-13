@@ -43,7 +43,7 @@ module.exports = {
           resolve: `gatsby-source-git`,
           options: {
             name: `private-blog`,
-            remote: `https://${process.env.PRIVATE_POST_GITHUB_AUTH}@github.com/coreyja/blog-posts.git`,
+            remote: `https://coreyja:${process.env.GITHUB_DEPLOY_TOKEN}@github.com/coreyja/blog-posts.git`,
             branch: `main`,
             patterns: `published/**`,
           },
