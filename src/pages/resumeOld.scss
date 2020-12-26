@@ -1,0 +1,190 @@
+.resume {
+
+  // font-family: Times !important;
+
+  div.wrap {
+    width: 900px;
+  }
+
+  .right {
+    h1#title {
+      font-size: 45px;
+      margin: 5px 0;
+    }
+
+    h2.subtitle{
+      font-size: 45px;
+      font-weight: normal;
+      margin: 0;
+    }
+  }
+
+  h1#name {
+    color: #000;
+
+    font-weight: normal !important;
+
+    font-size: 95px;
+    margin: 10px auto;
+  }
+
+  div#contact-info {
+
+    margin-top: 20px;
+
+
+  }
+
+  div.contact-block {
+    width: 300px;
+    float: left;
+
+    text-align: center;
+
+    h2 {
+      color: #000;
+
+      font-weight: normal !important;
+      font-family: Times;
+
+      margin: 0;
+
+      &.title {
+        font-weight: bold !important;
+        font-family: Times;
+      }
+    }
+  }
+
+  div#work-experience {
+    h1.title {
+      font-weight: normal;
+      font-size: 50px;
+      color: #000;
+
+      margin:10px 0;
+    }
+
+    div.experience {
+      overflow: hidden;
+
+      margin: 20px 0;
+
+      div.info {
+        color: #000;
+        div.top-info{
+          overflow: hidden;
+
+          span {
+            display: inline-block;
+
+            float: left;
+            font-size: 25px;
+
+            &.job-title {
+              font-size: 30px;
+
+              width: 350px;
+            }
+
+            &.company-name {
+              width: 250px;
+            }
+
+            &.time {
+              float: right;
+              width: 300px;
+
+              text-align: right;
+            }
+          }
+        }
+
+        div.description {
+          margin-top: 10px;
+          font-size: 20px;
+        }
+      }
+
+    }
+  }
+
+  div#education {
+
+    padding-bottom: 20px;
+
+    h1.title {
+      font-weight: normal;
+      font-size: 50px;
+      color: #000;
+
+      margin:10px 0;
+    }
+
+    div.info {
+      color: #000;
+      div.top-info{
+        overflow: hidden;
+
+        span {
+          display: inline-block;
+
+          float: left;
+          font-size: 25px;
+
+          &.job-title {
+            font-size: 30px;
+
+            width: 500px;
+          }
+
+          &.company-name {
+            width: 200px;
+          }
+
+          &.time {
+            float: right;
+            width: 200px;
+
+            text-align: right;
+          }
+
+          &.status {
+            width: 300px;
+          }
+
+          &.graduation {
+            width: 300px;
+          }
+
+          &.gpa {
+            width: 300px;
+
+            float: right;
+            text-align: right;
+          }
+        }
+
+        hr {
+          clear: both;
+          border: none;
+        }
+      }
+
+      div.description {
+        margin-top: 10px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  p.references {
+    text-align: center;
+
+    color: #000;
+    font-size: 18px;
+  }
+
+
+
+}

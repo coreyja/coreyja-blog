@@ -1,0 +1,10 @@
+.coloredBars {
+  display: flex;
+  height: 5px;
+  width: 100%;
+}
+
+.coloredBar {
+  background: currentColor;
+  flex: 1 0 auto;
+}
