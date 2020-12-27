@@ -79,12 +79,29 @@ const WorkExperience = () => (
 
     <Experience
       jobTitle="Senior Software Engineer"
+      company="Wellsheet"
+      timespan="October 2019 - Present"
+    >
+      <p>
+        Working on the Infrastructure Team. Working on infrastructure to run the
+        app and our background job system. This system is responsible for
+        interfacing with EHRs and making sure we operate on the most up to date
+        data possible.
+      </p>
+      <p>
+        Leading the Developer Tooling and Experience initiatives, making sure my
+        fellow engineers can be as happy and productive as possible.
+      </p>
+    </Experience>
+
+    <Experience
+      jobTitle="Senior Software Engineer"
       company="Betterment"
       timespan="June 2015 - Sept 2019"
     >
       <p>
-        Currently working on the Retail team, focusing on the web app and
-        developing new features.
+        Worked on the Retail team, focusing on the web app and developing new
+        features.
       </p>
       <p>
         Recently helped design and build the Aggregation product, allowing users
