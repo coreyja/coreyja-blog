@@ -138,19 +138,6 @@ const WorkExperience = () => (
         Javascript
       </p>
     </Experience>
-
-    <Experience
-      jobTitle="Intern"
-      company="Centaur Technology"
-      timespan="Summer 2010"
-    >
-      <p>Tested hardware, aimed at finding CPU bugs</p>
-      <p>Wrote automated programs to detect hardware bugs</p>
-      <p>
-        Developed programs dealing with the encoding and decoding of MSR and
-        CPUID values
-      </p>
-    </Experience>
   </div>
 );
 
