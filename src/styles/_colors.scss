@@ -31,3 +31,9 @@ $accent-colors: (
   purple: accent-color('purple');
   orange: accent-color('orange');
 }
+
+@each $key, $color in $accent-colors {
+  .color--#{$key} {
+    color: $color;
+  }
+}

@@ -6,13 +6,32 @@ import styles from "./resume.module.scss";
 import "./resumeOld.scss";
 
 import ColoredBars from "../components/coloredBars";
+import Color from "../utils/colors";
+import Gray from "../utils/grays";
 
 const Header = () => (
-  <div className={styles.Header}>
+  <div className={`${styles.constrainedContent} ${styles.Header}`}>
     <h1 className={styles.HeaderName}>Corey Alexander</h1>
-    <h2 className={styles.HeaderBlogUrl}>coreyja.com</h2>
+    <h2 className={styles.HeaderBlogUrl}>
+      corey<span style={{ color: Color.purple }}>ja</span>
+      <span style={{ color: Gray["high-contrast"] }}>.com</span>
+    </h2>
     <h2 className={styles.HeaderGithub}>github.com/coreyja</h2>
     <h2 className={styles.HeaderTagline}>complex to simple</h2>
+  </div>
+);
+
+const ContactInfo = () => (
+  <div className={`${styles.constrainedContent} ${styles.ContactInfo}`}>
+    <div className={styles.ContactBlock}>
+      <h2 className={styles.ContactBlockTitle}>Email</h2>
+      <h2 className={styles.ContactBlockValue}>coreyja@gmail.com</h2>
+    </div>
+
+    <div className={styles.ContactBlock}>
+      <h2 className={styles.ContactBlockTitle}>Phone</h2>
+      <h2 className={styles.ContactBlockValue}>(347) 863-4518</h2>
+    </div>
   </div>
 );
 
@@ -23,21 +42,9 @@ const Resume: React.FunctionComponent = () => {
         title="Corey Alexander Resume"
         keywords={[`Corey`, `Corey Alexander`, `coreyja`, `resume`]}
       />
-      <div className={styles.constrainedContent}>
-        <Header />
-      </div>
+      <Header />
       <ColoredBars />
-      <div className={`${styles.constrainedContent} ${styles.ContactInfo}`}>
-        <div className={styles.ContactBlock}>
-          <h2 className={styles.ContactBlockTitle}>Email</h2>
-          <h2 className={styles.ContactBlockValue}>coreyja@gmail.com</h2>
-        </div>
-
-        <div className="contact-block">
-          <h2 className="title">Phone</h2>
-          <h2 className="contact-info">(347) 863-4518</h2>
-        </div>
-      </div>
+      <ContactInfo />
 
       <div id="work-experience" className="wrap">
         <h1 className="title">Work Experience</h1>
