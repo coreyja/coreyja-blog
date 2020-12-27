@@ -1,0 +1,83 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #000;
+  }
+}
+
+.constrainedContent {
+  width: 900px;
+}
+
+.Header {
+  width: 900px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &-name {
+    font-size: 45px;
+  }
+
+  &-blogUrl, &-github {
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &-tagline {
+    font-weight: normal;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: .5rem;
+  }
+}
+
+.ContactInfo {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.ContactBlock {
+  &-title {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  &-value {
+    font-weight: lighter;
+    margin: 0;
+  }
+}
+
+.Experience {
+  &-header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &-headerItem {
+    flex: 1 0 0;
+
+    &-left { text-align: left; }
+    &-center { text-align: center; }
+    &-right { text-align: right; }
+  }
+
+  &-body {
+    margin: 0;
+
+    p { margin: 0 };
+  }
+}
+
+.ExperienceLabel {
+  margin-bottom: 0;
+
+}
