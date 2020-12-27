@@ -28,9 +28,3 @@ $print-black: '#000000';
   highContrast: gray('high-contrast');
   nearBlack: gray('near-black');
 }
-
-@each $key, $color in $grays {
-  .gray--#{$key} {
-    color: $color;
-  }
-}

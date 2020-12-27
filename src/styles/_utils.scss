@@ -1,3 +1,6 @@
+@import './colors';
+@import './grays';
+
 @mixin bigger-than-600 {
 	@media (min-width: 600px) {
 		@content;
@@ -18,4 +21,16 @@
 		padding-left: 50px;
 		padding-right: 50px;
 	}
+}
+
+@each $key, $color in $accent-colors {
+  .color--#{$key} {
+    color: $color;
+  }
+}
+
+@each $key, $color in $grays {
+  .gray--#{$key} {
+    color: $color;
+  }
 }
