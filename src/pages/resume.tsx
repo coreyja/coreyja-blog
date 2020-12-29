@@ -85,7 +85,7 @@ const WorkExperience = () => (
       <p>
         Working on the Infrastructure Team. Working on infrastructure to run the
         app and our background job system. This system is responsible for
-        interfacing with EHRs and making sure we operate on the most up to date
+        interfacing with EHRs and making sure we operate on the most up-to-date
         data possible.
       </p>
       <p>
@@ -100,15 +100,18 @@ const WorkExperience = () => (
       timespan="June 2015 - Sept 2019"
     >
       <p>
-        Worked on the Retail team, focusing on the web app and developing new
-        features.
+        Worked on the Retail team, eventually leading the Cashflow team,
+        focusing on the web app and developing new features.
       </p>
       <p>
         Recently helped design and build the Aggregation product, allowing users
         to link accounts at other Financial Institutions to view all their
         accounts in one place. Worked on the backend architecture of how we
-        update and store this data on a daily basis, as well as the front end
-        display of the data.
+        update and store this data daily and how it was displayed to Customers.
+        Also implemented and maintained the algorithm that used this data to
+        transfer money between a checking and savings account automatically,
+        optimizing for having 3-5 weeks of spending money in your checking
+        account at any one time.
       </p>
     </Experience>
 
@@ -119,12 +122,12 @@ const WorkExperience = () => (
     >
       <p>
         Personally rewrote the HTML/CSS templates for a client .NET application
-        as well as created a mobile version of their site, with both iOS and
-        Android native wrappers
+        and created a mobile version of their site, with both iOS and Android
+        native wrappers.
       </p>
       <p>
         Debugged and added features to a client&apos;s legacy Visual Basic web
-        application
+        application.
       </p>
     </Experience>
 
@@ -134,10 +137,10 @@ const WorkExperience = () => (
       timespan="Aug 2010 - 2014"
     >
       <p>
-        Worked as a developer on many different websites and webapps using a
-        variety of tools
+        Worked as a developer on many different websites and web apps using a
+        variety of tools. Most of this work was done through the &quot;MadLab
+        Media Group&quot; in Longmont, CO.
       </p>
-      <p>For a more complete portfolio of projects visit coreyja.com</p>
     </Experience>
 
     <Experience
