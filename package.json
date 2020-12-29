@@ -71,7 +71,7 @@
     "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-ts-config": "^0.2.3",
     "husky": "^4.3.6",
-    "lighthouse": "^6.5.0",
+    "lighthouse": "^7.0.0",
     "lighthouse-batch": "^6.1.0",
     "lint-staged": "^10.5.3",
     "prettier": "^2.1.2",
