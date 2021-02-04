@@ -12,7 +12,7 @@
     "@babel/cli": "^7.12.13",
     "@babel/core": "^7.12.13",
     "@babel/plugin-proposal-class-properties": "^7.12.13",
-    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-env": "^7.12.13",
     "@babel/preset-typescript": "^7.12.13",
     "@coreyja/typeface-alternate-gothic1": "0.0.1",
     "@coreyja/typeface-hack-nerd-font": "0.0.60",
