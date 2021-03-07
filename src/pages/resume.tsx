@@ -83,14 +83,13 @@ const WorkExperience = () => (
       timespan="October 2019 - Present"
     >
       <p>
-        Working on the Infrastructure Team. Working on infrastructure to run the
-        app and our background job system. This system is responsible for
-        interfacing with EHRs and making sure we operate on the most up-to-date
-        data possible.
+        Work on infrastructure to run the app and the background job system,
+        which interfaces with EHRs and ensures operations with the most
+        up-to-date data possible
       </p>
       <p>
-        Leading the Developer Tooling and Experience initiatives, making sure my
-        fellow engineers can be as happy and productive as possible.
+        Lead the developer tooling and experience initiatives to improve
+        engineers’ productivity
       </p>
     </Experience>
 
@@ -100,18 +99,21 @@ const WorkExperience = () => (
       timespan="June 2015 - Sept 2019"
     >
       <p>
-        Worked on the Retail team, eventually leading the Cashflow team,
-        focusing on the web app and developing new features.
+        Promoted to lead the Cashflow team, focusing on the web app and
+        developing new features
       </p>
       <p>
-        Recently helped design and build the Aggregation product, allowing users
-        to link accounts at other Financial Institutions to view all their
-        accounts in one place. Worked on the backend architecture of how we
-        update and store this data daily and how it was displayed to Customers.
-        Also implemented and maintained the algorithm that used this data to
-        transfer money between a checking and savings account automatically,
-        optimizing for having 3-5 weeks of spending money in your checking
-        account at any one time.
+        Enabled users to link accounts across financial institutions by helping
+        to design and build the aggregation product
+      </p>
+      <p>
+        Worked on the backend architecture for data storage, daily updates, and
+        customer-facing data
+      </p>
+      <p>
+        Optimized algorithm that automatically transfers money between checking
+        and savings accounts so users have 3-5 weeks of spending money in their
+        checking accounts at all times
       </p>
     </Experience>
 
@@ -121,13 +123,13 @@ const WorkExperience = () => (
       timespan="Summer 2014"
     >
       <p>
-        Personally rewrote the HTML/CSS templates for a client .NET application
-        and created a mobile version of their site, with both iOS and Android
-        native wrappers.
+        Rewrote the HTML/CSS templates for a client .NET application and created
+        a mobile version of their site, with both iOS and Android native
+        wrappers
       </p>
       <p>
         Debugged and added features to a client&apos;s legacy Visual Basic web
-        application.
+        application
       </p>
     </Experience>
 
@@ -138,9 +140,9 @@ const WorkExperience = () => (
     >
       <p>
         Worked as a developer on many different websites and web apps using a
-        variety of tools. Most of this work was done through the &quot;MadLab
-        Media Group&quot; in Longmont, CO.
+        variety of tools
       </p>
+      <p>Contracted regularly with MadLab Media Group in Longmont, CO</p>
     </Experience>
 
     <Experience
@@ -148,15 +150,11 @@ const WorkExperience = () => (
       company="Giftovus"
       timespan="Summer 2013"
     >
-      <p>Worked as a web developer on the Giftovus team.</p>
       <p>
-        Familiar with and coded for the both frontend and backend of the
-        Giftovus web app: giftovus.com
+        Worked as a web developer coding both the frontend and backend of the
+        Giftovas web app
       </p>
-      <p>
-        Wrote code that was shipped in the live app: Python with Django and
-        Javascript
-      </p>
+      <p>Wrote code that was shipped in the live app</p>
     </Experience>
   </div>
 );
