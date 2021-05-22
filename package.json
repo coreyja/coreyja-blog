@@ -51,7 +51,7 @@
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
     "typeface-oswald": "^1.1.13",
-    "typography": "^0.16.19"
+    "typography": "^0.16.21"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.21.4",
