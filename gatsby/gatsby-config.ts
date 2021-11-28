@@ -35,7 +35,7 @@ module.exports = {
       ? {
           resolve: `gatsby-source-filesystem`,
           options: {
-            path: `${__dirname}/../../coreyja-blog-posts/published`,
+            path: `${__dirname}/../../../writing/blog-posts`,
             name: `local-private-blog`,
           },
         }
