@@ -46,68 +46,70 @@ const BlogPost: React.FunctionComponent<Props> = (props) => {
         description={post.frontmatter?.description || post.excerpt || undefined}
       />
 
-      <article className={blogPostStyles.BlogPost}>
-        <section
-          className={`${blogPostStyles.titleContainer} ${blogPostStyles.PostTitle}`}
-          style={{ color }}
-        >
-          <h1 className={blogPostStyles.title} style={{ color }}>
-            {post.frontmatter.title}
-          </h1>
-          <h4 className={blogPostStyles.date}>{post.frontmatter.date}</h4>
-        </section>
-
-        {post.html && (
+      <div className={blogPostStyles.readingWrapper}>
+        <article className={blogPostStyles.BlogPost}>
           <section
-            className={blogPostStyles.post}
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
-        )}
+            className={`${blogPostStyles.titleContainer} ${blogPostStyles.PostTitle}`}
+            style={{ color }}
+          >
+            <h1 className={blogPostStyles.title} style={{ color }}>
+              {post.frontmatter.title}
+            </h1>
+            <h4 className={blogPostStyles.date}>{post.frontmatter.date}</h4>
+          </section>
 
-        <section className={blogPostStyles.tags} style={{ color }}>
-          {post.fields?.tags?.map(
-            (tag) =>
-              tag && (
-                <Link
-                  to={`/tags/${tag}`}
-                  className={blogPostStyles.tag}
-                  key={tag}
-                >
-                  {tag}
-                </Link>
-              )
+          {post.html && (
+            <section
+              className={blogPostStyles.post}
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
           )}
-        </section>
 
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-            margin: 0,
-            marginBottom: "1em",
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.slug} rel="prev">
-                ← {previous.title}
-              </Link>
+          <section className={blogPostStyles.tags} style={{ color }}>
+            {post.fields?.tags?.map(
+              (tag) =>
+                tag && (
+                  <Link
+                    to={`/tags/${tag}`}
+                    className={blogPostStyles.tag}
+                    key={tag}
+                  >
+                    {tag}
+                  </Link>
+                )
             )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.slug} rel="next">
-                {next.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </article>
+          </section>
 
-      <Bio />
+          <ul
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
+              margin: 0,
+              marginBottom: "1em",
+            }}
+          >
+            <li>
+              {previous && (
+                <Link to={previous.slug} rel="prev">
+                  ← {previous.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.slug} rel="next">
+                  {next.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        </article>
+
+        <Bio />
+      </div>
     </BlogLayout>
   );
 };

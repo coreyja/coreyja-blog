@@ -2,13 +2,15 @@
 @import '../styles/colors';
 @import '../styles/grays';
 
+.readingWrapper {
+  max-width: 700px;
+}
+
 .BlogPost {
   display: flex;
   flex-direction: column;
   min-height: 100%;
   word-break: break-word;
-
-  max-width: 70rem;
 }
 
 .titleContainer {
