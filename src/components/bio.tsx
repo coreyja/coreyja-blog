@@ -44,9 +44,9 @@ const Bio: React.FunctionComponent = () => (
           >
             Written by <strong>{author}</strong> who lives and works in NYC
             building useful things.
-            {` `}
+            <br />
             <a href={`https://github.com/${social.github}`}>
-              You should check out what he&apos;s building on Github
+              You should check out what I&apos;m building on Github
             </a>
           </p>
         </div>

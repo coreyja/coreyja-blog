@@ -2,6 +2,10 @@
 @import '../styles/colors';
 @import '../styles/grays';
 
+.readingWrapper {
+  max-width: 700px;
+}
+
 .BlogPost {
   display: flex;
   flex-direction: column;
@@ -21,6 +25,20 @@
   img {
     display: block;
     margin: auto;
+  }
+
+  aside {
+    padding: 1rem;
+    border: 5px solid accent-color('orange');
+    border-radius: 10px;
+
+    :first-child {
+      margin-top: 0;
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
   }
 }
 

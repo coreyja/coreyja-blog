@@ -16,7 +16,7 @@ commands:
 jobs:
   test:
     parallelism: 1
-    resource_class: small
+    resource_class: large
     docker:
       - image: circleci/node:14.0.0
     steps:
@@ -26,7 +26,7 @@ jobs:
       - run: yarn build
   deploy:
     parallelism: 1
-    resource_class: small
+    resource_class: large
     docker:
       - image: circleci/node:14.0.0
     steps:
