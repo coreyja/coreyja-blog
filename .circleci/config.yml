@@ -35,7 +35,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - build
+            - public
   deploy:
     parallelism: 1
     resource_class: small
