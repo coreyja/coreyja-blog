@@ -28,7 +28,17 @@
   }
 
   aside {
-    background: yellow;
+    padding: 1rem;
+    border: 5px solid accent-color('orange');
+    border-radius: 10px;
+
+    :first-child {
+      margin-top: 0;
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
