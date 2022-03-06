@@ -16,15 +16,14 @@ commands:
 jobs:
   test:
     parallelism: 1
-    resource_class: large
+    resource_class: small
     docker:
       - image: circleci/node:14.0.0
     steps:
       - checkout
       - yarn-install
       - run: yarn test
-      - run: yarn build
-  deploy:
+  build:
     parallelism: 1
     resource_class: large
     docker:
@@ -33,14 +32,30 @@ jobs:
       - checkout
       - yarn-install
       - run: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
+  deploy:
+    parallelism: 1
+    resource_class: small
+    docker:
+      - image: circleci/node:14.0.0
+    steps:
+      - checkout
+      - yarn-install
+      - attach_workspace:
+          at: .
       - run: yarn deploy
 workflows:
   version: 2.1
   test_and_deploy:
     jobs:
       - test
+      - build
       - deploy:
           requires:
+            - build
             - test
           filters:
             branches:
