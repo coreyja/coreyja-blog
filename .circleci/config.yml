@@ -36,6 +36,7 @@ jobs:
           root: .
           paths:
             - public
+            - .cache
   deploy:
     parallelism: 1
     resource_class: small
