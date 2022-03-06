@@ -44,6 +44,7 @@ const BlogPost: React.FunctionComponent<Props> = (props) => {
       <SEO
         title={title}
         description={post.frontmatter?.description || post.excerpt || undefined}
+        image={post.frontmatter?.image?.childImageSharp?.fixed?.src}
       />
 
       <div className={blogPostStyles.readingWrapper}>
@@ -129,6 +130,13 @@ export const blogPostFragment = graphql`
       date(formatString: "M.D.YY")
       color
       description
+      image {
+        childImageSharp {
+          fixed(height: 600, width: 1200) {
+            src
+          }
+        }
+      }
     }
   }
 `;
