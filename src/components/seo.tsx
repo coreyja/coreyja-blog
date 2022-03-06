@@ -80,18 +80,26 @@ const SEO: FunctionComponent<SEOProps> = ({
           name: `twitter:description`,
           content: metaDescription,
         },
-        {
-          name: `twitter:image`,
-          content: image,
-        },
-      ].concat(
-        keywords.length > 0
-          ? {
-              name: `keywords`,
-              content: keywords.join(`, `),
-            }
-          : []
-      )}
+      ]
+        .concat(
+          keywords.length > 0
+            ? {
+                name: `keywords`,
+                content: keywords.join(`, `),
+              }
+            : []
+        )
+        .concat(
+          image
+            ? [
+                {
+                  property: `og:image`,
+                  content: image,
+                },
+                { property: "twitter:image", content: image },
+              ]
+            : []
+        )}
     />
   );
 };
