@@ -20,7 +20,7 @@ const SocialIcon = (props: { href: string; icon: IconProp; title: string }) => (
     href={props.href}
     className={headerStyles.socialIcon}
     target="_blank"
-    rel="noopener noreferrer"
+    rel="me noreferrer"
     style={{ color: Gray["near-black"] }}
   >
     <FontAwesomeIcon icon={props.icon} title={props.title} size="2x" />
