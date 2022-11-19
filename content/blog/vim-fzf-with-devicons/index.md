@@ -244,21 +244,21 @@ Here is a very unscientific single-trial test where I timed three different comm
 And going in that order, here are my results! The Rust version is only barely slower than not doing any devicons. And it blows the bash implementation out of the water!
 
 ```bash
-coreyja in ~/Projects on ca/master/devicons
+coreyja in ~/Projects on ca/main/devicons
 ★  time rg --files --no-ignore --hidden --follow > /dev/null
 
 real    0m0.302s
 user    0m0.627s
 sys     0m1.515s
 
-coreyja in ~/Projects on ca/master/devicons
+coreyja in ~/Projects on ca/main/devicons
 ★  time rg --files --no-ignore --hidden --follow | add_devicon_before_each_file > /dev/null
 
 real    3m55.226s
 user    2m8.614s
 sys     1m45.380s
 
-coreyja in ~/Projects on ca/master/devicons
+coreyja in ~/Projects on ca/main/devicons
 ★  time rg --files --no-ignore --hidden --follow | devicon-lookup > /dev/null
 
 real    0m0.409s

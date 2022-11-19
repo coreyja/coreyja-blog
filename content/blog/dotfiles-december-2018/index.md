@@ -1,15 +1,13 @@
 ---
-
 title: Dotfiles - January 2018
 author: Corey Alexander
 date: 2018-01-06
 tags:
-    - dotfiles
-    - bash
-    - tmux
-    - vim
+  - dotfiles
+  - bash
+  - tmux
+  - vim
 color: orange
-
 ---
 
 # History
@@ -26,32 +24,32 @@ Next came [Powerline](http://powerline.readthedocs.io/en/master/), to which was 
 - Bash, I'm not a zsh guy. Plain ol' bash works for me. I experimented with Fish a long time ago but it never stuck. And now I know enough Bash and everything that I don't think switching would make much sense.
 - [tmux](https://github.com/tmux/tmux). I was using iTerm for it's tabs and splits and all that, but switched to tmux semi-recently. At the time the reason I switched was really to use Tmuxinator. I really like having different projects that I can set up and reproduce easily. It also lets me easily context switch to a new app/project without losing where I currently am. For example I currently have both my `dotfiles` and `coreyja-blog` sessions open and I can toggle back and forth between the two. Each of those sessions has their own windows and splits and all the jazz. It helps make context switching faster, since I can pick up exactly where I left off!
 - vim/[neovim](https://github.com/neovim/neovim). This is one of the more recent additions to my toolbelt! Before I was using RubyMine, which is am amazing IDE (all of Jetbrains stuff is really good in my opinion) but I wanted something more customizable and light weight, so VIM is where I ended up. My and a buddy at work picked it up at around the same time and that helped us both learn new tricks from each other. I'm actually using nvim which is a newer fork of vim, but essentially functions the same.
-    - [https://github.com/coreyja/dotfiles/blob/master/.vimrc](https://github.com/coreyja/dotfiles/blob/master/.vimrc)
+  - [https://github.com/coreyja/dotfiles/blob/main/.vimrc](https://github.com/coreyja/dotfiles/blob/main/.vimrc)
 - [Airline](https://github.com/vim-airline/vim-airline). This very recently replaced Powerline in my setup. It's way lighter weight and easier to set up, but I did lose a few features in the transition.
 - [fzf](https://github.com/junegunn/fzf)
-    - fzf is a fuzzy finder that I absolutely love! I use it in the command line in Bash as well as in vim. It provides super fast, and amazing accurate fuzzy finding. It's one of my favorite tools that I couldn't live without. I love that it integrates into the other tools I use so well too.
+  - fzf is a fuzzy finder that I absolutely love! I use it in the command line in Bash as well as in vim. It provides super fast, and amazing accurate fuzzy finding. It's one of my favorite tools that I couldn't live without. I love that it integrates into the other tools I use so well too.
 
 # Ruby
 
 - rbenv - Different projects needs different versions of Ruby and rbenv gets the job done perfectly!
-    - There are some rbenv plugins that I also use too to help out:
-        - rbenv/ruby-build
-            - Download and build new versions of Ruby
-        - rbenv/rbenv-default-gems
-            - Install a set of gems when you install a new version of ruby
-            - [https://github.com/coreyja/dotfiles/blob/master/.rbenv/default-gems](https://github.com/coreyja/dotfiles/blob/master/.rbenv/default-gems)
-        - ianheggie/rbenv-binstubs
-            - Never have to run `bundle exec` again!
-        - tpope/rbenv-ctags
-            - Automatically generate ctags files for installed Ruby versions. More on ctags in a bit!
-        - rkh/rbenv-update
-            - Automatically update rbenv plugins when `rbenv update` is run
+  - There are some rbenv plugins that I also use too to help out:
+    - rbenv/ruby-build
+      - Download and build new versions of Ruby
+    - rbenv/rbenv-default-gems
+      - Install a set of gems when you install a new version of ruby
+      - [https://github.com/coreyja/dotfiles/blob/main/.rbenv/default-gems](https://github.com/coreyja/dotfiles/blob/main/.rbenv/default-gems)
+    - ianheggie/rbenv-binstubs
+      - Never have to run `bundle exec` again!
+    - tpope/rbenv-ctags
+      - Automatically generate ctags files for installed Ruby versions. More on ctags in a bit!
+    - rkh/rbenv-update
+      - Automatically update rbenv plugins when `rbenv update` is run
 
 # Ctags
 
 Ctags are the reason I was able to leave RubyMine for vim! I LOVE the "Jump to Implementation" feature in RubyMine and ctags basically replicate that for me in VIM! I will admit they aren't _quite_ as good as I remember the "Jump to Implementation" feature being but its good enough for me! So basically ctags work by creating `tags` files which tell it where all the different classes and methods are defined. Once you have these made for your project (and your dependencies) vim can search through them to quickly jump to the definitions of functions. But getting all your ctags generated can be slightly challenging! I pretty much followed [this amazing guide](http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html) by [Tim Pope (tpope)](https://github.com/tpope), so I won't go into that too much!
 
-There is one thing I have started doing different than that guide is started using [ripper-tags](https://github.com/tmm1/ripper-tags) instead of ctags for my Ruby projects, which is most of my projects at the moment. It provides better indexing for Ruby files since it is specialized just for Ruby. I modified tpope's `ctags` bash script to use ripper tags for Ruby files. [Here](https://github.com/coreyja/dotfiles/blob/master/.git_template/hooks/ctags) is my modified version of that script.
+There is one thing I have started doing different than that guide is started using [ripper-tags](https://github.com/tmm1/ripper-tags) instead of ctags for my Ruby projects, which is most of my projects at the moment. It provides better indexing for Ruby files since it is specialized just for Ruby. I modified tpope's `ctags` bash script to use ripper tags for Ruby files. [Here](https://github.com/coreyja/dotfiles/blob/main/.git_template/hooks/ctags) is my modified version of that script.
 
 I am also using [gem-ripper-tags](https://github.com/lzap/gem-ripper-tags) to automatically generate ctags using [ripper-tags](https://github.com/tmm1/ripper-tags) for all my installed gems, this is on my list of default gems so that it gets installed for each version of Ruby automatically.
 

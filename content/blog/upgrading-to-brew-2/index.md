@@ -21,15 +21,14 @@ cd ~
 git init .
 git add remote origin https://github.com/coreyja/dotfiles.git
 git fetch origin
-git checkout --track origin/master
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+git checkout --track origin/main
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install)"
 brew bundle
 ```
 
 What this does is checkout my `dotfiles` repo in the home dir. This isn't how some people do their dotfiles, where they store the version controlled files somewhere else and copy or symlink then into their homedir. Instead I keep my actual home directory under version control, but have the `.gitignore` set up as a white-list, where I have to specifically add files to be tracked. This works really well for me since I don't have to maintain two different directories. I wrote a bit more about that [setup here.](blog/2018/01/06/dotfiles-december-2018.html)
 
 My first `brew bundle` didn't work, since there were some upgrades I needed to make! The rest of this post will be about the changes I had to make to get up and running! Overall I felt like I only had to make a few small changes and I was up and running really quickly!
-
 
 ## Homebrew 2
 
@@ -74,4 +73,3 @@ I added `go` and `rustup` since my setup depends on some go and Rust utilites. I
 ## Added a base `.ruby-version` file
 
 I was actually surprised I hadn't already done this when I setup the new laptop. But I wasn't keeping the `.ruby-version` file in my homedir under `git`, so I changed that by adding the latest currently available version of ruby as my default `.ruby-version`. I will still have projects that depend on different versions of Ruby, and have their own `.ruby-version` file. But this will give me a good default version, that is consistent between machines.
-

@@ -11,7 +11,7 @@ color: purple
 
 ## Heroku
 
-I've hosted on a number of different providers over the year, but I have always kept coming back to Heroku. They make hosting so simple, a deploy is always only a git push away! With their Github Integration I don't even push to Heroku manually anymore, merges to master auto-deploy.
+I've hosted on a number of different providers over the year, but I have always kept coming back to Heroku. They make hosting so simple, a deploy is always only a git push away! With their Github Integration I don't even push to Heroku manually anymore, merges to main auto-deploy.
 
 With that said there was one big drawback to Heroku. The cost. I want HTTPS for all my side-projects, and I also want to use a custom domain for most of them. This right away knocks me out of the free tier. Most of my side projects require a worker and a web process, so on Heroku that's $14 a month per project, minimum. When I started this migration I had 2 side projects on Heroku, and was also wanting to start hosting an [Octobox](https://octobox.io/) instance. This would have cost me about $32 a month on Heroku.
 
@@ -21,7 +21,7 @@ One day while I was looking for a platform to help make self hosting easier I ra
 
 ## Server
 
-I decided to go with Digital Ocean. At first I wanted to move my package tracker side project over and set up Octobox. So I went with a 2GB 1 vCPU box for $10 a month. I was thinking that this would be about the same as 4 Heroku dynos. A web and a worker, each for the two projects I was wanting to host.
+I decided to go with Digital Ocean. At first I wanted to move my package tracker side project over and set up Octobox. So I went with a 2GB 1 vCPU box for \$10 a month. I was thinking that this would be about the same as 4 Heroku dynos. A web and a worker, each for the two projects I was wanting to host.
 
 I installed Dokku with the Digital Ocean one click installer without any difficulties and pointed a subdomain at my newly created droplet.
 The first setup step with Dokku is through a web installer. This is accessed by going to the ip or domain of the Droplet and following the wizard. It will have you add an SSH key for the Dokku user, as well as some default Virtualhost settings. After the wizard is finished, the Dokku box itself no longer will respond to web requests, it has no web GUI.
@@ -117,7 +117,7 @@ Now we are just was a push away from deploying our app!
 
 ```bash
 git remote add dokku dokku@DOKKU_HOST
-git push dokku master
+git push dokku main
 ```
 
 This will look similar to a Heroku deploy, in that we will see the deploy output in your git push. Here you can see it building your Dockerfile, and when it is done your app will be available!

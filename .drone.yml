@@ -73,7 +73,7 @@ steps:
       from_secret: AWS_SECRET_ACCESS_KEY
   when:
     branch:
-    - master
+    - main
     event:
     - push
   depends_on:
