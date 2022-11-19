@@ -6,6 +6,7 @@ import {
   faGithub,
   faTwitch,
   faMastodon,
+  faDev,
 } from "@fortawesome/free-brands-svg-icons";
 import { faRss } from "@fortawesome/pro-solid-svg-icons";
 
@@ -43,12 +44,17 @@ const Header: React.FunctionComponent = () => (
         <SocialIcon
           href="https://twitch.tv/coreyja"
           icon={faTwitch}
-          title="Dev.to Profile Icon"
+          title="Twitch Profile Icon"
         />
         <SocialIcon
           href="https://toot.cat/@coreyja"
           icon={faMastodon}
           title="Fediverse Profile Icon"
+        />
+        <SocialIcon
+          href="https://dev.to/coreyja"
+          icon={faDev}
+          title="Dev.to Profile Icon"
         />
         <SocialIcon href="/rss.xml" icon={faRss} title="RSS Icon" />
       </div>
