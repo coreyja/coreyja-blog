@@ -2,7 +2,12 @@ import React from "react";
 import headerStyles from "./header.module.scss";
 import { Link } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faDev, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faTwitch,
+  faMastodon,
+  faDev,
+} from "@fortawesome/free-brands-svg-icons";
 import { faRss } from "@fortawesome/pro-solid-svg-icons";
 
 import Color from "../utils/colors";
@@ -37,14 +42,19 @@ const Header: React.FunctionComponent = () => (
           title="Github Profile Icon"
         />
         <SocialIcon
+          href="https://twitch.tv/coreyja"
+          icon={faTwitch}
+          title="Twitch Profile Icon"
+        />
+        <SocialIcon
+          href="https://toot.cat/@coreyja"
+          icon={faMastodon}
+          title="Fediverse Profile Icon"
+        />
+        <SocialIcon
           href="https://dev.to/coreyja"
           icon={faDev}
           title="Dev.to Profile Icon"
-        />
-        <SocialIcon
-          href="https://twitter.com/coreyja_dev"
-          icon={faTwitter}
-          title="Twitter Profile Icon"
         />
         <SocialIcon href="/rss.xml" icon={faRss} title="RSS Icon" />
       </div>
